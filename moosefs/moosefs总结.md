@@ -2,13 +2,26 @@
 
 ### 简介
 
-MooseFS is a fault-tolerant distributed le system. It spreads data over multiple physical
-locations (servers), which are visible to user as one resource. For standard le operations
-MooseFS acts as any other Unix-alike lesystem。
+moosefs是一个高容错的分布式文件系统。它将数据存储在多个物理位置，但是对用户可见为一个资源。对moosefs文件系统的操作类似于unix-like系统。
 
+moosefs包括四个组件：
 
+1. Managing servers (master servers)：存储每个文件的元数据（文件大小，属性以及位置，非正常文件的所有信息，例如目录，套接字，管道，以及设备）
+2. Data servers (chunk servers) ：任意数量的服务器保存着数据文件，且之间相互同步数据（支持一份文件存在多份副本）
+3. Metadata backup server(s) (metalogger server)：任意数量的服务器，保存着元数据变化日志和间断性从master下载的元数据文件。当master宕机时可以很容易的将metalogger切换成master。
+4. Client computers that access (mount) the les in MooseFS：任意数量的服务器可以通过mfsmount连接管理服务器（接收和修改元数据），chunkservers（修改实际数据）
 
-### 安装
+工作原理：
+
+![1532416491576](E:\Wiki\MyWiki\images\1532416491576.png)
+
+![1532416538807](E:\Wiki\MyWiki\images\1532416538807.png)
+
+元数据存储在管理服务器的内存中同时保存在硬盘（通过一段时间更新二进制文件以及时刻更新增加的日志）。同时这些数据会同步到metologger中。
+
+文件数据在chunks中被划分成64M的片段。高可用性通过设置“goal”值（副本保存的数量）来实现。
+
+### 源代码安装
 
 #### 1. 安装编译包
 
