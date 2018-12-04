@@ -78,7 +78,6 @@ Starting docker:        [确定]
 
    -d：detach，分离，docker会将容器放在后台运行。
 
-   
 
 ### 4 常用容器命令
 
@@ -198,7 +197,6 @@ docker run -d -p 80 --name website -v /root/sample/website:/var/www/html/website
       vi /etc/selinux/config 将SELINUX=enforcing的值改为disabled，重启机器即可。
    ```
 
-   
 
 #### 6.1 Docker网络
 
