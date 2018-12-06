@@ -52,10 +52,85 @@ BeanFactory和ApplicationContext的继承关系图：
 
 
 
-BeanFactory接口只定义如何访问容
-器内管理的Bean的方法，各个BeanFactory的具体实现类负责具体Bean的注册以及管理工作。
-BeanDefinitionRegistry接口定义抽象了Bean的注册逻辑。通常情况下，具体的BeanFactory实现
-类会实现这个接口来管理Bean的注册。
+BeanFactory接口只定义如何访问容器内管理的Bean的方法，各个BeanFactory的具体实现类负责具体Bean的注册以及管理工作。BeanDefinitionRegistry接口定义抽象了Bean的注册逻辑。通常情况下，具体的BeanFactory实现类会实现这个接口来管理Bean的注册。他们之间的关系如下图：
+
+![1543890671974](E:\Wiki\mywiki\images\1543890671974.png)
+
+```java
+public static void main(String[] args) 
+{ 
+ DefaultListableBeanFactory beanRegistry = new DefaultListableBeanFactory(); 
+ BeanFactory container = (BeanFactory)bindViaCode(beanRegistry); 
+ FXNewsProvider newsProvider = (FXNewsProvider)container.getBean(" "); 
+ newsProvider.getAndPersistNews(); 
+} 
+public static BeanFactory bindViaCode(BeanDefinitionRegistry registry) 
+{ 
+ AbstractBeanDefinition newsProvider=
+     new RootBeanDefinition(FXNewsProvider.class,true); 
+ AbstractBeanDefinition newsListener = 
+     new RootBeanDefinition(DowJonesNewsListener.class,true); 
+ AbstractBeanDefinition newsPersister = 
+    new RootBeanDefinition(DowJonesNewsPersister.class,true); 
+  // 将bean定义注册到容器中
+ registry.registerBeanDefinition("djNewsProvider", newsProvider); 
+ registry.registerBeanDefinition("djListener", newsListener); 
+ registry.registerBeanDefinition("djPersister", newsPersister); 
+ // 指定依赖关系
+ // 1. 可以通过构造方法注入方式
+ ConstructorArgumentValues argValues = new ConstructorArgumentValues(); 
+ argValues.addIndexedArgumentValue(0, newsListener); 
+ argValues.addIndexedArgumentValue(1, newsPersister); 
+ newsProvider.setConstructorArgumentValues(argValues); 
+ // 2. 或者通过setter方法注入方式 
+ MutablePropertyValues propertyValues = new MutablePropertyValues(); 
+ propertyValues.addPropertyValue(new ropertyValue("newsListener",newsListener)); 
+ propertyValues.addPropertyValue(new PropertyValue("newPersistener",newsPersister)); 
+ newsProvider.setPropertyValues(propertyValues); 
+ // 绑定完成
+ return (BeanFactory)registry; 
+}
+```
+
+
+
+### Bean的scope
+
+配置中的bean定义可以看作是一个模板，容器会根据这个模板来构造对象。但是要根据这个模板构造多少对象实例，又该让这些构造完的对象实例存活多久，则由容器根据bean定义的scope语意来决定。
+
+#### singleton
+
+标记为拥有singleton scope的对象定义，在Spring的IoC容器中只存在一个实例，所有对该对象的引用将共享这个实例。该实例从容器启动，并因为第一次被请求而初始化之后，将一直存活到容器退出，也就是说，它与IoC容器“几乎”拥有相同的“寿命”。
+
+![1543905550476](E:\Wiki\mywiki\images\1543905550476.png)
+
+需要注意的一点是，不要因为名字的原因而与GoF所提出的Singleton模式相混淆，二者的语意是不同的： 标记为singleton的bean是由**容器来保证**这种类型的bean在同一个容器中只存在一个共享实例；而Singleton模式则是保证在同一个**Classloader**中只存在一个这种类型的实例。
+
+通常情况下，如果你不指定bean的scope，singleton便是容器默认的scope。
+
+
+
+#### prototype
+
+针对声明为拥有prototype scope的bean定义，容器在接到该类型对象的请求的时候，会每次都重新生成一个新的对象实例给请求方。虽然这种类型的对象的实例化以及属性设置等工作都是由容器负责的，但是只要准备完毕，并且对象实例返回给请求方之后，**容器就不再拥有当前返回对象的引用**，请求方需要自己负责当前返回对象的后继生命周期的管理工作，包括该对象的销毁。也就是说，容器每次返回给请求方一个新的对象实例之后，就任由这个对象实例“自生自灭”了。
+
+![1543906009407](E:\Wiki\mywiki\images\1543906009407.png)
+
+#### request、session和global session 
+
+Spring容器，即XmlWebApplicationContext会为每个HTTP请求创建一个全新的RequestProcessor对象供当前请求使用，当请求结束后，该对象实例的生命周期即告结束。request可以看作prototype的一种特例，除了场景更加具体之外，语意上差不多。
+
+Spring容器会为每个独立的session创建属于它们自己的全新的UserPreferences对象实例。与request相比，除了拥有session scope的bean的实例具有比request scope的bean可能更长的存活时间，其他方面真是没什么差别。
+
+global session只有应用在基于portlet的Web应用程序中才有意义，它映射到portlet的global范围的session。如果在普通的基于servlet的Web应用中使用了这个类型的scope，容器会将其作为普通的session类型的scope对待。
+
+
+
+
+
+
+
+
 
 
 

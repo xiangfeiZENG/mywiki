@@ -337,3 +337,422 @@ The end of the file
 
 
 
+#### 文件读写的实用工具
+
+注意：
+
+1. read()将每行添加到StringBuffer，并且为每行加上换行符，因为在读的过程中换行符会被去除掉。
+2. 需要close()关闭文件。
+
+```java
+public class TextFile extends ArrayList<String> {
+  // Read a file as a single string:
+  public static String read(String fileName) {
+    StringBuilder sb = new StringBuilder();
+    try {
+      BufferedReader in= new BufferedReader(new FileReader(
+        new File(fileName).getAbsoluteFile()));
+      try {
+        String s;
+        while((s = in.readLine()) != null) {
+          sb.append(s);
+          sb.append("\n");
+        }
+      } finally {
+        in.close();
+      }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
+    return sb.toString();
+  }
+  // Write a single file in one method call:
+  public static void write(String fileName, String text) {
+    try {
+      PrintWriter out = new PrintWriter(
+        new File(fileName).getAbsoluteFile());
+      try {
+        out.print(text);
+      } finally {
+        out.close();
+      }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  // Read a file, split by any regular expression:
+  public TextFile(String fileName, String splitter) {
+    super(Arrays.asList(read(fileName).split(splitter)));
+    // Regular expression split() often leaves an empty
+    // String at the first position:
+    if(get(0).equals("")) remove(0);
+  }
+  // Normally read by lines:
+  public TextFile(String fileName) {
+    this(fileName, "\n");
+  }
+  public void write(String fileName) {
+    try {
+      PrintWriter out = new PrintWriter(
+        new File(fileName).getAbsoluteFile());
+      try {
+        for(String item : this)
+          out.println(item);
+      } finally {
+        out.close();
+      }
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  // Simple test:
+  public static void main(String[] args) {
+    String file = read("TextFile.java");
+    write("test.txt", file);
+    TextFile text = new TextFile("test.txt");
+    text.write("test2.txt");
+    // Break into unique sorted list of words:
+    TreeSet<String> words = new TreeSet<String>(
+      new TextFile("TextFile.java", "\\W+"));
+    // Display the capitalized words:
+    System.out.println(words.headSet("a"));
+  }
+} /* Output:
+[0, ArrayList, Arrays, Break, BufferedReader, BufferedWriter, Clean, Display, File, FileReader, FileWriter, IOException, Normally, Output, PrintWriter, Read, Regular, RuntimeException, Simple, Static, String, StringBuilder, System, TextFile, Tools, TreeSet, W, Write]
+*///:~
+```
+
+##### 读取二进制文件
+
+ bf.available()方法用来产生恰当的数组尺寸，并且read()方法的特定的重载版本填充了这个数组。
+
+```java
+public class BinaryFile {
+  public static byte[] read(File bFile) throws IOException{
+    BufferedInputStream bf = new BufferedInputStream(
+      new FileInputStream(bFile));
+    try {
+      byte[] data = new byte[bf.available()];
+      bf.read(data);
+      return data;
+    } finally {
+      bf.close();
+    }
+  }
+  public static byte[]
+  read(String bFile) throws IOException {
+    return read(new File(bFile).getAbsoluteFile());
+  }
+} ///:~
+```
+
+
+
+### 标准I/O
+
+标准输入、标准输出、标准错误，标准I/O的意义在于可以很容易地把程序串联起来，一个程序的标准输出可以成为另一个程序的标准输入。
+
+System.out、System.err事先被包装成了printStream，System.in却是一个没有被包装过的未经过加工的InputStream，这意味着读取System.in之前必须对其进行包装。
+
+#### 从标准输入中读取
+
+```java
+public class Echo {
+  public static void main(String[] args)
+  throws IOException {
+    BufferedReader stdin = new BufferedReader(
+      new InputStreamReader(System.in));
+    String s;
+    while((s = stdin.readLine()) != null && s.length()!= 0)
+      System.out.println(s);
+    // An empty line or Ctrl-Z terminates the program
+  }
+} ///:~
+```
+
+
+
+#### 将System.out转换为PrintWriter
+
+```java
+public class ChangeSystemOut {
+  public static void main(String[] args) {
+    PrintWriter out = new PrintWriter(System.out, true);
+    out.println("Hello, world");
+  }
+} /* Output:
+Hello, world
+*///:~
+```
+
+注意第二个参数true，开启自动清空功能，否则看不到输出。
+
+
+
+ProcessBuilder实例
+
+```java
+public class OSExecute {
+  public static void command(String command) {
+    boolean err = false;
+    try {
+      Process process =
+        new ProcessBuilder(command.split(" ")).start();
+      BufferedReader results = new BufferedReader(
+        new InputStreamReader(process.getInputStream()));
+      String s;
+      while((s = results.readLine())!= null)
+        System.out.println(s);
+      BufferedReader errors = new BufferedReader(
+        new InputStreamReader(process.getErrorStream()));
+      // Report errors and return nonzero value
+      // to calling process if there are problems:
+      while((s = errors.readLine())!= null) {
+        System.err.println(s);
+        err = true;
+      }
+    } catch(Exception e) {
+      // Compensate for Windows 2000, which throws an
+      // exception for the default command line:
+      if(!command.startsWith("CMD /C"))
+        command("CMD /C " + command);
+      else
+        throw new RuntimeException(e);
+    }
+    if(err)
+      throw new OSExecuteException("Errors executing " +
+        command);
+  }
+} ///:~
+```
+
+```
+public class OSExecuteDemo {
+  public static void main(String[] args) {
+    OSExecute.command("javap OSExecuteDemo");
+  }
+} /* Output:
+Compiled from "OSExecuteDemo.java"
+public class OSExecuteDemo extends java.lang.Object{
+    public OSExecuteDemo();
+    public static void main(java.lang.String[]);
+}
+*///:~
+```
+
+
+
+### 新I/O
+
+jdk1.4 的java.nio.*包中引入了新的Java I/O类库，其目的在于提高速度，旧的I/O包已经使用nio重新实现过，一边重复利用这种速度提高，因此我们不显示地使用nio编写代码，也能从中受益。
+
+速度的提高来自于所使用的结构更接近与操作系统执行I/O的方式：通道和缓冲器。唯一直接与通道交互的缓冲器是ByteBuffer。
+
+旧的I/O类库中有三个类被修改了，用以产生FileChannel，这三个被修改的类是FileInputStream、FileOutputStream以及用于即读又写的RandomAccessfile.
+
+nio的目标就是快速移动大量数据，因此ByteBuffer的大小就显得尤为重要。
+
+例子：
+
+```java
+public class BufferToText {
+  private static final int BSIZE = 1024;
+  public static void main(String[] args) throws Exception {
+    FileChannel fc =
+      new FileOutputStream("data2.txt").getChannel();
+    fc.write(ByteBuffer.wrap("Some text".getBytes()));
+    fc.close();
+    fc = new FileInputStream("data2.txt").getChannel();
+    ByteBuffer buff = ByteBuffer.allocate(BSIZE);
+    fc.read(buff);
+    buff.flip();
+    // Doesn't work:
+    System.out.println(buff.asCharBuffer());
+    // Decode using this system's default Charset:
+    buff.rewind();
+    String encoding = System.getProperty("file.encoding");
+    System.out.println("Decoded using " + encoding + ": "
+      + Charset.forName(encoding).decode(buff));
+    // Or, we could encode with something that will print:
+    fc = new FileOutputStream("data2.txt").getChannel();
+    fc.write(ByteBuffer.wrap(
+      "Some text".getBytes("UTF-16BE")));
+    fc.close();
+    // Now try reading again:
+    fc = new FileInputStream("data2.txt").getChannel();
+    buff.clear();
+    fc.read(buff);
+    buff.flip();
+    System.out.println(buff.asCharBuffer());
+    // Use a CharBuffer to write through:
+    fc = new FileOutputStream("data2.txt").getChannel();
+    buff = ByteBuffer.allocate(24); // More than needed
+    buff.asCharBuffer().put("Some text");
+    fc.write(buff);
+    fc.close();
+    // Read and display:
+    fc = new FileInputStream("data2.txt").getChannel();
+    buff.clear();
+    fc.read(buff);
+    buff.flip();
+    System.out.println(buff.asCharBuffer());
+  }
+} /* Output:
+????
+Decoded using Cp1252: Some text
+Some text
+Some text
+*///:~
+```
+
+注意：Charset.forName(encoding).decode(buff)
+
+向ByteBuffer插入基本类型的最简单地方法是：利用asCharBuffer()、asShortBuffer()等获得该缓冲器上的视图，然后使用视图的put()方法。视图缓冲器可以让我们通过某个特定的基本类型的视窗查看其底层的ByteBuffer。
+
+ByteBuffer通过一个被”包装“过的8字节数组产生，然后通过各种不同的基本类型的视图缓冲器显示出来。
+
+ByteBuffer是将数据移进移出通道的唯一方式。
+
+![1544094448661](E:\Wiki\mywiki\images\1544094448661.png)
+
+内存映射文件及其性能讨论：
+
+```java
+public class MappedIO {
+  private static int numOfInts = 4000000;
+  private static int numOfUbuffInts = 200000;
+  private abstract static class Tester {
+    private String name;
+    public Tester(String name) { this.name = name; }
+    public void runTest() {
+      System.out.print(name + ": ");
+      try {
+        long start = System.nanoTime();
+        test();
+        double duration = System.nanoTime() - start;
+        System.out.format("%.2f\n", duration/1.0e9);
+      } catch(IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+    public abstract void test() throws IOException;
+  }
+  private static Tester[] tests = {
+    new Tester("Stream Write") {
+      public void test() throws IOException {
+        DataOutputStream dos = new DataOutputStream(
+          new BufferedOutputStream(
+            new FileOutputStream(new File("temp.tmp"))));
+        for(int i = 0; i < numOfInts; i++)
+          dos.writeInt(i);
+        dos.close();
+      }
+    },
+    new Tester("Mapped Write") {
+      public void test() throws IOException {
+        FileChannel fc =
+          new RandomAccessFile("temp.tmp", "rw")
+          .getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_WRITE, 0, fc.size())
+          .asIntBuffer();
+        for(int i = 0; i < numOfInts; i++)
+          ib.put(i);
+        fc.close();
+      }
+    },
+    new Tester("Stream Read") {
+      public void test() throws IOException {
+        DataInputStream dis = new DataInputStream(
+          new BufferedInputStream(
+            new FileInputStream("temp.tmp")));
+        for(int i = 0; i < numOfInts; i++)
+          dis.readInt();
+        dis.close();
+      }
+    },
+    new Tester("Mapped Read") {
+      public void test() throws IOException {
+        FileChannel fc = new FileInputStream(
+          new File("temp.tmp")).getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_ONLY, 0, fc.size())
+          .asIntBuffer();
+        while(ib.hasRemaining())
+          ib.get();
+        fc.close();
+      }
+    },
+    new Tester("Stream Read/Write") {
+      public void test() throws IOException {
+        RandomAccessFile raf = new RandomAccessFile(
+          new File("temp.tmp"), "rw");
+        raf.writeInt(1);
+        for(int i = 0; i < numOfUbuffInts; i++) {
+          raf.seek(raf.length() - 4);
+          raf.writeInt(raf.readInt());
+        }
+        raf.close();
+      }
+    },
+    new Tester("Mapped Read/Write") {
+      public void test() throws IOException {
+        FileChannel fc = new RandomAccessFile(
+          new File("temp.tmp"), "rw").getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_WRITE, 0, fc.size())
+          .asIntBuffer();
+        ib.put(0);
+        for(int i = 1; i < numOfUbuffInts; i++)
+          ib.put(ib.get(i - 1));
+        fc.close();
+      }
+    }
+  };
+  public static void main(String[] args) {
+    for(Tester test : tests)
+      test.runTest();
+  }
+} /* Output: (90% match)
+Stream Write: 0.56
+Mapped Write: 0.12
+Stream Read: 0.80
+Mapped Read: 0.07
+Stream Read/Write: 5.32
+Mapped Read/Write: 0.02
+*///:~
+```
+
+
+
+### 文件加锁
+
+文件锁对其他的操作系统进程是可见的，因为java的文件加锁直接映射到了本地操作系统的加锁工具。
+
+```java
+public class FileLocking {
+  public static void main(String[] args) throws Exception {
+    FileOutputStream fos= new FileOutputStream("file.txt");
+    FileLock fl = fos.getChannel().tryLock();
+    if(fl != null) {
+      System.out.println("Locked File");
+      TimeUnit.MILLISECONDS.sleep(100);
+      fl.release();
+      System.out.println("Released Lock");
+    }
+    fos.close();
+  }
+} /* Output:
+Locked File
+Released Lock
+*///:~
+```
+
+tryLock()是非阻塞的，它设法获取锁，但是如果不能获得，它将直接从方法调用返回，lock()则是阻塞式，它要阻塞进程直至锁可以获得，或利用lock()的线程终端，或调用lock()的通道关闭。 FileLock.release()可以释放锁。
+
+
+
+
+
+
+
