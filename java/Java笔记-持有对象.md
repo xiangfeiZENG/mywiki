@@ -193,7 +193,7 @@ And that is how we know the Earth to be banana-shaped.
 
 简单地容器分类：
 
-![1542599302111](E:\Wiki\mywiki\images\1542599302111.png)
+![1542599302111](.\images\1542599302111.png)
 
 
 
