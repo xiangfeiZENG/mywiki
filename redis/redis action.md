@@ -226,6 +226,522 @@ Sadd + Sinter = Social Graph
 
 ### 有序集合
 
+一个集合，集合的元素是有序的。
+
+Key score value
+
+#### Api
+
+- zadd key score element（可以是多对） O(logN)
+- zrem key element(可以是多个) o(1)
+- zscore key element 获得分数
+- zincrby key increSore element
+- zcard key 返回元素的总个数 O(1)
+- zrange key start end [withscores] o(log(n) +m) 返回制定索引范围内的升序元素【分值】
+- zrange key minScore maxScore [withscores]
+- zcount key minScore maxScore
+- zremrangebyrank key start end 删除指定排名的元素
+
+
+
+## Redis客户端
+
+### Java客户端
+
+#### Jedis直连
+
+Jedis是基于java语言的redis客户端。
+
+Jedis（String host, int port, int commectionTimeout, int soTimeout)
+
+#### Jedis连接池
+
+![image-20190128155611212](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128155611212.png)
+
+![image-20190128155739671](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128155739671.png)
+
+
+
+
+
+
+
+### Python客户端
+
+redis-py
+
+
+
+## Redis其他优秀功能
+
+### 慢查询
+
+#### 生命周期
+
+![image-20190128160802282](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128160802282.png)
+
+两个配置
+
+- slowlog-max-len，默认128
+
+- slowlog-slower-than，默认10000微妙，=0所有命令都接入到慢查询，<0不接入所有命令
+
+  ![image-20190128161117753](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128161117753.png)
+
+慢查询命令：
+
+1. slowlog get [n] ： 获取慢查询队列
+2. slowlog Len : 
+3. slowlog reset:清空
+
+**运维经验**
+
+1. slowlog-slower-than不要设置过大，默认10ms，通常设置1ms，QPS万级别，平均是0.1毫米，根据QPS决定阈值大小
+2. slowlog-max-len不要设置过小，默认为128
+3. 理解命令生命周期
+4. 定期持久化慢查询
+
+
+
+
+
+### 流水线 pipeline
+
+Redis的命令时间是微妙级别的。
+
+Pipeline每次条数要控制（网络）
+
+![image-20190128162243797](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128162243797.png)
+
+java中使用pipeline
+
+```java
+Jedis jedis = new Jedis("127.0.0.1", 6379);
+for(int i=0; i< 100; i++){
+    Pipeline pipeline = jedis.pipelined();
+    for(int j = i*100; j<(i+1)*100; j++){
+        pipeline.hset("hashkey" + j, "field" + j , "value" + j);
+    }
+    pipeline.syncAndReturnAll();
+}
+```
+
+与原生m操作
+
+m操作是原子的。非原子的。redis会对pipeline进行拆分。
+
+#### 使用建议
+
+1. 注意每次pipeline携带的数据量。
+2. pipeline每次只能作用在一个Redis节点上。
+3. m操作与pipeline的区别。
+
+
+
+### 发布订阅
+
+发布者、订阅者、频道，无法获取历史消息，没有消息堆积的功能。
+
+发布订阅模型：
+
+![image-20190128163334482](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128163334482.png)
+
+#### API
+
+- publish channel message
+- subscribe 【channel】 一个或者多个
+
+
+
+区别于消息队列：
+
+![image-20190128163855765](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128163855765.png)
+
+
+
+### 位图 bitmap
+
+可以操作位
+
+api
+
+setbit key offset value 
+
+场景：
+
+独立用户统计
+
+如果只有10万用户数，优先选择set
+
+
+
+### HyperLogLog
+
+基于HyperLogLog算法：极小的空间实现独立用户数的统计。
+
+本质还是字符串
+
+三个命令：
+
+pfadd key element
+
+pfcount key
+
+
+
+GEO
+
+redis 3.2添加，地理信息定位：存储经纬度，计算两地距离，范围计算。通过zset实现。
+
+api
+
+- geo key longitude latitude member
+- geopos key member
+- geodist key member1 member2  [unit]
+- georadius 指定范围内的member
+
+
+
+## Redis持久化
+
+持久化的作用：
+
+什么是持久化：redis所有数据保存在内存中，对数据的更新将异步保存在磁盘中。
+
+
+
+持久化的实现方式：
+
+- 快照：mysql dump /redis rdb
+- 写日志： mysql binlog。/ hbase hlog / redis aof
+
+### RDB
+
+是二进制的。是复制媒介。
+
+触发机制：save（同步），bgsave（异步），自动
+
+文件策略：如存在老的RDB文件，新替换老
+
+复杂度：O(n)
+
+![image-20190128205310984](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128205310984.png)
+
+save seconds changes 不是一种很好的方式
+
+最佳配置
+
+```shell
+# save 900 1 
+# save 300 10
+# save 60 10000  #一般将save关闭
+dbfilename dump-${port}.rdb # 一台机器可以有很多redis，利用多核的优势
+dir /bigdiskpath
+stop-writes-on-bgsave-error yes
+rdbcompression yes
+```
+
+
+
+触发机制-不容忽略方式
+
+1. 全量复制
+2. debug reload
+3. shutdown
+
+总结：
+
+1. rdb是Redis内存到硬盘的快照，用于持久化
+2. save通常会阻塞Redis
+3. bgsave不会阻塞Redis，但是会fork新进程
+4. save自动配置满足任意一个就会被执行
+5. 有些出发机制不容忽视
+
+
+
+### AOF
+
+rdb save耗时。bgsave耗内存。不可控、丢失数据。
+
+引入aof
+
+aof三种策略
+
+- always
+
+  redis命令写入到缓存区，每条命令缓存区fsync到硬盘
+
+- everysec
+
+  redis命令写入到缓存区，每条命令缓存区fsync到硬盘
+
+- non
+
+  os决定fsync
+
+![image-20190128212729837](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128212729837.png)
+
+aof重写：减少磁盘占用量，加速恢复速度。
+
+重写的两种实现方式：
+
+- bgrewriteaof：实际是对redis命令回溯重写
+- aof重写配置
+  - auto-aof-rewrite-min-size ：aof文件重写需要的尺寸
+  - auto-aof-rewrite-percentage ：aof文件增长率
+
+统计项：
+
+- aof_current_size ： aof当前尺寸（单位：字节）
+- aof_base_size：aof上次启动和重写的尺寸（单位：字节）
+
+![image-20190128213834674](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128213834674.png)
+
+![image-20190128213912371](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128213912371.png)
+
+
+
+配置：
+
+```shell
+appendonly yes
+appendfilename "appendonly-${port}.aof"
+appendfsync everysec
+dir /bigdiskpath
+no-appendfync-on-rewrite yes # rewrite时不执行append 可能会有数据丢失（优先考虑性能）
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+```
+
+
+
+### rdb和aof抉择
+
+启动优先级:
+
+![image-20190128215153755](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128215153755.png)
+
+rdb最佳策略：
+
+- “关”，
+
+- 集中管理，
+
+- 主从、从开？：从最好也不要开
+
+aof的最佳策略：
+
+- “开”：缓存和存储
+- aof重写集中管理
+- everysec
+
+最佳策略：
+
+- 小分片：每个redis的max-memory设置一个最大值
+- 缓存或者存储
+- 监控（硬盘、内存、负载、网络）
+- 足够的内存，不要全部用完
+
+
+
+### redis持久化开发运维常见问题
+
+#### fork操作
+
+同步操作，与内存量息息相关：内存越大，消耗越长（与机器类型有关）
+
+查看命令：info:latest_fork_usec
+
+改善fork：
+
+- 使用好的机器，
+- 控制最大可用内存：maxmemory
+- 合理配置linux内存分配策略：vm.overcommit_memory=1
+- 降低fork频率：例如放宽aof重写自动触发时机，不必要的全量复制。
+
+#### 子进程开销和优化
+
+- cpu
+
+  - 开销：rdb和aof文件生成，属于cpu密集型
+  - 优化：不要cpu绑定（不要把redis绑定在一个cpu上，不和cpu密集型部署
+
+- 内存
+
+  - 开销：fork内存开销，copy-on-write。
+  - 优化：echo never > /sys/kernel/mm/transparent_hugepage/enabled
+
+- 硬盘
+
+  - 开销：aof和rdb文件写入
+  - 不要和高硬盘负载服务部署在一起：存储服务、消息队列等
+  - no-appendfsync-on-rewrite=yes
+  - 根据写入量决定磁盘类型。如ssd
+  - 单机多实例持久化文件目录可以考虑分盘。
+
+  ####  aof追加阻塞
+
+  ![image-20190128223149358](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128223149358.png)
+
+
+info persistence
+
+
+
+## Redis复制原理和优化
+
+redis复制是故障经常发生的点，需特别注意。
+
+单机问题：
+
+- 机器故障
+- 容量瓶颈
+- QPS瓶颈
+
+主从复制的作用
+
+- 数据副本
+- 扩张读性能
+
+总结：一个master可以有多个slave，一个slave只能有一个master，数据流向必须是单向的，master到slave
+
+两种方式主从复制：
+
+- slaveof命令
+- 配置
+
+```
+slaveof ip port
+slave-read-only yes
+```
+
+### 全量复制和增量复制：
+
+master_repl_offset :偏移量 
+
+#### 全量复制：
+
+![image-20190128231124472](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128231124472.png)
+
+开销：
+
+- bgsave时间
+- rdb文件网络传输时间
+- 从节点清空数据时间
+- 从节点加载rdb的时间
+- 可能的aof重写时间
+
+#### 部分复制
+
+![image-20190128231720058](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128231720058.png)
+
+
+
+### 故障处理
+
+自动故障转移
+
+### 常见问题
+
+1. 读写分离：读流量分摊到从节点
+   - 可能遇到的问题：复制数据延迟，读到过期数据，从节点故障
+2. 配置不一致
+   - maxmemory不一致：丢失数据
+3. 规避全量复制
+   - 第一次全量复制：不可避免，小主节点、低峰
+   - 节点运行id不匹配，如主节点重启（运行id变化），故障转移，例如哨兵或集群
+   - 复制积压缓冲区不足：网络终端，部分复制无法满足，增大复制缓冲区配置，rel_backlog_size,网络“增强”。
+4. 规避复制风暴
+   - 单主节点复制风暴
+   - 单机器复制风暴
+
+
+
+## Redis Sentinel
+
+解决手动主从切换的问题。sentinel可以监控多套主从。
+
+![image-20190128234410574](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128234410574.png)
+
+![image-20190128234557250](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128234557250.png)
+
+### 安装与配置
+
+1. 配置开启主从节点
+2. 配置开启sentinel监控主节点。（sentinel是特殊的redis）
+3. 实际应该多机器
+4. 详细配置节点
+
+sentinel配置
+
+![image-20190128235054591](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128235054591.png)
+
+- sentinel monitor mymaster 127.0.0.1 7000 2 其中2是指有2个sentinel认为master是down的，那么判断maste为down
+- sentinel paralle-syncs mymaster 1 指master down了之后每次复制1个slave。
+
+![image-20190129000242810](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129000242810.png)
+
+上述配置加一个deamonize yes
+
+启动方式：redis-sentinel redis-sentinel-26379.conf·
+
+
+
+#### Java客户端
+
+![image-20190129160143731](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129160143731.png)
+
+客户端接入流程
+
+- Sentinel地址集合
+- MasterName
+- 不是代理模式
+
+![image-20190129160519197](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129160519197.png)
+
+
+
+### 三个定时任务
+
+1. 每10秒每个sentinel对master和slave执行info
+   - 发现slave节点
+   - 确认主从关系
+2. 每2秒每个sentinel通过master节点的channel交换信息（pub/sub）
+   - 通过_sentinel_:hello 频道交互
+   - 交互对节点的“看法”和自身信息
+3. 每1秒每个sentinel对其他sentinel和redis执行ping
+   - 心跳检测，失败的依据
+
+### 主观下线和客观下线
+
+sentinel monitor masterName ip port quorun
+
+sentinel down-after-milliseconds my master 30000
+
+- 主观下线：每个sentinel节点对redis节点失败的“偏见”
+
+- 客观下线：所有sentinel节点对Redis节点失败“达成共识”（超过quorum个同意）
+
+  sentinel is-master-down-by-addr
+
+### 领导者选举
+
+- 原因：只有一个sentinel节点完成故障转移
+
+- 选举：通过sentinel is-master-down-by-addr命令都希望成为领导者
+
+![image-20190129163144558](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129163144558.png)
+
+### 故障转移
+
+![image-20190129163708044](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129163708044.png)
+
+### 常见开发运维问题
+
+#### 节点运维
+
+
+
 
 
 

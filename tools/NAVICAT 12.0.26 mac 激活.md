@@ -1,4 +1,6 @@
-# NAVICAT 12.0.26 mac 激活
+# mac下常用开发软件激活
+
+## NAVICAT 12.0.26 
 
 激活参考
 
@@ -203,8 +205,19 @@ https://github.com/DoubleLabyrinth/navicat-keygen/blob/mac/README.zh-CN.md
 
 
 
+## Charles Web Debugging Proxy
 
-附上一个Sublime Text3 破解方式：
+破解参考：
+
+https://www.gfzj.us/tech/2015/06/24/charles-hacking.html
+
+安装完成后，先启动一次再进行jar替换。
+
+## Sublime Text3 
+
+破解过程如下：
+
+参考：
 
 ```
 ## Sublime Text 3 Serial key build is 3176
