@@ -742,11 +742,123 @@ sentinel down-after-milliseconds my master 30000
 
 
 
+## Redis Cluster
+
+为什么需要集群：
+
+- 并发，单机10万/秒，业务需要100万/每秒
+- 数据量，机器内存：16～256G，业务需要500G
+
+Redis Cluster isreleased in 3.0
+
+###  数据分布概论
+
+- 哈希分布
+  - 节点取余分区：扩容困难，需要多倍扩容，不建议使用。
+  - 一致性哈希分区：哈希+顺时针（优化取余）
+  - 虚拟槽分区
+    - 预设虚拟槽
+- 顺序分布
+
+
+
+### 基本架构
+
+分布式架构，节点是互相通信的。需要智能客户端，否则命中率不高。
+
+- 节点：cluster-enable：yes
+- meet：节点之间互相通信，所有节点共享消息
+- 指派槽：
+- 复制：
+
+特性：复制，高可用，分片
+
+
+
+### 原生安装
+
+原生命令安装-理解架构
+
+1. 配置开启节点
+
+   ![image-20190217175046030](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175046030.png)
+
+   开启节点：
+
+   - redis-server redis-7000.conf
+   - redis-server redis-7001.conf
+   - ...
+   - redis-server redis-7006.conf
+
+2. meet
+
+   ![image-20190217175316259](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175316259.png)
+
+3. 指派槽
+
+   ![image-20190217175615725](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175615725.png)
+
+4. 主从
+
+   ![image-20190217175743283](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175743283.png)
+
+### 原生安装-具体安装
+
+####  节点配置
+
+![image-20190217180115816](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217180115816.png)
+
+启动，redis-server redis-port.conf
+
+查看状态：
+
+![image-20190217180435967](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217180435967.png)
+
+#### 节点握手
+
+![image-20190217181242031](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181242031.png)
+
+####   指定槽
+
+![image-20190217215837139](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217215837139.png)
+
+![image-20190217181725888](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181725888.png)
+
+![image-20190217182007517](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182007517.png)
+
+#### 主从分配
+
+![image-20190217181854944](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181854944.png)
+
+
+
+验证安装完成：
+
+![image-20190217182114006](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182114006.png)
+
+如果在三台机器上，可以拓扑错开，例如：
+
+![image-20190217182312125](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182312125.png)
 
 
 
 
 
+
+
+## 集群伸缩
+
+原理：
+
+![image-20190217223758099](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217223758099.png)
+
+### 扩容集群
+
+1. 准备新节点
+   - 集群模式
+   - 配置和其他节点统一
+   - 启动后是孤儿节点
+2. 
 
 
 
