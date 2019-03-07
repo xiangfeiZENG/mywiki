@@ -1,4 +1,5 @@
 ---
+
 title: Java笔记-类型信息
 date: 2018-04-12 21:28:11
 categories: java
