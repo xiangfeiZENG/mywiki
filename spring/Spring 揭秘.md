@@ -2,7 +2,7 @@
 
 [TOC]
 
-![1539240874774](..\images\1539240874774.png)
+![1539240874774](.\images\1539240874774.png)
 
 
 
@@ -12,7 +12,7 @@
 
 注意:本章更多的是将IoC和依赖注入看作等同的概念进行讲解。但是，在这一点上可能存在不同的观点，比如Expert Spring MVC and Web Flow和Expert One-on-One J2EE without EJB等书中都将依赖注入看作是IoC的一种方式。
 
-![1539241501866](..\images\1539241501866.png)
+![1539241501866](.\images\1539241501866.png)
 
 在IoC的场景中，二者之间通过IoC Service Provider来打交道，所有的被注入对象和依赖对象现在由IoC Service Provider统一管理。被注入对象需要什么，直接跟IoC Service Provider招呼一声，后者就会把相应的被依赖对象注入到被注入对象中，从而达到IoC Service Provider为被注入对象服务的目的。IoC Service Provider在这里就是通常的IoC容器所充当的角色。从被注入对象的角度看，与之前直接寻求依赖对象相比，依赖对象的取得方式发生了反转，控制也从被注入对象转到了IoC Service Provider那里。
 
@@ -37,7 +37,7 @@ IoC Service Provider的职责相对来说比较简单，主要有两个：业务
 
 Spring的IoC容器是一个提供IoC支持的轻量级容器，除了基本的IoC支持，它作为轻量级容器还提供了IoC之外的支持。如在Spring的IoC容器之上，Spring还提供了相应的AOP框架支持、企业级服务集成等服务。Spring的IoC容器和IoC Service Provider所提供的服务之间存在一定的交集，二者的关系如下图所示。
 
-![1543828152097](..\images\1543828152097.png)
+![1543828152097](.\images\1543828152097.png)
 
 Spring提供了两种容器类型：BeanFactory和ApplicationContext。
 
@@ -46,7 +46,7 @@ Spring提供了两种容器类型：BeanFactory和ApplicationContext。
 
 BeanFactory和ApplicationContext的继承关系图：
 
-![1543828021321](..\images\1543828021321.png)
+![1543828021321](.\images\1543828021321.png)
 
 作为Spring提供的基本的IoC容器，BeanFactory可以完成作为IoC Service Provider的所有职责，包括**业务对象的注册**和**对象间依赖关系的绑定**。
 
@@ -54,7 +54,7 @@ BeanFactory和ApplicationContext的继承关系图：
 
 BeanFactory接口只定义如何访问容器内管理的Bean的方法，各个BeanFactory的具体实现类负责具体Bean的注册以及管理工作。BeanDefinitionRegistry接口定义抽象了Bean的注册逻辑。通常情况下，具体的BeanFactory实现类会实现这个接口来管理Bean的注册。他们之间的关系如下图：
 
-![1543890671974](..\images\1543890671974.png)
+![1543890671974](.\images\1543890671974.png)
 
 ```java
 public static void main(String[] args) 
@@ -102,7 +102,7 @@ public static BeanFactory bindViaCode(BeanDefinitionRegistry registry)
 
 标记为拥有singleton scope的对象定义，在Spring的IoC容器中只存在一个实例，所有对该对象的引用将共享这个实例。该实例从容器启动，并因为第一次被请求而初始化之后，将一直存活到容器退出，也就是说，它与IoC容器“几乎”拥有相同的“寿命”。
 
-![1543905550476](..\images\1543905550476.png)
+![1543905550476](.\images\1543905550476.png)
 
 需要注意的一点是，不要因为名字的原因而与GoF所提出的Singleton模式相混淆，二者的语意是不同的： 标记为singleton的bean是由**容器来保证**这种类型的bean在同一个容器中只存在一个共享实例；而Singleton模式则是保证在同一个**Classloader**中只存在一个这种类型的实例。
 
@@ -114,7 +114,7 @@ public static BeanFactory bindViaCode(BeanDefinitionRegistry registry)
 
 针对声明为拥有prototype scope的bean定义，容器在接到该类型对象的请求的时候，会每次都重新生成一个新的对象实例给请求方。虽然这种类型的对象的实例化以及属性设置等工作都是由容器负责的，但是只要准备完毕，并且对象实例返回给请求方之后，**容器就不再拥有当前返回对象的引用**，请求方需要自己负责当前返回对象的后继生命周期的管理工作，包括该对象的销毁。也就是说，容器每次返回给请求方一个新的对象实例之后，就任由这个对象实例“自生自灭”了。
 
-![1543906009407](..\images\1543906009407.png)
+![1543906009407](.\images\1543906009407.png)
 
 #### request、session和global session 
 

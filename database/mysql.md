@@ -55,7 +55,7 @@ TPS：每秒事物数
      - 移除不必要在事务中的select操作
 
 
-![image-20190201234408042](/Users/zengxiangfei/Documents/Wiki/mywiki/database/images/image-20190201234408042.png)
+![image-20190201234408042](./images/image-20190201234408042.png)
 
 
 
@@ -97,11 +97,11 @@ TPS：每秒事物数
    - raid 5 ：分布式奇偶校验磁盘阵列。整个整列只需要一块冗余。写很慢，随机读很快，适合以读为主的业务。最好使用在从数据库服务器上。
    - raid 10 ：又称为分片的镜像。读写性能好，重建会很简单。
 
-   ![image-20190202161815719](/Users/zengxiangfei/Documents/Wiki/mywiki/database/images/image-20190202161815719.png)
+   ![image-20190202161815719](./images/image-20190202161815719.png)
 
    raid级别选择：
 
-   ![image-20190202161906635](/Users/zengxiangfei/Documents/Wiki/mywiki/database/images/image-20190202161906635.png)
+   ![image-20190202161906635](./images/image-20190202161906635.png)
 
 #### 固态存储
 

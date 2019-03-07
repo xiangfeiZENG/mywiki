@@ -56,15 +56,15 @@ Spring
     学习内容：配置数据源
     实验方法：自己建一张表，引入数据库连接池，自动插入20万条数据，创建联合索引，验证走索引和不走索引的耗时，查看sql是否走索引，学会查看查询，计划实验，用标注式事务，编程式事务（查看编程式事务源码实现）；用乐观锁和悲观锁实现数据更新。
 ---------------------
-​![](E:\Wiki\mywiki\images\20160620115227065.jpg) 
+![](.\images\20160620115227065.jpg) 
 
 
 
-![](E:\Wiki\mywiki\images\alibabaplan.jpg)
+![](.\images\alibabaplan.jpg)
 
 
 
-![](E:\Wiki\mywiki\images\alibabaplan-detail.jpg)
+![](.\images\alibabaplan-detail.jpg)
 
 
 
