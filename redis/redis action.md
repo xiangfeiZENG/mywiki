@@ -256,9 +256,9 @@ Jedis（String host, int port, int commectionTimeout, int soTimeout)
 
 #### Jedis连接池
 
-![image-20190128155611212](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128155611212.png)
+![image-20190128155611212](./image/image-20190128155611212.png)
 
-![image-20190128155739671](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128155739671.png)
+![image-20190128155739671](./image/image-20190128155739671.png)
 
 
 
@@ -278,7 +278,7 @@ redis-py
 
 #### 生命周期
 
-![image-20190128160802282](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128160802282.png)
+![image-20190128160802282](./image/image-20190128160802282.png)
 
 两个配置
 
@@ -286,7 +286,7 @@ redis-py
 
 - slowlog-slower-than，默认10000微妙，=0所有命令都接入到慢查询，<0不接入所有命令
 
-  ![image-20190128161117753](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128161117753.png)
+  ![image-20190128161117753](./image/image-20190128161117753.png)
 
 慢查询命令：
 
@@ -311,7 +311,7 @@ Redis的命令时间是微妙级别的。
 
 Pipeline每次条数要控制（网络）
 
-![image-20190128162243797](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128162243797.png)
+![image-20190128162243797](./image/image-20190128162243797.png)
 
 java中使用pipeline
 
@@ -344,7 +344,7 @@ m操作是原子的。非原子的。redis会对pipeline进行拆分。
 
 发布订阅模型：
 
-![image-20190128163334482](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128163334482.png)
+![image-20190128163334482](./image/image-20190128163334482.png)
 
 #### API
 
@@ -355,7 +355,7 @@ m操作是原子的。非原子的。redis会对pipeline进行拆分。
 
 区别于消息队列：
 
-![image-20190128163855765](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128163855765.png)
+![image-20190128163855765](./image/image-20190128163855765.png)
 
 
 
@@ -425,7 +425,7 @@ api
 
 复杂度：O(n)
 
-![image-20190128205310984](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128205310984.png)
+![image-20190128205310984](./image/image-20190128205310984.png)
 
 save seconds changes 不是一种很好的方式
 
@@ -479,7 +479,7 @@ aof三种策略
 
   os决定fsync
 
-![image-20190128212729837](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128212729837.png)
+![image-20190128212729837](./image/image-20190128212729837.png)
 
 aof重写：减少磁盘占用量，加速恢复速度。
 
@@ -495,9 +495,9 @@ aof重写：减少磁盘占用量，加速恢复速度。
 - aof_current_size ： aof当前尺寸（单位：字节）
 - aof_base_size：aof上次启动和重写的尺寸（单位：字节）
 
-![image-20190128213834674](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128213834674.png)
+![image-20190128213834674](./image/image-20190128213834674.png)
 
-![image-20190128213912371](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128213912371.png)
+![image-20190128213912371](./image/image-20190128213912371.png)
 
 
 
@@ -519,7 +519,7 @@ auto-aof-rewrite-min-size 64mb
 
 启动优先级:
 
-![image-20190128215153755](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128215153755.png)
+![image-20190128215153755](./image/image-20190128215153755.png)
 
 rdb最佳策略：
 
@@ -581,7 +581,7 @@ aof的最佳策略：
 
   ####  aof追加阻塞
 
-  ![image-20190128223149358](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128223149358.png)
+  ![image-20190128223149358](./image/image-20190128223149358.png)
 
 
 info persistence
@@ -621,7 +621,7 @@ master_repl_offset :偏移量
 
 #### 全量复制：
 
-![image-20190128231124472](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128231124472.png)
+![image-20190128231124472](./image/image-20190128231124472.png)
 
 开销：
 
@@ -633,7 +633,7 @@ master_repl_offset :偏移量
 
 #### 部分复制
 
-![image-20190128231720058](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128231720058.png)
+![image-20190128231720058](./image/image-20190128231720058.png)
 
 
 
@@ -661,9 +661,9 @@ master_repl_offset :偏移量
 
 解决手动主从切换的问题。sentinel可以监控多套主从。
 
-![image-20190128234410574](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128234410574.png)
+![image-20190128234410574](./image/image-20190128234410574.png)
 
-![image-20190128234557250](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128234557250.png)
+![image-20190128234557250](./image/image-20190128234557250.png)
 
 ### 安装与配置
 
@@ -674,12 +674,12 @@ master_repl_offset :偏移量
 
 sentinel配置
 
-![image-20190128235054591](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190128235054591.png)
+![image-20190128235054591](./image/image-20190128235054591.png)
 
 - sentinel monitor mymaster 127.0.0.1 7000 2 其中2是指有2个sentinel认为master是down的，那么判断maste为down
 - sentinel paralle-syncs mymaster 1 指master down了之后每次复制1个slave。
 
-![image-20190129000242810](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129000242810.png)
+![image-20190129000242810](./image/image-20190129000242810.png)
 
 上述配置加一个deamonize yes
 
@@ -689,7 +689,7 @@ sentinel配置
 
 #### Java客户端
 
-![image-20190129160143731](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129160143731.png)
+![image-20190129160143731](./image/image-20190129160143731.png)
 
 客户端接入流程
 
@@ -697,7 +697,7 @@ sentinel配置
 - MasterName
 - 不是代理模式
 
-![image-20190129160519197](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129160519197.png)
+![image-20190129160519197](./image/image-20190129160519197.png)
 
 
 
@@ -730,11 +730,11 @@ sentinel down-after-milliseconds my master 30000
 
 - 选举：通过sentinel is-master-down-by-addr命令都希望成为领导者
 
-![image-20190129163144558](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129163144558.png)
+![image-20190129163144558](./image/image-20190129163144558.png)
 
 ### 故障转移
 
-![image-20190129163708044](/Users/zengxiangfei/Documents/Wiki/mywiki/nodejs/image/image-20190129163708044.png)
+![image-20190129163708044](./image/image-20190129163708044.png)
 
 ### 常见开发运维问题
 
@@ -781,7 +781,7 @@ Redis Cluster isreleased in 3.0
 
 1. 配置开启节点
 
-   ![image-20190217175046030](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175046030.png)
+   ![image-20190217175046030](./image/image-20190217175046030.png)
 
    开启节点：
 
@@ -792,53 +792,53 @@ Redis Cluster isreleased in 3.0
 
 2. meet
 
-   ![image-20190217175316259](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175316259.png)
+   ![image-20190217175316259](./image/image-20190217175316259.png)
 
 3. 指派槽
 
-   ![image-20190217175615725](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175615725.png)
+   ![image-20190217175615725](./image/image-20190217175615725.png)
 
 4. 主从
 
-   ![image-20190217175743283](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217175743283.png)
+   ![image-20190217175743283](./image/image-20190217175743283.png)
 
 ### 原生安装-具体安装
 
 ####  节点配置
 
-![image-20190217180115816](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217180115816.png)
+![image-20190217180115816](./image/image-20190217180115816.png)
 
 启动，redis-server redis-port.conf
 
 查看状态：
 
-![image-20190217180435967](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217180435967.png)
+![image-20190217180435967](./image/image-20190217180435967.png)
 
 #### 节点握手
 
-![image-20190217181242031](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181242031.png)
+![image-20190217181242031](./image/image-20190217181242031.png)
 
 ####   指定槽
 
-![image-20190217215837139](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217215837139.png)
+![image-20190217215837139](./image/image-20190217215837139.png)
 
-![image-20190217181725888](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181725888.png)
+![image-20190217181725888](./image/image-20190217181725888.png)
 
-![image-20190217182007517](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182007517.png)
+![image-20190217182007517](./image/image-20190217182007517.png)
 
 #### 主从分配
 
-![image-20190217181854944](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217181854944.png)
+![image-20190217181854944](./image/image-20190217181854944.png)
 
 
 
 验证安装完成：
 
-![image-20190217182114006](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182114006.png)
+![image-20190217182114006](./image/image-20190217182114006.png)
 
 如果在三台机器上，可以拓扑错开，例如：
 
-![image-20190217182312125](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217182312125.png)
+![image-20190217182312125](./image/image-20190217182312125.png)
 
 
 
@@ -850,7 +850,7 @@ Redis Cluster isreleased in 3.0
 
 原理：
 
-![image-20190217223758099](/Users/zengxiangfei/Documents/Wiki/mywiki/action/images/image-20190217223758099.png)
+![image-20190217223758099](./image/image-20190217223758099.png)
 
 ### 扩容集群
 
