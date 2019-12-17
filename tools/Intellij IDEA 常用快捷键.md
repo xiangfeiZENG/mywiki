@@ -1,6 +1,14 @@
-
-
 ## Intellij IDEA 常用快捷键
+
+
+
+## 常使用的快捷键-mac
+
+- 打开实现方法：command + option + 左键
+
+
+
+## 常使用的快捷键-eclipse
 
 ![1539659835979](.\images\1539659835979.png)
 

@@ -1,0 +1,2389 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java笔记-Java I/O系统 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Java笔记-初始化与清理.html" />
+    
+    
+    <link rel="prev" href="Java日志记录总结.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Action
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../action/权限管理的副本.html">
+            
+                <a href="../action/权限管理的副本.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../action/电商实战.html">
+            
+                <a href="../action/电商实战.html">
+            
+                    
+                    电商实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../action/电商实战2.html">
+            
+                <a href="../action/电商实战2.html">
+            
+                    
+                    电商实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../action/电商实战的副本.html">
+            
+                <a href="../action/电商实战的副本.html">
+            
+                    
+                    电商实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Activiti
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../activiti/Activiti实战.html">
+            
+                <a href="../activiti/Activiti实战.html">
+            
+                    
+                    Activiti实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../activiti/Activiti实战的副本.html">
+            
+                <a href="../activiti/Activiti实战的副本.html">
+            
+                    
+                    Activiti实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Books
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../books/Java基础学习过程[转].html">
+            
+                <a href="../books/Java基础学习过程[转].html">
+            
+                    
+                    Java基础学习过程[转]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../books/java进阶（空格分隔）： 学习.html">
+            
+                <a href="../books/java进阶（空格分隔）： 学习.html">
+            
+                    
+                    java进阶（空格分隔）： 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../books/读书笔记.html">
+            
+                <a href="../books/读书笔记.html">
+            
+                    
+                    读书笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../database/mybatis-plus.html">
+            
+                <a href="../database/mybatis-plus.html">
+            
+                    
+                    Mybatis Plus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../database/mysql.html">
+            
+                <a href="../database/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../database/PageHelper的使用和原理.html">
+            
+                <a href="../database/PageHelper的使用和原理.html">
+            
+                    
+                    PageHelper的使用和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Designpattern
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../designpattern/单件模式.html">
+            
+                <a href="../designpattern/单件模式.html">
+            
+                    
+                    单件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../designpattern/命令模式.html">
+            
+                <a href="../designpattern/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../designpattern/工厂模式.html">
+            
+                <a href="../designpattern/工厂模式.html">
+            
+                    
+                    工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../designpattern/策略模式.html">
+            
+                <a href="../designpattern/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../designpattern/装饰者模式.html">
+            
+                <a href="../designpattern/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../designpattern/观察者模式.html">
+            
+                <a href="../designpattern/观察者模式.html">
+            
+                    
+                    观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../designpattern/适配器模式与外观模式.html">
+            
+                <a href="../designpattern/适配器模式与外观模式.html">
+            
+                    
+                    适配器模式与外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Devops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../devops/DevOps简介.md">
+            
+                <span>
+            
+                    
+                    DevOps简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../devops/持续集成是什么.html">
+            
+                <a href="../devops/持续集成是什么.html">
+            
+                    
+                    持续集成是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../docker/docker and k8s.html">
+            
+                <a href="../docker/docker and k8s.html">
+            
+                    
+                    Docker And k8s 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../docker/Docker基础.html">
+            
+                <a href="../docker/Docker基础.html">
+            
+                    
+                    Docker基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../docker/images.html">
+            
+                <a href="../docker/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../docker/容器技术与Docker简介.html">
+            
+                <a href="../docker/容器技术与Docker简介.html">
+            
+                    
+                    容器技术与Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Dubbo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../dubbo/Untitled.html">
+            
+                <a href="../dubbo/Untitled.html">
+            
+                    
+                    Untitled
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hadoop/hadoop笔记(一）.html">
+            
+                <a href="../hadoop/hadoop笔记(一）.html">
+            
+                    
+                    hadoop笔记(一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="Java Concurrency in Practice.html">
+            
+                <a href="Java Concurrency in Practice.html">
+            
+                    
+                    Java Concurrency In Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="Java日志记录总结.html">
+            
+                <a href="Java日志记录总结.html">
+            
+                    
+                    Java日志记录总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.3" data-path="Java笔记-Java IO系统.html">
+            
+                <a href="Java笔记-Java IO系统.html">
+            
+                    
+                    Java笔记-Java I/O系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="Java笔记-初始化与清理.html">
+            
+                <a href="Java笔记-初始化与清理.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="Java笔记-多态.html">
+            
+                <a href="Java笔记-多态.html">
+            
+                    
+                    Java笔记-多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="Java笔记-并发.html">
+            
+                <a href="Java笔记-并发.html">
+            
+                    
+                    Java笔记-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="Java笔记-接口和内部类.html">
+            
+                <a href="Java笔记-接口和内部类.html">
+            
+                    
+                    Java笔记-接口和内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="Java笔记-类型信息.html">
+            
+                <a href="Java笔记-类型信息.html">
+            
+                    
+                    Java笔记-类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="Java笔记-访问控制权限和复用类.html">
+            
+                <a href="Java笔记-访问控制权限和复用类.html">
+            
+                    
+                    Java笔记-访问控制权限和复用类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="剑指offer.html">
+            
+                <a href="剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../linux/.~VMBox桥接网络设置.html">
+            
+                <a href="../linux/.~VMBox桥接网络设置.html">
+            
+                    
+                    .~VMBox桥接网络设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../linux/Linux常用软件安装.html">
+            
+                <a href="../linux/Linux常用软件安装.html">
+            
+                    
+                    Linux常用软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../linux/LINUX磁盘与文件系统管理.html">
+            
+                <a href="../linux/LINUX磁盘与文件系统管理.html">
+            
+                    
+                    LINUX磁盘与文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../linux/linux防火墙关闭.html">
+            
+                <a href="../linux/linux防火墙关闭.html">
+            
+                    
+                    linux防火墙关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../linux/RedHat中安装EPEL.html">
+            
+                <a href="../linux/RedHat中安装EPEL.html">
+            
+                    
+                    RedHat中安装EPEL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../linux/RedHat配置网络yum源.html">
+            
+                <a href="../linux/RedHat配置网络yum源.html">
+            
+                    
+                    RedHat配置网络yum源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                <a href="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                    
+                    VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../linux/vsftp配置.html">
+            
+                <a href="../linux/vsftp配置.html">
+            
+                    
+                    vsftp配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../linux/网络配置.html">
+            
+                <a href="../linux/网络配置.html">
+            
+                    
+                    网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../linux/进程管理.html">
+            
+                <a href="../linux/进程管理.html">
+            
+                    
+                    进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Maven
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../maven/Maven实战笔记.html">
+            
+                <a href="../maven/Maven实战笔记.html">
+            
+                    
+                    Maven实战笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Mongodb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../mongodb/Centos7.x下mongodb安装.html">
+            
+                <a href="../mongodb/Centos7.x下mongodb安装.html">
+            
+                    
+                    Centos7.x下mongodb安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Moosefs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../moosefs/moosefs总结.html">
+            
+                <a href="../moosefs/moosefs总结.html">
+            
+                    
+                    moosefs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Mq
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../mq/RabbitMQ.html">
+            
+                <a href="../mq/RabbitMQ.html">
+            
+                    
+                    Rabbit MQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Netty
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../netty/Netty源码解析.html">
+            
+                <a href="../netty/Netty源码解析.html">
+            
+                    
+                    Netty源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../nginx/Nginx实战.html">
+            
+                <a href="../nginx/Nginx实战.html">
+            
+                    
+                    Nginx实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    Nodejs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../nodejs/前端面试题.html">
+            
+                <a href="../nodejs/前端面试题.html">
+            
+                    
+                    前端面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../nodejs/常用正则表达式.html">
+            
+                <a href="../nodejs/常用正则表达式.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../nodejs/电商前端.html">
+            
+                <a href="../nodejs/电商前端.html">
+            
+                    
+                    电商前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../python/Python基础学习.html">
+            
+                <a href="../python/Python基础学习.html">
+            
+                    
+                    Python基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../redis/redis action.html">
+            
+                <a href="../redis/redis action.html">
+            
+                    
+                    Redis Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../redis/Redis Cluster 安装.html">
+            
+                <a href="../redis/Redis Cluster 安装.html">
+            
+                    
+                    Redis Cluster 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../redis/redis主从切换的集群管理.html">
+            
+                <a href="../redis/redis主从切换的集群管理.html">
+            
+                    
+                    redis主从切换的集群管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                <a href="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                    
+                    eclipse搭建Spring MVC 开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../spring/Spring boot实践.html">
+            
+                <a href="../spring/Spring boot实践.html">
+            
+                    
+                    Spring boot实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../spring/Spring Cloud.html">
+            
+                <a href="../spring/Spring Cloud.html">
+            
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="../spring/Spring Security 实战.html">
+            
+                <a href="../spring/Spring Security 实战.html">
+            
+                    
+                    Spring Security 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="../spring/Spring 揭秘.html">
+            
+                <a href="../spring/Spring 揭秘.html">
+            
+                    
+                    Spring 揭秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="../spring/Spring集成日志.html">
+            
+                <a href="../spring/Spring集成日志.html">
+            
+                    
+                    Java笔记-集成日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.7" data-path="../spring/理解Spring技术栈.html">
+            
+                <a href="../spring/理解Spring技术栈.html">
+            
+                    
+                    理解Spring技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" >
+            
+                <span>
+            
+                    
+                    Sybase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../sybase/Sybase ASE培训.html">
+            
+                <a href="../sybase/Sybase ASE培训.html">
+            
+                    
+                    Sybase ASE培训
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../sybase/SYBASE 日常维护.html">
+            
+                <a href="../sybase/SYBASE 日常维护.html">
+            
+                    
+                    SYBASE 日常维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" >
+            
+                <span>
+            
+                    
+                    Test
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../test/性能测试.html">
+            
+                <a href="../test/性能测试.html">
+            
+                    
+                    性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" >
+            
+                <span>
+            
+                    
+                    Tools
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                <a href="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                    
+                    Github进行fork后如何与原仓库同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../tools/GIT常用操作.html">
+            
+                <a href="../tools/GIT常用操作.html">
+            
+                    
+                    GIT常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../tools/Intellij IDEA 常用快捷键.html">
+            
+                <a href="../tools/Intellij IDEA 常用快捷键.html">
+            
+                    
+                    Intellij IDEA 常用快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                <a href="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                    
+                    NAVICAT 12.0.26 mac 激活
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../tools/Redis故障排查.html">
+            
+                <a href="../tools/Redis故障排查.html">
+            
+                    
+                    Redis故障排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../tools/vpn搭建.html">
+            
+                <a href="../tools/vpn搭建.html">
+            
+                    
+                    vpn搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.7" data-path="../tools/转售物联网交流.html">
+            
+                <a href="../tools/转售物联网交流.html">
+            
+                    
+                    转售物联网交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <span>
+            
+                    
+                    Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../work/会议记录20190515.html">
+            
+                <a href="../work/会议记录20190515.html">
+            
+                    
+                    会议记录20190515
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../work/可研会议记录.html">
+            
+                <a href="../work/可研会议记录.html">
+            
+                    
+                    可研会议记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.3" data-path="../work/审计相关问题.html">
+            
+                <a href="../work/审计相关问题.html">
+            
+                    
+                    审计相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.4" data-path="../work/工程项目培训与交流.html">
+            
+                <a href="../work/工程项目培训与交流.html">
+            
+                    
+                    工程项目培训与交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.5" data-path="../work/转售4G.html">
+            
+                <a href="../work/转售4G.html">
+            
+                    
+                    转售4G
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Java笔记-Java I/O系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="java&#x7B14;&#x8BB0;-java-io&#x7CFB;&#x7EDF;">Java&#x7B14;&#x8BB0;-Java I/O&#x7CFB;&#x7EDF;</h2>
+<p>Java I/O&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x5904;&#x7406;&#x5404;&#x79CD;I/O&#x6E90;&#x7AEF;&#x548C;&#x60F3;&#x8981;&#x4E0E;&#x4E4B;&#x901A;&#x4FE1;&#x7684;&#x63A5;&#x6536;&#x7AEF;&#xFF08;&#x6587;&#x4EF6;&#x3001;&#x63A7;&#x5236;&#x53F0;&#x3001;&#x7F51;&#x7EDC;&#x94FE;&#x63A5;&#x7B49;&#xFF09;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x9700;&#x8981;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF08;&#x987A;&#x5E8F;&#x3001;&#x968F;&#x673A;&#x5B58;&#x53D6;&#x3001;&#x7F13;&#x51B2;&#x3001;&#x4E8C;&#x8FDB;&#x5236;&#x3001;&#x6309;&#x5B57;&#x7B26;&#x3001;&#x6309;&#x884C;&#x3001;&#x6309;&#x5B57;&#x7B49;&#xFF09;&#x3002;</p>
+<h3 id="file&#x7C7B;">File&#x7C7B;</h3>
+<p>File&#x65E2;&#x80FD;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x53C8;&#x80FD;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x4E00;&#x7EC4;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x76EE;&#x5F55;&#x5217;&#x8868;&#x5668;,&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DirList3</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String[] args)</span> </span>{
+    File path = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;.&quot;</span>);
+    String[] list;
+    <span class="hljs-keyword">if</span>(args.length == <span class="hljs-number">0</span>)
+      list = path.list();
+    <span class="hljs-keyword">else</span>
+      list = path.list(<span class="hljs-keyword">new</span> FilenameFilter() {
+        <span class="hljs-keyword">private</span> Pattern pattern = Pattern.compile(args[<span class="hljs-number">0</span>]);
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">accept</span><span class="hljs-params">(File dir, String name)</span> </span>{
+          <span class="hljs-keyword">return</span> pattern.matcher(name).matches();
+        }
+      });
+    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
+    <span class="hljs-keyword">for</span>(String dirItem : list)
+      System.out.println(dirItem);
+  }
+} <span class="hljs-comment">/* Output:
+DirectoryDemo.java
+DirList.java
+DirList2.java
+DirList3.java
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x76EE;&#x5F55;&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Directory</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> File[]
+  local(File dir, <span class="hljs-keyword">final</span> String regex) {
+    <span class="hljs-keyword">return</span> dir.listFiles(<span class="hljs-keyword">new</span> FilenameFilter() {
+      <span class="hljs-keyword">private</span> Pattern pattern = Pattern.compile(regex);
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">accept</span><span class="hljs-params">(File dir, String name)</span> </span>{
+        <span class="hljs-keyword">return</span> pattern.matcher(
+          <span class="hljs-keyword">new</span> File(name).getName()).matches();
+      }
+    });
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> File[]
+  local(String path, <span class="hljs-keyword">final</span> String regex) { <span class="hljs-comment">// Overloaded</span>
+    <span class="hljs-keyword">return</span> local(<span class="hljs-keyword">new</span> File(path), regex);
+  }
+  <span class="hljs-comment">// A two-tuple for returning a pair of objects:</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeInfo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Iterable</span>&lt;<span class="hljs-title">File</span>&gt; </span>{
+    <span class="hljs-keyword">public</span> List&lt;File&gt; files = <span class="hljs-keyword">new</span> ArrayList&lt;File&gt;();
+    <span class="hljs-keyword">public</span> List&lt;File&gt; dirs = <span class="hljs-keyword">new</span> ArrayList&lt;File&gt;();
+    <span class="hljs-comment">// The default iterable element is the file list:</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Iterator&lt;File&gt; <span class="hljs-title">iterator</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> files.iterator();
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addAll</span><span class="hljs-params">(TreeInfo other)</span> </span>{
+      files.addAll(other.files);
+      dirs.addAll(other.dirs);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;dirs: &quot;</span> + PPrint.pformat(dirs) +
+        <span class="hljs-string">&quot;\n\nfiles: &quot;</span> + PPrint.pformat(files);
+    }
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeInfo
+  <span class="hljs-title">walk</span><span class="hljs-params">(String start, String regex)</span> </span>{ <span class="hljs-comment">// Begin recursion</span>
+    <span class="hljs-keyword">return</span> recurseDirs(<span class="hljs-keyword">new</span> File(start), regex);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeInfo
+  <span class="hljs-title">walk</span><span class="hljs-params">(File start, String regex)</span> </span>{ <span class="hljs-comment">// Overloaded</span>
+    <span class="hljs-keyword">return</span> recurseDirs(start, regex);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeInfo <span class="hljs-title">walk</span><span class="hljs-params">(File start)</span> </span>{ <span class="hljs-comment">// Everything</span>
+    <span class="hljs-keyword">return</span> recurseDirs(start, <span class="hljs-string">&quot;.*&quot;</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeInfo <span class="hljs-title">walk</span><span class="hljs-params">(String start)</span> </span>{
+    <span class="hljs-keyword">return</span> recurseDirs(<span class="hljs-keyword">new</span> File(start), <span class="hljs-string">&quot;.*&quot;</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">static</span> TreeInfo <span class="hljs-title">recurseDirs</span><span class="hljs-params">(File startDir, String regex)</span></span>{
+    TreeInfo result = <span class="hljs-keyword">new</span> TreeInfo();
+    <span class="hljs-keyword">for</span>(File item : startDir.listFiles()) {
+      <span class="hljs-keyword">if</span>(item.isDirectory()) {
+        result.dirs.add(item);
+        result.addAll(recurseDirs(item, regex));
+      } <span class="hljs-keyword">else</span> <span class="hljs-comment">// Regular file</span>
+        <span class="hljs-keyword">if</span>(item.getName().matches(regex))
+          result.files.add(item);
+    }
+    <span class="hljs-keyword">return</span> result;
+  }
+  <span class="hljs-comment">// Simple validation test:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-keyword">if</span>(args.length == <span class="hljs-number">0</span>)
+      System.out.println(walk(<span class="hljs-string">&quot;.&quot;</span>));
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-keyword">for</span>(String arg : args)
+       System.out.println(walk(arg));
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<p>File&#x7C7B;&#x4E0D;&#x4EC5;&#x4EC5;&#x6307;&#x4EE3;&#x8868;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;File&#x5BF9;&#x8C61;&#x6765;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x76EE;&#x5F55;&#x6216;&#x5C1A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6574;&#x4E2A;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;">&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;</h3>
+<p>&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;I/O&#x7C7B;&#x5E93;&#x4E2D;&#x5E38;&#x4F7F;&#x7528;&#x6D41;&#x8FD9;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x4EE3;&#x8868;&#x4EFB;&#x4F55;&#x6709;&#x80FD;&#x529B;&#x4EA7;&#x51FA;&#x6570;&#x636E;&#x7684;<strong>&#x6570;&#x636E;&#x6E90;&#x5BF9;&#x8C61;</strong>&#x6216;&#x8005;&#x662F;&#x7531;&#x80FD;&#x529B;&#x63A5;&#x53D7;&#x6570;&#x636E;&#x7684;<strong>&#x63A5;&#x6536;&#x7AEF;&#x5BF9;&#x8C61;</strong>&#x3002;&#x201C;&#x6D41;&#x201D;&#x5C4F;&#x853D;&#x4E86;&#x5B9E;&#x9645;&#x7684;I/O&#x8BBE;&#x5907;&#x4E2D;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x7EC6;&#x8282;&#x3002;</p>
+<p>Java&#x7C7B;&#x5E93;&#x4E2D;&#x7684;I/O&#x7C7B;&#x5206;&#x6210;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x4EFB;&#x4F55;&#x81EA;InputStream&#x6216;Reader&#x6D3E;&#x751F;&#x800C;&#x6765;&#x7684;&#x7C7B;&#x90FD;&#x542B;&#x6709;read()&#x7684;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x5355;&#x4E2A;&#x5B57;&#x8282;&#x6216;&#x8005;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x3002;&#x4EFB;&#x4F55;&#x81EA;OutputStream&#x6216;Writer&#x6D3E;&#x751F;&#x800C;&#x6765;&#x7684;&#x7C7B;&#x90FD;&#x542B;&#x6709;&#x540D;&#x4E3A;write()&#x7684;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x5199;&#x5355;&#x4E2A;&#x5B57;&#x8282;&#x6216;&#x8005;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x3002;</p>
+<p>&#x6574;&#x4F53;&#x7C7B;&#x8BBE;&#x8BA1;&#x91C7;&#x7528;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<p><img src="images/1544430724194.png" alt="1543801118173"></p>
+<p>Reader &#x548C;Writer&#x63D0;&#x4F9B;&#x517C;&#x5BB9;Unicode&#x4E0E;&#x9762;&#x5411;&#x5B57;&#x7B26;&#x7684;I/O&#x529F;&#x80FD;&#x3002;&#x5E76;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x66FF;&#x4EE3;InputStream&#x548C;OutputStream&#xFF0C;&#x8BBE;&#x8BA1;Reader&#x548C;Writer&#x7EE7;&#x627F;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x56FD;&#x9645;&#x5316;&#x3002;&#x8001;&#x7684;I/O&#x6D41;&#x7EE7;&#x627F;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4EC5;&#x652F;&#x6301;8&#x4F4D;&#x5B57;&#x8282;&#x6D41;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x5904;&#x7406;16&#x4F4D;&#x7684;Unicode&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x6709;&#x65F6;&#x5019;&#x5FC5;&#x987B;&#x628A;&#x6765;&#x81EA;&#x201C;&#x5B57;&#x8282;&#x201D;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x7C7B;&#x548C;&#x201C;&#x5B57;&#x7B26;&#x201D;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x7C7B;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;&#xFF0C;&#x8981;&#x7528;&#x5230;&#x201C;&#x9002;&#x914D;&#x5668;&#x201D;&#xFF08;adapter&#xFF09;&#x7C7B;&#xFF1A;InputStreamReader&#x53EF;&#x4EE5;&#x628A;InputStream&#x8F6C;&#x6362;&#x4E3A;Reader&#xFF0C;&#x800C;OutputStreamWriter&#x53EF;&#x4EE5;&#x628A;OutputStream&#x8F6C;&#x6362;&#x4E3A;Writer&#x3002;</p>
+<h3 id="io&#x6D41;&#x7684;&#x5178;&#x578B;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">I/O&#x6D41;&#x7684;&#x5178;&#x578B;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h3>
+<h4 id="&#x7F13;&#x51B2;&#x8F93;&#x5165;&#x6587;&#x4EF6;">&#x7F13;&#x51B2;&#x8F93;&#x5165;&#x6587;&#x4EF6;</h4>
+<p>&#x6CE8;&#x610F;&#x8981;&#x5173;&#x95ED;&#x8F93;&#x5165;&#x6D41;&#xFF1A;in.close();  &#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x56E0;&#x4E3A;readLine()&#x5DF2;&#x7ECF;&#x5C06;&#x4ED6;&#x4EEC;&#x5220;&#x9664;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BufferedInputFile</span> </span>{
+  <span class="hljs-comment">// Throw exceptions to console:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String
+  <span class="hljs-title">read</span><span class="hljs-params">(String filename)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    <span class="hljs-comment">// Reading input by lines:</span>
+    BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+      <span class="hljs-keyword">new</span> FileReader(filename));
+    String s;
+    StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();
+    <span class="hljs-keyword">while</span>((s = in.readLine())!= <span class="hljs-keyword">null</span>)
+      sb.append(s + <span class="hljs-string">&quot;\n&quot;</span>);
+    in.close();
+    <span class="hljs-keyword">return</span> sb.toString();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    System.out.print(read(<span class="hljs-string">&quot;BufferedInputFile.java&quot;</span>));
+  }
+} <span class="hljs-comment">/* (Execute to see output) */</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x4ECE;&#x5185;&#x5B58;&#x8F93;&#x5165;">&#x4ECE;&#x5185;&#x5B58;&#x8F93;&#x5165;</h4>
+<p>StringReader&#x4E2D;read()&#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x53D1;&#x9001;&#x503C;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x6CE8;&#x610F;read()&#x662F;&#x4EE5;int&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x5B57;&#x8282;&#xFF0C;&#x5FC5;&#x987B;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;char&#x624D;&#x80FD;&#x6B63;&#x786E;&#x6253;&#x5370;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MemoryInput</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    StringReader in = <span class="hljs-keyword">new</span> StringReader(
+      BufferedInputFile.read(<span class="hljs-string">&quot;MemoryInput.java&quot;</span>));
+    <span class="hljs-keyword">int</span> c;
+    <span class="hljs-keyword">while</span>((c = in.read()) != -<span class="hljs-number">1</span>)
+      System.out.print((<span class="hljs-keyword">char</span>)c);
+  }
+} <span class="hljs-comment">/* (Execute to see output) */</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x683C;&#x5F0F;&#x5316;&#x5185;&#x5B58;&#x8F93;&#x5165;">&#x683C;&#x5F0F;&#x5316;&#x5185;&#x5B58;&#x8F93;&#x5165;</h4>
+<p>ByteArrayInputStream&#xFF1A;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x6240;&#x6709;&#x9001;&#x5F80;&#x201C;&#x6D41;&#x201D;&#x7684;&#x6570;&#x636E;&#x90FD;&#x8981;&#x653E;&#x7F6E;&#x5728;&#x6B64;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x3002;&#x5173;&#x95ED;ByteArrayInputStream&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x6548;&#x679C;&#x3002; &#x5728;&#x5173;&#x95ED;&#x6D41;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x6B64;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x751F;&#x6210;IOException &#x3002;</p>
+<p>DataInputStream&#xFF1A;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x53EF;&#x79FB;&#x690D;&#x65B9;&#x5F0F;&#x4ECE;&#x6D41;&#x8BFB;&#x53D6;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;int&#xFF0C;char&#xFF0C;long&#x7B49;&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FormattedMemoryInput</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    <span class="hljs-keyword">try</span> {
+      DataInputStream in = <span class="hljs-keyword">new</span> DataInputStream(
+        <span class="hljs-keyword">new</span> ByteArrayInputStream(
+         BufferedInputFile.read(
+          <span class="hljs-string">&quot;FormattedMemoryInput.java&quot;</span>).getBytes()));
+      <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>)
+        System.out.print((<span class="hljs-keyword">char</span>)in.readByte());
+    } <span class="hljs-keyword">catch</span>(EOFException e) {
+      System.err.println(<span class="hljs-string">&quot;End of stream&quot;</span>);
+    }
+  }
+} <span class="hljs-comment">/* (Execute to see output) */</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x57FA;&#x672C;&#x7684;&#x6587;&#x4EF6;&#x8F93;&#x51FA;">&#x57FA;&#x672C;&#x7684;&#x6587;&#x4EF6;&#x8F93;&#x51FA;</h4>
+<p>&#x901A;&#x8FC7;BufferWriter&#x5C06;FileWriter&#x5305;&#x88C5;&#x8D77;&#x6765;&#x7528;&#x4EE5;&#x7F13;&#x51B2;&#x8F93;&#x51FA;&#xFF0C;&#x7528;PrintWriter&#x63D0;&#x4F9B;&#x683C;&#x5F0F;&#x5316;&#x673A;&#x5236;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicFileOutput</span> </span>{
+  <span class="hljs-keyword">static</span> String file = <span class="hljs-string">&quot;BasicFileOutput.out&quot;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+      <span class="hljs-keyword">new</span> StringReader(
+        BufferedInputFile.read(<span class="hljs-string">&quot;BasicFileOutput.java&quot;</span>)));
+    PrintWriter out = <span class="hljs-keyword">new</span> PrintWriter(
+      <span class="hljs-keyword">new</span> BufferedWriter(<span class="hljs-keyword">new</span> FileWriter(file)));
+    <span class="hljs-keyword">int</span> lineCount = <span class="hljs-number">1</span>;
+    String s;
+    <span class="hljs-keyword">while</span>((s = in.readLine()) != <span class="hljs-keyword">null</span> )
+      out.println(lineCount++ + <span class="hljs-string">&quot;: &quot;</span> + s);
+    out.close();
+    <span class="hljs-comment">// Show the stored file:</span>
+    System.out.println(BufferedInputFile.read(file));
+  }
+} <span class="hljs-comment">/* (Execute to see output) */</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x5B58;&#x50A8;&#x548C;&#x6062;&#x590D;&#x6570;&#x636E;">&#x5B58;&#x50A8;&#x548C;&#x6062;&#x590D;&#x6570;&#x636E;</h4>
+<p>&#x7528;DataOutputStream&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x7528;DataInputStream&#x6062;&#x590D;&#x6570;&#x636E;&#x3002;&#x4E24;&#x4E2A;&#x7C7B;&#x90FD;&#x662F;&#x9762;&#x5411;&#x5B57;&#x8282;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;InputStream&#x548C;OutputStream&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;DataOutputStream&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;Java&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;DataInputStream&#x51C6;&#x786E;&#x5730;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x2014;&#x2014;&#x65E0;&#x8BBA;&#x8BFB;&#x548C;&#x5199;&#x6570;&#x636E;&#x7684;&#x5E73;&#x53F0;&#x591A;&#x4E48;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;DataOutputStream&#x65F6;&#xFF0C;&#x5199;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x4E14;&#x8BA9;DataInputStream&#x80FD;&#x591F;&#x6062;&#x590D;&#x5B83;&#x7684;&#x552F;&#x4E00;&#x53EF;&#x9760;&#x5730;&#x505A;&#x6CD5;&#x662F;&#x4F7F;&#x7528;UTF-8&#x7F16;&#x7801;&#xFF0C;writeUTF()&#x4E0E;readUTF()</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StoringAndRecoveringData</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    DataOutputStream out = <span class="hljs-keyword">new</span> DataOutputStream(
+      <span class="hljs-keyword">new</span> BufferedOutputStream(
+        <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;Data.txt&quot;</span>)));
+    out.writeDouble(<span class="hljs-number">3.14159</span>);
+    out.writeUTF(<span class="hljs-string">&quot;That was pi&quot;</span>);
+    out.writeDouble(<span class="hljs-number">1.41413</span>);
+    out.writeUTF(<span class="hljs-string">&quot;Square root of 2&quot;</span>);
+    out.close();
+    DataInputStream in = <span class="hljs-keyword">new</span> DataInputStream(
+      <span class="hljs-keyword">new</span> BufferedInputStream(
+        <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;Data.txt&quot;</span>)));
+    System.out.println(in.readDouble());
+    <span class="hljs-comment">// Only readUTF() will recover the</span>
+    <span class="hljs-comment">// Java-UTF String properly:</span>
+    System.out.println(in.readUTF());
+    System.out.println(in.readDouble());
+    System.out.println(in.readUTF());
+  }
+} <span class="hljs-comment">/* Output:
+3.14159
+That was pi
+1.41413
+Square root of 2
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x8BFB;&#x5199;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;">&#x8BFB;&#x5199;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;</h4>
+<p>&#x4F7F;&#x7528;RandomAccessFile&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6587;&#x4EF6;&#x6392;&#x7248;&#xFF0C;&#x624D;&#x80FD;&#x6B63;&#x786E;&#x64CD;&#x4F5C;&#xFF0C;&#x5229;&#x7528;seek()&#x53EF;&#x4EE5;&#x518D;&#x6587;&#x4EF6;&#x4E2D;&#x5230;&#x5904;&#x79FB;&#x52A8;&#xFF0C;&#x5E76;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x503C;&#x3002;</p>
+<p>&#x4F7F;&#x7528;RandomAccessFile&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x4E86;DataInputStream&#x548C;DataOutputStream&#xFF08;&#x56E0;&#x4E3A;&#x4ED6;&#x5B9E;&#x73B0;&#x4E86;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;&#xFF1A;DataInput&#x548C;DataOutput&#xFF09;&#xFF0C;&#x5B83;&#x6709;&#x6548;&#x7684;&#x4E0E;I/O&#x7EE7;&#x627F;&#x5C42;&#x6B21;&#x63A5;&#x53E3;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x5B9E;&#x73B0;&#x4E86;&#x5206;&#x79BB;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5C06;&#x5176;&#x4E0E;InputStream&#x548C;OutputStream&#x81EA;&#x96F7;&#x7684;&#x4EFB;&#x4F55;&#x90E8;&#x5206;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UsingRandomAccessFile</span> </span>{
+  <span class="hljs-keyword">static</span> String file = <span class="hljs-string">&quot;rtest.dat&quot;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    RandomAccessFile rf = <span class="hljs-keyword">new</span> RandomAccessFile(file, <span class="hljs-string">&quot;r&quot;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">7</span>; i++)
+      System.out.println(
+        <span class="hljs-string">&quot;Value &quot;</span> + i + <span class="hljs-string">&quot;: &quot;</span> + rf.readDouble());
+    System.out.println(rf.readUTF());
+    rf.close();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    RandomAccessFile rf = <span class="hljs-keyword">new</span> RandomAccessFile(file, <span class="hljs-string">&quot;rw&quot;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">7</span>; i++)
+      rf.writeDouble(i*<span class="hljs-number">1.414</span>);
+    rf.writeUTF(<span class="hljs-string">&quot;The end of the file&quot;</span>);
+    rf.close();
+    display();
+    rf = <span class="hljs-keyword">new</span> RandomAccessFile(file, <span class="hljs-string">&quot;rw&quot;</span>);
+    rf.seek(<span class="hljs-number">5</span>*<span class="hljs-number">8</span>);
+    rf.writeDouble(<span class="hljs-number">47.0001</span>);
+    rf.close();
+    display();
+  }
+} <span class="hljs-comment">/* Output:
+Value 0: 0.0
+Value 1: 1.414
+Value 2: 2.828
+Value 3: 4.242
+Value 4: 5.656
+Value 5: 7.069999999999999
+Value 6: 8.484
+The end of the file
+Value 0: 0.0
+Value 1: 1.414
+Value 2: 2.828
+Value 3: 4.242
+Value 4: 5.656
+Value 5: 47.0001
+Value 6: 8.484
+The end of the file
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x7684;&#x5B9E;&#x7528;&#x5DE5;&#x5177;">&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x7684;&#x5B9E;&#x7528;&#x5DE5;&#x5177;</h4>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ol>
+<li>read()&#x5C06;&#x6BCF;&#x884C;&#x6DFB;&#x52A0;&#x5230;StringBuffer&#xFF0C;&#x5E76;&#x4E14;&#x4E3A;&#x6BCF;&#x884C;&#x52A0;&#x4E0A;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x6362;&#x884C;&#x7B26;&#x4F1A;&#x88AB;&#x53BB;&#x9664;&#x6389;&#x3002;</li>
+<li>&#x9700;&#x8981;close()&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x3002;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextFile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ArrayList</span>&lt;<span class="hljs-title">String</span>&gt; </span>{
+  <span class="hljs-comment">// Read a file as a single string:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">read</span><span class="hljs-params">(String fileName)</span> </span>{
+    StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();
+    <span class="hljs-keyword">try</span> {
+      BufferedReader in= <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(
+        <span class="hljs-keyword">new</span> File(fileName).getAbsoluteFile()));
+      <span class="hljs-keyword">try</span> {
+        String s;
+        <span class="hljs-keyword">while</span>((s = in.readLine()) != <span class="hljs-keyword">null</span>) {
+          sb.append(s);
+          sb.append(<span class="hljs-string">&quot;\n&quot;</span>);
+        }
+      } <span class="hljs-keyword">finally</span> {
+        in.close();
+      }
+    } <span class="hljs-keyword">catch</span>(IOException e) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+    }
+    <span class="hljs-keyword">return</span> sb.toString();
+  }
+  <span class="hljs-comment">// Write a single file in one method call:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(String fileName, String text)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+      PrintWriter out = <span class="hljs-keyword">new</span> PrintWriter(
+        <span class="hljs-keyword">new</span> File(fileName).getAbsoluteFile());
+      <span class="hljs-keyword">try</span> {
+        out.print(text);
+      } <span class="hljs-keyword">finally</span> {
+        out.close();
+      }
+    } <span class="hljs-keyword">catch</span>(IOException e) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+    }
+  }
+  <span class="hljs-comment">// Read a file, split by any regular expression:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextFile</span><span class="hljs-params">(String fileName, String splitter)</span> </span>{
+    <span class="hljs-keyword">super</span>(Arrays.asList(read(fileName).split(splitter)));
+    <span class="hljs-comment">// Regular expression split() often leaves an empty</span>
+    <span class="hljs-comment">// String at the first position:</span>
+    <span class="hljs-keyword">if</span>(get(<span class="hljs-number">0</span>).equals(<span class="hljs-string">&quot;&quot;</span>)) remove(<span class="hljs-number">0</span>);
+  }
+  <span class="hljs-comment">// Normally read by lines:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextFile</span><span class="hljs-params">(String fileName)</span> </span>{
+    <span class="hljs-keyword">this</span>(fileName, <span class="hljs-string">&quot;\n&quot;</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(String fileName)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+      PrintWriter out = <span class="hljs-keyword">new</span> PrintWriter(
+        <span class="hljs-keyword">new</span> File(fileName).getAbsoluteFile());
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">for</span>(String item : <span class="hljs-keyword">this</span>)
+          out.println(item);
+      } <span class="hljs-keyword">finally</span> {
+        out.close();
+      }
+    } <span class="hljs-keyword">catch</span>(IOException e) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+    }
+  }
+  <span class="hljs-comment">// Simple test:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    String file = read(<span class="hljs-string">&quot;TextFile.java&quot;</span>);
+    write(<span class="hljs-string">&quot;test.txt&quot;</span>, file);
+    TextFile text = <span class="hljs-keyword">new</span> TextFile(<span class="hljs-string">&quot;test.txt&quot;</span>);
+    text.write(<span class="hljs-string">&quot;test2.txt&quot;</span>);
+    <span class="hljs-comment">// Break into unique sorted list of words:</span>
+    TreeSet&lt;String&gt; words = <span class="hljs-keyword">new</span> TreeSet&lt;String&gt;(
+      <span class="hljs-keyword">new</span> TextFile(<span class="hljs-string">&quot;TextFile.java&quot;</span>, <span class="hljs-string">&quot;\\W+&quot;</span>));
+    <span class="hljs-comment">// Display the capitalized words:</span>
+    System.out.println(words.headSet(<span class="hljs-string">&quot;a&quot;</span>));
+  }
+} <span class="hljs-comment">/* Output:
+[0, ArrayList, Arrays, Break, BufferedReader, BufferedWriter, Clean, Display, File, FileReader, FileWriter, IOException, Normally, Output, PrintWriter, Read, Regular, RuntimeException, Simple, Static, String, StringBuilder, System, TextFile, Tools, TreeSet, W, Write]
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h5 id="&#x8BFB;&#x53D6;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;">&#x8BFB;&#x53D6;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</h5>
+<p> bf.available()&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x4EA7;&#x751F;&#x6070;&#x5F53;&#x7684;&#x6570;&#x7EC4;&#x5C3A;&#x5BF8;&#xFF0C;&#x5E76;&#x4E14;read()&#x65B9;&#x6CD5;&#x7684;&#x7279;&#x5B9A;&#x7684;&#x91CD;&#x8F7D;&#x7248;&#x672C;&#x586B;&#x5145;&#x4E86;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinaryFile</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] read(File bFile) <span class="hljs-keyword">throws</span> IOException{
+    BufferedInputStream bf = <span class="hljs-keyword">new</span> BufferedInputStream(
+      <span class="hljs-keyword">new</span> FileInputStream(bFile));
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">byte</span>[] data = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[bf.available()];
+      bf.read(data);
+      <span class="hljs-keyword">return</span> data;
+    } <span class="hljs-keyword">finally</span> {
+      bf.close();
+    }
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[]
+  read(String bFile) <span class="hljs-keyword">throws</span> IOException {
+    <span class="hljs-keyword">return</span> read(<span class="hljs-keyword">new</span> File(bFile).getAbsoluteFile());
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<h3 id="&#x6807;&#x51C6;io">&#x6807;&#x51C6;I/O</h3>
+<p>&#x6807;&#x51C6;&#x8F93;&#x5165;&#x3001;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3001;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF0C;&#x6807;&#x51C6;I/O&#x7684;&#x610F;&#x4E49;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x628A;&#x7A0B;&#x5E8F;&#x4E32;&#x8054;&#x8D77;&#x6765;&#xFF0C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x3002;</p>
+<p>System.out&#x3001;System.err&#x4E8B;&#x5148;&#x88AB;&#x5305;&#x88C5;&#x6210;&#x4E86;printStream&#xFF0C;System.in&#x5374;&#x662F;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x88AB;&#x5305;&#x88C5;&#x8FC7;&#x7684;&#x672A;&#x7ECF;&#x8FC7;&#x52A0;&#x5DE5;&#x7684;InputStream&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8BFB;&#x53D6;System.in&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5305;&#x88C5;&#x3002;</p>
+<h4 id="&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E2D;&#x8BFB;&#x53D6;">&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E2D;&#x8BFB;&#x53D6;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Echo</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+  <span class="hljs-keyword">throws</span> IOException </span>{
+    BufferedReader stdin = <span class="hljs-keyword">new</span> BufferedReader(
+      <span class="hljs-keyword">new</span> InputStreamReader(System.in));
+    String s;
+    <span class="hljs-keyword">while</span>((s = stdin.readLine()) != <span class="hljs-keyword">null</span> &amp;&amp; s.length()!= <span class="hljs-number">0</span>)
+      System.out.println(s);
+    <span class="hljs-comment">// An empty line or Ctrl-Z terminates the program</span>
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<h4 id="&#x5C06;systemout&#x8F6C;&#x6362;&#x4E3A;printwriter">&#x5C06;System.out&#x8F6C;&#x6362;&#x4E3A;PrintWriter</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChangeSystemOut</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    PrintWriter out = <span class="hljs-keyword">new</span> PrintWriter(System.out, <span class="hljs-keyword">true</span>);
+    out.println(<span class="hljs-string">&quot;Hello, world&quot;</span>);
+  }
+} <span class="hljs-comment">/* Output:
+Hello, world
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;true&#xFF0C;&#x5F00;&#x542F;&#x81EA;&#x52A8;&#x6E05;&#x7A7A;&#x529F;&#x80FD;&#xFF0C;&#x5426;&#x5219;&#x770B;&#x4E0D;&#x5230;&#x8F93;&#x51FA;&#x3002;</p>
+<p>ProcessBuilder&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OSExecute</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">command</span><span class="hljs-params">(String command)</span> </span>{
+    <span class="hljs-keyword">boolean</span> err = <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">try</span> {
+      Process process =
+        <span class="hljs-keyword">new</span> ProcessBuilder(command.split(<span class="hljs-string">&quot; &quot;</span>)).start();
+      BufferedReader results = <span class="hljs-keyword">new</span> BufferedReader(
+        <span class="hljs-keyword">new</span> InputStreamReader(process.getInputStream()));
+      String s;
+      <span class="hljs-keyword">while</span>((s = results.readLine())!= <span class="hljs-keyword">null</span>)
+        System.out.println(s);
+      BufferedReader errors = <span class="hljs-keyword">new</span> BufferedReader(
+        <span class="hljs-keyword">new</span> InputStreamReader(process.getErrorStream()));
+      <span class="hljs-comment">// Report errors and return nonzero value</span>
+      <span class="hljs-comment">// to calling process if there are problems:</span>
+      <span class="hljs-keyword">while</span>((s = errors.readLine())!= <span class="hljs-keyword">null</span>) {
+        System.err.println(s);
+        err = <span class="hljs-keyword">true</span>;
+      }
+    } <span class="hljs-keyword">catch</span>(Exception e) {
+      <span class="hljs-comment">// Compensate for Windows 2000, which throws an</span>
+      <span class="hljs-comment">// exception for the default command line:</span>
+      <span class="hljs-keyword">if</span>(!command.startsWith(<span class="hljs-string">&quot;CMD /C&quot;</span>))
+        command(<span class="hljs-string">&quot;CMD /C &quot;</span> + command);
+      <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+    }
+    <span class="hljs-keyword">if</span>(err)
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> OSExecuteException(<span class="hljs-string">&quot;Errors executing &quot;</span> +
+        command);
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<pre><code>public class OSExecuteDemo {
+  public static void main(String[] args) {
+    OSExecute.command(&quot;javap OSExecuteDemo&quot;);
+  }
+} /* Output:
+Compiled from &quot;OSExecuteDemo.java&quot;
+public class OSExecuteDemo extends java.lang.Object{
+    public OSExecuteDemo();
+    public static void main(java.lang.String[]);
+}
+*///:~
+</code></pre><h3 id="&#x65B0;io">&#x65B0;I/O</h3>
+<p>jdk1.4 &#x7684;java.nio.*&#x5305;&#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x7684;Java I/O&#x7C7B;&#x5E93;&#xFF0C;&#x5176;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x63D0;&#x9AD8;&#x901F;&#x5EA6;&#xFF0C;&#x65E7;&#x7684;I/O&#x5305;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;nio&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x8FC7;&#xFF0C;&#x4E00;&#x8FB9;&#x91CD;&#x590D;&#x5229;&#x7528;&#x8FD9;&#x79CD;&#x901F;&#x5EA6;&#x63D0;&#x9AD8;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4E0D;&#x663E;&#x793A;&#x5730;&#x4F7F;&#x7528;nio&#x7F16;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x80FD;&#x4ECE;&#x4E2D;&#x53D7;&#x76CA;&#x3002;</p>
+<p>&#x901F;&#x5EA6;&#x7684;&#x63D0;&#x9AD8;&#x6765;&#x81EA;&#x4E8E;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7ED3;&#x6784;&#x66F4;&#x63A5;&#x8FD1;&#x4E0E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6267;&#x884C;I/O&#x7684;&#x65B9;&#x5F0F;&#xFF1A;&#x901A;&#x9053;&#x548C;&#x7F13;&#x51B2;&#x5668;&#x3002;&#x552F;&#x4E00;&#x76F4;&#x63A5;&#x4E0E;&#x901A;&#x9053;&#x4EA4;&#x4E92;&#x7684;&#x7F13;&#x51B2;&#x5668;&#x662F;ByteBuffer&#x3002;</p>
+<p>&#x65E7;&#x7684;I/O&#x7C7B;&#x5E93;&#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x7C7B;&#x88AB;&#x4FEE;&#x6539;&#x4E86;&#xFF0C;&#x7528;&#x4EE5;&#x4EA7;&#x751F;FileChannel&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x7C7B;&#x662F;FileInputStream&#x3001;FileOutputStream&#x4EE5;&#x53CA;&#x7528;&#x4E8E;&#x5373;&#x8BFB;&#x53C8;&#x5199;&#x7684;RandomAccessfile.</p>
+<p>nio&#x7684;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x5FEB;&#x901F;&#x79FB;&#x52A8;&#x5927;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;ByteBuffer&#x7684;&#x5927;&#x5C0F;&#x5C31;&#x663E;&#x5F97;&#x5C24;&#x4E3A;&#x91CD;&#x8981;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BufferToText</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> BSIZE = <span class="hljs-number">1024</span>;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    FileChannel fc =
+      <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    fc.write(ByteBuffer.wrap(<span class="hljs-string">&quot;Some text&quot;</span>.getBytes()));
+    fc.close();
+    fc = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    ByteBuffer buff = ByteBuffer.allocate(BSIZE);
+    fc.read(buff);
+    buff.flip();
+    <span class="hljs-comment">// Doesn&apos;t work:</span>
+    System.out.println(buff.asCharBuffer());
+    <span class="hljs-comment">// Decode using this system&apos;s default Charset:</span>
+    buff.rewind();
+    String encoding = System.getProperty(<span class="hljs-string">&quot;file.encoding&quot;</span>);
+    System.out.println(<span class="hljs-string">&quot;Decoded using &quot;</span> + encoding + <span class="hljs-string">&quot;: &quot;</span>
+      + Charset.forName(encoding).decode(buff));
+    <span class="hljs-comment">// Or, we could encode with something that will print:</span>
+    fc = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    fc.write(ByteBuffer.wrap(
+      <span class="hljs-string">&quot;Some text&quot;</span>.getBytes(<span class="hljs-string">&quot;UTF-16BE&quot;</span>)));
+    fc.close();
+    <span class="hljs-comment">// Now try reading again:</span>
+    fc = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    buff.clear();
+    fc.read(buff);
+    buff.flip();
+    System.out.println(buff.asCharBuffer());
+    <span class="hljs-comment">// Use a CharBuffer to write through:</span>
+    fc = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    buff = ByteBuffer.allocate(<span class="hljs-number">24</span>); <span class="hljs-comment">// More than needed</span>
+    buff.asCharBuffer().put(<span class="hljs-string">&quot;Some text&quot;</span>);
+    fc.write(buff);
+    fc.close();
+    <span class="hljs-comment">// Read and display:</span>
+    fc = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;data2.txt&quot;</span>).getChannel();
+    buff.clear();
+    fc.read(buff);
+    buff.flip();
+    System.out.println(buff.asCharBuffer());
+  }
+} <span class="hljs-comment">/* Output:
+????
+Decoded using Cp1252: Some text
+Some text
+Some text
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;Charset.forName(encoding).decode(buff)</p>
+<p>&#x5411;ByteBuffer&#x63D2;&#x5165;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x6700;&#x7B80;&#x5355;&#x5730;&#x65B9;&#x6CD5;&#x662F;&#xFF1A;&#x5229;&#x7528;asCharBuffer()&#x3001;asShortBuffer()&#x7B49;&#x83B7;&#x5F97;&#x8BE5;&#x7F13;&#x51B2;&#x5668;&#x4E0A;&#x7684;&#x89C6;&#x56FE;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x7684;put()&#x65B9;&#x6CD5;&#x3002;&#x89C6;&#x56FE;&#x7F13;&#x51B2;&#x5668;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x89C6;&#x7A97;&#x67E5;&#x770B;&#x5176;&#x5E95;&#x5C42;&#x7684;ByteBuffer&#x3002;</p>
+<p>ByteBuffer&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x88AB;&#x201D;&#x5305;&#x88C5;&#x201C;&#x8FC7;&#x7684;8&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4EA7;&#x751F;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x89C6;&#x56FE;&#x7F13;&#x51B2;&#x5668;&#x663E;&#x793A;&#x51FA;&#x6765;&#x3002;</p>
+<p>ByteBuffer&#x662F;&#x5C06;&#x6570;&#x636E;&#x79FB;&#x8FDB;&#x79FB;&#x51FA;&#x901A;&#x9053;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x5F0F;&#x3002;</p>
+<p><img src="images/1544094448661.png" alt="1544094448661"></p>
+<p>&#x5185;&#x5B58;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#x53CA;&#x5176;&#x6027;&#x80FD;&#x8BA8;&#x8BBA;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MappedIO</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> numOfInts = <span class="hljs-number">4000000</span>;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> numOfUbuffInts = <span class="hljs-number">200000</span>;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tester</span> </span>{
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Tester</span><span class="hljs-params">(String name)</span> </span>{ <span class="hljs-keyword">this</span>.name = name; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">runTest</span><span class="hljs-params">()</span> </span>{
+      System.out.print(name + <span class="hljs-string">&quot;: &quot;</span>);
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">long</span> start = System.nanoTime();
+        test();
+        <span class="hljs-keyword">double</span> duration = System.nanoTime() - start;
+        System.out.format(<span class="hljs-string">&quot;%.2f\n&quot;</span>, duration/<span class="hljs-number">1.0e9</span>);
+      } <span class="hljs-keyword">catch</span>(IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+      }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException</span>;
+  }
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Tester[] tests = {
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Stream Write&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(
+          <span class="hljs-keyword">new</span> BufferedOutputStream(
+            <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;temp.tmp&quot;</span>))));
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numOfInts; i++)
+          dos.writeInt(i);
+        dos.close();
+      }
+    },
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Mapped Write&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        FileChannel fc =
+          <span class="hljs-keyword">new</span> RandomAccessFile(<span class="hljs-string">&quot;temp.tmp&quot;</span>, <span class="hljs-string">&quot;rw&quot;</span>)
+          .getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_WRITE, <span class="hljs-number">0</span>, fc.size())
+          .asIntBuffer();
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numOfInts; i++)
+          ib.put(i);
+        fc.close();
+      }
+    },
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Stream Read&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        DataInputStream dis = <span class="hljs-keyword">new</span> DataInputStream(
+          <span class="hljs-keyword">new</span> BufferedInputStream(
+            <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;temp.tmp&quot;</span>)));
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numOfInts; i++)
+          dis.readInt();
+        dis.close();
+      }
+    },
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Mapped Read&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        FileChannel fc = <span class="hljs-keyword">new</span> FileInputStream(
+          <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;temp.tmp&quot;</span>)).getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_ONLY, <span class="hljs-number">0</span>, fc.size())
+          .asIntBuffer();
+        <span class="hljs-keyword">while</span>(ib.hasRemaining())
+          ib.get();
+        fc.close();
+      }
+    },
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Stream Read/Write&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        RandomAccessFile raf = <span class="hljs-keyword">new</span> RandomAccessFile(
+          <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;temp.tmp&quot;</span>), <span class="hljs-string">&quot;rw&quot;</span>);
+        raf.writeInt(<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numOfUbuffInts; i++) {
+          raf.seek(raf.length() - <span class="hljs-number">4</span>);
+          raf.writeInt(raf.readInt());
+        }
+        raf.close();
+      }
+    },
+    <span class="hljs-keyword">new</span> Tester(<span class="hljs-string">&quot;Mapped Read/Write&quot;</span>) {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        FileChannel fc = <span class="hljs-keyword">new</span> RandomAccessFile(
+          <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;temp.tmp&quot;</span>), <span class="hljs-string">&quot;rw&quot;</span>).getChannel();
+        IntBuffer ib = fc.map(
+          FileChannel.MapMode.READ_WRITE, <span class="hljs-number">0</span>, fc.size())
+          .asIntBuffer();
+        ib.put(<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; numOfUbuffInts; i++)
+          ib.put(ib.get(i - <span class="hljs-number">1</span>));
+        fc.close();
+      }
+    }
+  };
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-keyword">for</span>(Tester test : tests)
+      test.runTest();
+  }
+} <span class="hljs-comment">/* Output: (90% match)
+Stream Write: 0.56
+Mapped Write: 0.12
+Stream Read: 0.80
+Mapped Read: 0.07
+Stream Read/Write: 5.32
+Mapped Read/Write: 0.02
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h3 id="&#x6587;&#x4EF6;&#x52A0;&#x9501;">&#x6587;&#x4EF6;&#x52A0;&#x9501;</h3>
+<p>&#x6587;&#x4EF6;&#x9501;&#x5BF9;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;&#x662F;&#x53EF;&#x89C1;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;java&#x7684;&#x6587;&#x4EF6;&#x52A0;&#x9501;&#x76F4;&#x63A5;&#x6620;&#x5C04;&#x5230;&#x4E86;&#x672C;&#x5730;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x52A0;&#x9501;&#x5DE5;&#x5177;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileLocking</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    FileOutputStream fos= <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;file.txt&quot;</span>);
+    FileLock fl = fos.getChannel().tryLock();
+    <span class="hljs-keyword">if</span>(fl != <span class="hljs-keyword">null</span>) {
+      System.out.println(<span class="hljs-string">&quot;Locked File&quot;</span>);
+      TimeUnit.MILLISECONDS.sleep(<span class="hljs-number">100</span>);
+      fl.release();
+      System.out.println(<span class="hljs-string">&quot;Released Lock&quot;</span>);
+    }
+    fos.close();
+  }
+} <span class="hljs-comment">/* Output:
+Locked File
+Released Lock
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>tryLock()&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x5B83;&#x8BBE;&#x6CD5;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E0D;&#x80FD;&#x83B7;&#x5F97;&#xFF0C;&#x5B83;&#x5C06;&#x76F4;&#x63A5;&#x4ECE;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#xFF0C;lock()&#x5219;&#x662F;&#x963B;&#x585E;&#x5F0F;&#xFF0C;&#x5B83;&#x8981;&#x963B;&#x585E;&#x8FDB;&#x7A0B;&#x76F4;&#x81F3;&#x9501;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#xFF0C;&#x6216;&#x5229;&#x7528;lock()&#x7684;&#x7EBF;&#x7A0B;&#x7EC8;&#x7AEF;&#xFF0C;&#x6216;&#x8C03;&#x7528;lock()&#x7684;&#x901A;&#x9053;&#x5173;&#x95ED;&#x3002; FileLock.release()&#x53EF;&#x4EE5;&#x91CA;&#x653E;&#x9501;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Java日志记录总结.html" class="navigation navigation-prev " aria-label="Previous page: Java日志记录总结">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Java笔记-初始化与清理.html" class="navigation navigation-next " aria-label="Next page: Java笔记-初始化与清理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java笔记-Java I/O系统","date":"2018-04-18T21:21:20.000Z","categories":"java","tags":"java","level":"1.11.3","depth":2,"next":{"title":"Java笔记-初始化与清理","level":"1.11.4","depth":2,"path":"java/Java笔记-初始化与清理.md","ref":"java/Java笔记-初始化与清理.md","articles":[]},"previous":{"title":"Java日志记录总结","level":"1.11.2","depth":2,"path":"java/Java日志记录总结.md","ref":"java/Java日志记录总结.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/Java笔记-Java IO系统.md","mtime":"2019-03-07T09:20:40.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T03:04:27.118Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

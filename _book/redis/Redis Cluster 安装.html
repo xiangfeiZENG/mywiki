@@ -1,0 +1,1980 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis Cluster 安装 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="redis主从切换的集群管理.html" />
+    
+    
+    <link rel="prev" href="redis action.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Action
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../action/权限管理的副本.html">
+            
+                <a href="../action/权限管理的副本.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../action/电商实战.html">
+            
+                <a href="../action/电商实战.html">
+            
+                    
+                    电商实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../action/电商实战2.html">
+            
+                <a href="../action/电商实战2.html">
+            
+                    
+                    电商实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../action/电商实战的副本.html">
+            
+                <a href="../action/电商实战的副本.html">
+            
+                    
+                    电商实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Activiti
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../activiti/Activiti实战.html">
+            
+                <a href="../activiti/Activiti实战.html">
+            
+                    
+                    Activiti实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../activiti/Activiti实战的副本.html">
+            
+                <a href="../activiti/Activiti实战的副本.html">
+            
+                    
+                    Activiti实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Books
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../books/Java基础学习过程[转].html">
+            
+                <a href="../books/Java基础学习过程[转].html">
+            
+                    
+                    Java基础学习过程[转]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../books/java进阶（空格分隔）： 学习.html">
+            
+                <a href="../books/java进阶（空格分隔）： 学习.html">
+            
+                    
+                    java进阶（空格分隔）： 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../books/读书笔记.html">
+            
+                <a href="../books/读书笔记.html">
+            
+                    
+                    读书笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../database/mybatis-plus.html">
+            
+                <a href="../database/mybatis-plus.html">
+            
+                    
+                    Mybatis Plus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../database/mysql.html">
+            
+                <a href="../database/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../database/PageHelper的使用和原理.html">
+            
+                <a href="../database/PageHelper的使用和原理.html">
+            
+                    
+                    PageHelper的使用和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Designpattern
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../designpattern/单件模式.html">
+            
+                <a href="../designpattern/单件模式.html">
+            
+                    
+                    单件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../designpattern/命令模式.html">
+            
+                <a href="../designpattern/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../designpattern/工厂模式.html">
+            
+                <a href="../designpattern/工厂模式.html">
+            
+                    
+                    工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../designpattern/策略模式.html">
+            
+                <a href="../designpattern/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../designpattern/装饰者模式.html">
+            
+                <a href="../designpattern/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../designpattern/观察者模式.html">
+            
+                <a href="../designpattern/观察者模式.html">
+            
+                    
+                    观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../designpattern/适配器模式与外观模式.html">
+            
+                <a href="../designpattern/适配器模式与外观模式.html">
+            
+                    
+                    适配器模式与外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Devops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../devops/DevOps简介.md">
+            
+                <span>
+            
+                    
+                    DevOps简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../devops/持续集成是什么.html">
+            
+                <a href="../devops/持续集成是什么.html">
+            
+                    
+                    持续集成是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../docker/docker and k8s.html">
+            
+                <a href="../docker/docker and k8s.html">
+            
+                    
+                    Docker And k8s 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../docker/Docker基础.html">
+            
+                <a href="../docker/Docker基础.html">
+            
+                    
+                    Docker基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../docker/images.html">
+            
+                <a href="../docker/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../docker/容器技术与Docker简介.html">
+            
+                <a href="../docker/容器技术与Docker简介.html">
+            
+                    
+                    容器技术与Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Dubbo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../dubbo/Untitled.html">
+            
+                <a href="../dubbo/Untitled.html">
+            
+                    
+                    Untitled
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hadoop/hadoop笔记(一）.html">
+            
+                <a href="../hadoop/hadoop笔记(一）.html">
+            
+                    
+                    hadoop笔记(一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../java/Java Concurrency in Practice.html">
+            
+                <a href="../java/Java Concurrency in Practice.html">
+            
+                    
+                    Java Concurrency In Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../java/Java日志记录总结.html">
+            
+                <a href="../java/Java日志记录总结.html">
+            
+                    
+                    Java日志记录总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../java/Java笔记-Java IO系统.html">
+            
+                <a href="../java/Java笔记-Java IO系统.html">
+            
+                    
+                    Java笔记-Java I/O系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../java/Java笔记-初始化与清理.html">
+            
+                <a href="../java/Java笔记-初始化与清理.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../java/Java笔记-多态.html">
+            
+                <a href="../java/Java笔记-多态.html">
+            
+                    
+                    Java笔记-多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../java/Java笔记-并发.html">
+            
+                <a href="../java/Java笔记-并发.html">
+            
+                    
+                    Java笔记-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../java/Java笔记-接口和内部类.html">
+            
+                <a href="../java/Java笔记-接口和内部类.html">
+            
+                    
+                    Java笔记-接口和内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../java/Java笔记-类型信息.html">
+            
+                <a href="../java/Java笔记-类型信息.html">
+            
+                    
+                    Java笔记-类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../java/Java笔记-访问控制权限和复用类.html">
+            
+                <a href="../java/Java笔记-访问控制权限和复用类.html">
+            
+                    
+                    Java笔记-访问控制权限和复用类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../java/剑指offer.html">
+            
+                <a href="../java/剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../linux/.~VMBox桥接网络设置.html">
+            
+                <a href="../linux/.~VMBox桥接网络设置.html">
+            
+                    
+                    .~VMBox桥接网络设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../linux/Linux常用软件安装.html">
+            
+                <a href="../linux/Linux常用软件安装.html">
+            
+                    
+                    Linux常用软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../linux/LINUX磁盘与文件系统管理.html">
+            
+                <a href="../linux/LINUX磁盘与文件系统管理.html">
+            
+                    
+                    LINUX磁盘与文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../linux/linux防火墙关闭.html">
+            
+                <a href="../linux/linux防火墙关闭.html">
+            
+                    
+                    linux防火墙关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../linux/RedHat中安装EPEL.html">
+            
+                <a href="../linux/RedHat中安装EPEL.html">
+            
+                    
+                    RedHat中安装EPEL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../linux/RedHat配置网络yum源.html">
+            
+                <a href="../linux/RedHat配置网络yum源.html">
+            
+                    
+                    RedHat配置网络yum源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                <a href="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                    
+                    VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../linux/vsftp配置.html">
+            
+                <a href="../linux/vsftp配置.html">
+            
+                    
+                    vsftp配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../linux/网络配置.html">
+            
+                <a href="../linux/网络配置.html">
+            
+                    
+                    网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../linux/进程管理.html">
+            
+                <a href="../linux/进程管理.html">
+            
+                    
+                    进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Maven
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../maven/Maven实战笔记.html">
+            
+                <a href="../maven/Maven实战笔记.html">
+            
+                    
+                    Maven实战笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Mongodb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../mongodb/Centos7.x下mongodb安装.html">
+            
+                <a href="../mongodb/Centos7.x下mongodb安装.html">
+            
+                    
+                    Centos7.x下mongodb安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Moosefs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../moosefs/moosefs总结.html">
+            
+                <a href="../moosefs/moosefs总结.html">
+            
+                    
+                    moosefs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Mq
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../mq/RabbitMQ.html">
+            
+                <a href="../mq/RabbitMQ.html">
+            
+                    
+                    Rabbit MQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Netty
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../netty/Netty源码解析.html">
+            
+                <a href="../netty/Netty源码解析.html">
+            
+                    
+                    Netty源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../nginx/Nginx实战.html">
+            
+                <a href="../nginx/Nginx实战.html">
+            
+                    
+                    Nginx实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    Nodejs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../nodejs/前端面试题.html">
+            
+                <a href="../nodejs/前端面试题.html">
+            
+                    
+                    前端面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../nodejs/常用正则表达式.html">
+            
+                <a href="../nodejs/常用正则表达式.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../nodejs/电商前端.html">
+            
+                <a href="../nodejs/电商前端.html">
+            
+                    
+                    电商前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../python/Python基础学习.html">
+            
+                <a href="../python/Python基础学习.html">
+            
+                    
+                    Python基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="redis action.html">
+            
+                <a href="redis action.html">
+            
+                    
+                    Redis Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.21.2" data-path="Redis Cluster 安装.html">
+            
+                <a href="Redis Cluster 安装.html">
+            
+                    
+                    Redis Cluster 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="redis主从切换的集群管理.html">
+            
+                <a href="redis主从切换的集群管理.html">
+            
+                    
+                    redis主从切换的集群管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                <a href="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                    
+                    eclipse搭建Spring MVC 开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../spring/Spring boot实践.html">
+            
+                <a href="../spring/Spring boot实践.html">
+            
+                    
+                    Spring boot实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../spring/Spring Cloud.html">
+            
+                <a href="../spring/Spring Cloud.html">
+            
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="../spring/Spring Security 实战.html">
+            
+                <a href="../spring/Spring Security 实战.html">
+            
+                    
+                    Spring Security 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="../spring/Spring 揭秘.html">
+            
+                <a href="../spring/Spring 揭秘.html">
+            
+                    
+                    Spring 揭秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="../spring/Spring集成日志.html">
+            
+                <a href="../spring/Spring集成日志.html">
+            
+                    
+                    Java笔记-集成日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.7" data-path="../spring/理解Spring技术栈.html">
+            
+                <a href="../spring/理解Spring技术栈.html">
+            
+                    
+                    理解Spring技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" >
+            
+                <span>
+            
+                    
+                    Sybase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../sybase/Sybase ASE培训.html">
+            
+                <a href="../sybase/Sybase ASE培训.html">
+            
+                    
+                    Sybase ASE培训
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../sybase/SYBASE 日常维护.html">
+            
+                <a href="../sybase/SYBASE 日常维护.html">
+            
+                    
+                    SYBASE 日常维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" >
+            
+                <span>
+            
+                    
+                    Test
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../test/性能测试.html">
+            
+                <a href="../test/性能测试.html">
+            
+                    
+                    性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" >
+            
+                <span>
+            
+                    
+                    Tools
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                <a href="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                    
+                    Github进行fork后如何与原仓库同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../tools/GIT常用操作.html">
+            
+                <a href="../tools/GIT常用操作.html">
+            
+                    
+                    GIT常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../tools/Intellij IDEA 常用快捷键.html">
+            
+                <a href="../tools/Intellij IDEA 常用快捷键.html">
+            
+                    
+                    Intellij IDEA 常用快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                <a href="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                    
+                    NAVICAT 12.0.26 mac 激活
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../tools/Redis故障排查.html">
+            
+                <a href="../tools/Redis故障排查.html">
+            
+                    
+                    Redis故障排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../tools/vpn搭建.html">
+            
+                <a href="../tools/vpn搭建.html">
+            
+                    
+                    vpn搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.7" data-path="../tools/转售物联网交流.html">
+            
+                <a href="../tools/转售物联网交流.html">
+            
+                    
+                    转售物联网交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <span>
+            
+                    
+                    Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../work/会议记录20190515.html">
+            
+                <a href="../work/会议记录20190515.html">
+            
+                    
+                    会议记录20190515
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../work/可研会议记录.html">
+            
+                <a href="../work/可研会议记录.html">
+            
+                    
+                    可研会议记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.3" data-path="../work/审计相关问题.html">
+            
+                <a href="../work/审计相关问题.html">
+            
+                    
+                    审计相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.4" data-path="../work/工程项目培训与交流.html">
+            
+                <a href="../work/工程项目培训与交流.html">
+            
+                    
+                    工程项目培训与交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.5" data-path="../work/转售4G.html">
+            
+                <a href="../work/转售4G.html">
+            
+                    
+                    转售4G
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redis Cluster 安装</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redis-cluster-&#x5B89;&#x88C5;">Redis Cluster &#x5B89;&#x88C5;</h1>
+<p>[TOC]</p>
+<p>Redis Cluster&#x5B89;&#x88C5;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x539F;&#x751F;&#x5B89;&#x88C5;&#x548C;<code>edis-trib.rb</code>&#x65B9;&#x5F0F;&#x5B89;&#x88C5;&#x3002;</p>
+<h2 id="&#x539F;&#x751F;&#x5B89;&#x88C5;">&#x539F;&#x751F;&#x5B89;&#x88C5;</h2>
+<p>&#x4E86;&#x89E3;&#x547D;&#x4EE4;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;redis&#x96C6;&#x7FA4;&#x7684;&#x539F;&#x7406;&#x3002;</p>
+<ol>
+<li><p>&#x8282;&#x70B9;&#x914D;&#x7F6E;</p>
+<pre><code>[xfei-centos@xfei-centos conf]$ cat redis-7000.conf 
+daemonize yes
+pidfile /var/run/redis.pid
+port 7000
+tcp-backlog 511
+timeout 0
+tcp-keepalive 0
+loglevel notice
+logfile &quot;7000.log&quot;
+databases 16
+save 900 1
+save 300 10
+save 60 10000
+stop-writes-on-bgsave-error yes
+rdbcompression yes
+rdbchecksum yes
+dbfilename dump-7000.rdb
+dir &quot;/usr/local/redis/data&quot;
+slave-serve-stale-data yes
+slave-read-only yes
+repl-diskless-sync no
+repl-diskless-sync-delay 5
+repl-disable-tcp-nodelay no
+slave-priority 100
+appendonly no
+appendfilename &quot;appendonly.aof&quot;
+appendfsync everysec
+no-appendfsync-on-rewrite no
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+aof-load-truncated yes
+lua-time-limit 5000
+slowlog-log-slower-than 10000
+slowlog-max-len 128
+latency-monitor-threshold 0
+notify-keyspace-events &quot;&quot;
+hash-max-ziplist-entries 512
+hash-max-ziplist-value 64
+list-max-ziplist-entries 512
+list-max-ziplist-value 64
+set-max-intset-entries 512
+zset-max-ziplist-entries 128
+zset-max-ziplist-value 64
+hll-sparse-max-bytes 3000
+activerehashing yes
+client-output-buffer-limit normal 0 0 0
+client-output-buffer-limit slave 256mb 64mb 60
+client-output-buffer-limit pubsub 32mb 8mb 60
+hz 10
+aof-rewrite-incremental-fsync yes
+
+# cluster 
+cluster-enabled yes
+cluster-config-file nodes-7000.conf
+</code></pre><p>&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x914D;&#x7F6E;&#x5176;&#x4F59;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre><code>sed &apos;s/7000/7001/g&apos; redis-7000.conf &gt; redis-7001.conf
+sed &apos;s/7000/7002/g&apos; redis-7000.conf &gt; redis-7002.conf
+sed &apos;s/7000/7003/g&apos; redis-7000.conf &gt; redis-7003.conf
+sed &apos;s/7000/7004/g&apos; redis-7000.conf &gt; redis-7004.conf
+sed &apos;s/7000/7005/g&apos; redis-7000.conf &gt; redis-7005.conf
+</code></pre></li>
+</ol>
+<ol>
+<li><p>&#x542F;&#x52A8;&#x8282;&#x70B9;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7000.conf
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7001.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7002.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7003.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7004.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7005.conf
+</code></pre><p>&#x67E5;&#x770B;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster info
+cluster_state:fail
+cluster_slots_assigned:16384
+cluster_slots_ok:5462
+cluster_slots_pfail:10922
+cluster_slots_fail:0
+cluster_known_nodes:6
+cluster_size:3
+cluster_current_epoch:5
+cluster_my_epoch:2
+cluster_stats_messages_sent:2445
+cluster_stats_messages_received:0
+</code></pre></li>
+</ol>
+<ol>
+<li><p>&#x8282;&#x70B9;&#x63E1;&#x624B;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster meet 127.0.0.1 7001
+OK
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster info
+cluster_state:ok
+cluster_slots_assigned:16384
+cluster_slots_ok:16384
+cluster_slots_pfail:0
+cluster_slots_fail:0
+cluster_known_nodes:6
+cluster_size:3
+cluster_current_epoch:5
+cluster_my_epoch:2
+cluster_stats_messages_sent:8348
+cluster_stats_messages_received:488
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7001 cluster info
+cluster_state:ok
+cluster_slots_assigned:16384
+cluster_slots_ok:16384
+cluster_slots_pfail:0
+cluster_slots_fail:0
+cluster_known_nodes:6
+cluster_size:3
+cluster_current_epoch:5
+cluster_my_epoch:1
+cluster_stats_messages_sent:909
+cluster_stats_messages_received:509
+</code></pre><p>&#x63E1;&#x624B;&#x5176;&#x4ED6;&#x8D44;&#x6E90;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster meet 127.0.0.1 7002
+OK
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster meet 127.0.0.1 7003
+OK
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster meet 127.0.0.1 7004
+OK
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster meet 127.0.0.1 7005
+</code></pre></li>
+</ol>
+<ol>
+<li><p>&#x6307;&#x5B9A;&#x69FD;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -h 127.0.0.1 -p 7000 cluster addslots {0..5461}
+[xfei-centos@xfei-centos bin]$ ./redis-cli -h 127.0.0.1 -p 7001 cluster addslots {5462..10922}
+[xfei-centos@xfei-centos bin]$ ./redis-cli -h 127.0.0.1 -p 7000 cluster addslots {10923..16383}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>&#x4E3B;&#x4ECE;&#x5206;&#x914D;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7003 cluster replicate 9f3755cb8c7e6467e711089830d0cd7963b1409e
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7004 cluster replicate 288a09821c1a8876027bc218ac4ea52b14e9dbb9
+[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7005 cluster replicate d9dd7eb791f153474571a682cc5ee451230a6639
+</code></pre></li>
+</ol>
+<ol>
+<li><p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -p 7000 cluster nodes
+49b528eb00aac4fbdc417b73e945598a61fb21db 127.0.0.1:7003 slave 9f3755cb8c7e6467e711089830d0cd7963b1409e 0 1565923810712 4 connected
+288a09821c1a8876027bc218ac4ea52b14e9dbb9 127.0.0.1:7001 master - 0 1565923812737 1 connected 5462-10922
+d9dd7eb791f153474571a682cc5ee451230a6639 127.0.0.1:7002 master - 0 1565923811724 0 connected 10923-16383
+71c1dc8b4e2c455f5cbe6b1043f66b7213ee6e03 127.0.0.1:7005 slave d9dd7eb791f153474571a682cc5ee451230a6639 0 1565923813749 5 connected
+9f3755cb8c7e6467e711089830d0cd7963b1409e 127.0.0.1:7000 myself,master - 0 0 2 connected 0-5461
+4bcbd1d505fe2087f8dd5380474753e44060aeca 127.0.0.1:7004 slave 288a09821c1a8876027bc218ac4ea52b14e9dbb9 0 1565923806658 3 connected
+</code></pre></li>
+<li><p>&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ ./redis-cli -c -p 7000
+127.0.0.1:7000&gt; set hello world
+OK
+127.0.0.1:7000&gt; get hello
+&quot;world&quot;
+</code></pre></li>
+</ol>
+<h2 id="&#x5B98;&#x65B9;&#x624B;&#x52A8;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;">&#x5B98;&#x65B9;&#x624B;&#x52A8;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;</h2>
+<ol>
+<li><p>&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x5982;&#x4E0A;&#x3002;</p>
+</li>
+<li><p>&#x542F;&#x52A8;&#x8282;&#x70B9;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7000.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7001.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7002.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7003.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7004.conf 
+[xfei-centos@xfei-centos bin]$ sudo ./redis-server ../conf/redis-7005.conf
+</code></pre></li>
+<li><p>&#x6267;&#x884C;&#x5B89;&#x88C5;</p>
+<p>To create your cluster for Redis 5 with <code>redis-cli</code> simply type:</p>
+<pre><code>redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 \
+127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 \
+--cluster-replicas 1
+</code></pre><p>Using <code>redis-trib.rb</code> for Redis 4 or 3 type:</p>
+<pre><code>./redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 \
+127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
+</code></pre><p>&#x6267;&#x884C;&#x5177;&#x4F53;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>[xfei-centos@xfei-centos bin]$ sudo ./redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
+/usr/bin/env: ruby: &#x6CA1;&#x6709;&#x90A3;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;
+
+&#x56E0;&#x4E3A;redis-trib.rb&#x4F9D;&#x8D56;ruby&#x73AF;&#x5883;
+&#x9700;&#x8981;&#x5B89;&#x88C5;ruby&#x73AF;&#x5883;
+[xfei-centos@xfei-centos bin]$ sudo yum install ruby
+
+&#x518D;&#x6B21;&#x62A5;&#x9519;
+[xfei-centos@xfei-centos bin]$ sudo ./redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
+/usr/share/rubygems/rubygems/core_ext/kernel_require.rb:55:in `require&apos;: cannot load such file -- redis (LoadError)
+        from /usr/share/rubygems/rubygems/core_ext/kernel_require.rb:55:in `require&apos;
+        from ./redis-trib.rb:25:in `&lt;main&gt;&apos;
+
+&#x539F;&#x56E0;&#x662F;&#xFF1A;&#x6CA1;&#x88C5;redis&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x63A5;&#x53E3;&#xFF01;&#x65E2;&#x7136;ruby&#x7A0B;&#x5E8F;&#x8981;&#x8BBF;&#x95EE;redis&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x603B;&#x5F97;&#x6709;&#x4E2A;&#x8FDE;&#x63A5;&#x63A5;&#x53E3;&#x3002;&#x5BF9;&#x4E8E;ruby&#x8FD9;&#x4E48;&#x5B89;&#x88C5;client&#x5305;&#x5C31;&#x884C;&#x4E86;
+&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x901A;&#x8FC7;gem install redis &#x624D;&#x884C;&#x3002;
+[xfei-centos@xfei-centos bin]$ sudo gem install redis
+
+&#x518D;&#x6B21;&#x62A5;&#x9519;&#xFF1A;
+[xfei-centos@xfei-centos bin]$ sudo gem install redis
+Fetching: redis-4.1.2.gem (100%)
+ERROR:  Error installing redis:
+        redis requires Ruby version &gt;= 2.3.0.
+&#x539F;&#x56E0;&#x662F;&#x4F7F;&#x7528;&#x7684;centos&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;2.2.0
+
+&#x8FD9;&#x91CC;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;sudo&#x53BB;&#x6267;&#x884C;&#x3002;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#x3002;
+</code></pre></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="redis action.html" class="navigation navigation-prev " aria-label="Previous page: Redis Action">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="redis主从切换的集群管理.html" class="navigation navigation-next " aria-label="Next page: redis主从切换的集群管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis Cluster 安装","level":"1.21.2","depth":2,"next":{"title":"redis主从切换的集群管理","level":"1.21.3","depth":2,"path":"redis/redis主从切换的集群管理.md","ref":"redis/redis主从切换的集群管理.md","articles":[]},"previous":{"title":"Redis Action","level":"1.21.1","depth":2,"path":"redis/redis action.md","ref":"redis/redis action.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redis/Redis Cluster 安装.md","mtime":"2019-08-16T06:41:10.405Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T03:04:27.118Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,2057 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>理解Spring技术栈 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Spring集成日志.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Action
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../action/权限管理的副本.html">
+            
+                <a href="../action/权限管理的副本.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../action/电商实战.html">
+            
+                <a href="../action/电商实战.html">
+            
+                    
+                    电商实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../action/电商实战2.html">
+            
+                <a href="../action/电商实战2.html">
+            
+                    
+                    电商实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../action/电商实战的副本.html">
+            
+                <a href="../action/电商实战的副本.html">
+            
+                    
+                    电商实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Activiti
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../activiti/Activiti实战.html">
+            
+                <a href="../activiti/Activiti实战.html">
+            
+                    
+                    Activiti实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../activiti/Activiti实战的副本.html">
+            
+                <a href="../activiti/Activiti实战的副本.html">
+            
+                    
+                    Activiti实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Books
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../books/Java基础学习过程[转].html">
+            
+                <a href="../books/Java基础学习过程[转].html">
+            
+                    
+                    Java基础学习过程[转]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../books/java进阶（空格分隔）： 学习.html">
+            
+                <a href="../books/java进阶（空格分隔）： 学习.html">
+            
+                    
+                    java进阶（空格分隔）： 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../books/读书笔记.html">
+            
+                <a href="../books/读书笔记.html">
+            
+                    
+                    读书笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../database/mybatis-plus.html">
+            
+                <a href="../database/mybatis-plus.html">
+            
+                    
+                    Mybatis Plus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../database/mysql.html">
+            
+                <a href="../database/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../database/PageHelper的使用和原理.html">
+            
+                <a href="../database/PageHelper的使用和原理.html">
+            
+                    
+                    PageHelper的使用和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Designpattern
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../designpattern/单件模式.html">
+            
+                <a href="../designpattern/单件模式.html">
+            
+                    
+                    单件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../designpattern/命令模式.html">
+            
+                <a href="../designpattern/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../designpattern/工厂模式.html">
+            
+                <a href="../designpattern/工厂模式.html">
+            
+                    
+                    工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../designpattern/策略模式.html">
+            
+                <a href="../designpattern/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../designpattern/装饰者模式.html">
+            
+                <a href="../designpattern/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../designpattern/观察者模式.html">
+            
+                <a href="../designpattern/观察者模式.html">
+            
+                    
+                    观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../designpattern/适配器模式与外观模式.html">
+            
+                <a href="../designpattern/适配器模式与外观模式.html">
+            
+                    
+                    适配器模式与外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Devops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../devops/DevOps简介.md">
+            
+                <span>
+            
+                    
+                    DevOps简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../devops/持续集成是什么.html">
+            
+                <a href="../devops/持续集成是什么.html">
+            
+                    
+                    持续集成是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../docker/docker and k8s.html">
+            
+                <a href="../docker/docker and k8s.html">
+            
+                    
+                    Docker And k8s 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../docker/Docker基础.html">
+            
+                <a href="../docker/Docker基础.html">
+            
+                    
+                    Docker基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../docker/images.html">
+            
+                <a href="../docker/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../docker/容器技术与Docker简介.html">
+            
+                <a href="../docker/容器技术与Docker简介.html">
+            
+                    
+                    容器技术与Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Dubbo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../dubbo/Untitled.html">
+            
+                <a href="../dubbo/Untitled.html">
+            
+                    
+                    Untitled
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hadoop/hadoop笔记(一）.html">
+            
+                <a href="../hadoop/hadoop笔记(一）.html">
+            
+                    
+                    hadoop笔记(一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../java/Java Concurrency in Practice.html">
+            
+                <a href="../java/Java Concurrency in Practice.html">
+            
+                    
+                    Java Concurrency In Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../java/Java日志记录总结.html">
+            
+                <a href="../java/Java日志记录总结.html">
+            
+                    
+                    Java日志记录总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../java/Java笔记-Java IO系统.html">
+            
+                <a href="../java/Java笔记-Java IO系统.html">
+            
+                    
+                    Java笔记-Java I/O系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../java/Java笔记-初始化与清理.html">
+            
+                <a href="../java/Java笔记-初始化与清理.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../java/Java笔记-多态.html">
+            
+                <a href="../java/Java笔记-多态.html">
+            
+                    
+                    Java笔记-多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../java/Java笔记-并发.html">
+            
+                <a href="../java/Java笔记-并发.html">
+            
+                    
+                    Java笔记-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../java/Java笔记-接口和内部类.html">
+            
+                <a href="../java/Java笔记-接口和内部类.html">
+            
+                    
+                    Java笔记-接口和内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../java/Java笔记-类型信息.html">
+            
+                <a href="../java/Java笔记-类型信息.html">
+            
+                    
+                    Java笔记-类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../java/Java笔记-访问控制权限和复用类.html">
+            
+                <a href="../java/Java笔记-访问控制权限和复用类.html">
+            
+                    
+                    Java笔记-访问控制权限和复用类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../java/剑指offer.html">
+            
+                <a href="../java/剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../linux/.~VMBox桥接网络设置.html">
+            
+                <a href="../linux/.~VMBox桥接网络设置.html">
+            
+                    
+                    .~VMBox桥接网络设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../linux/Linux常用软件安装.html">
+            
+                <a href="../linux/Linux常用软件安装.html">
+            
+                    
+                    Linux常用软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../linux/LINUX磁盘与文件系统管理.html">
+            
+                <a href="../linux/LINUX磁盘与文件系统管理.html">
+            
+                    
+                    LINUX磁盘与文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../linux/linux防火墙关闭.html">
+            
+                <a href="../linux/linux防火墙关闭.html">
+            
+                    
+                    linux防火墙关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../linux/RedHat中安装EPEL.html">
+            
+                <a href="../linux/RedHat中安装EPEL.html">
+            
+                    
+                    RedHat中安装EPEL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../linux/RedHat配置网络yum源.html">
+            
+                <a href="../linux/RedHat配置网络yum源.html">
+            
+                    
+                    RedHat配置网络yum源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                <a href="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                    
+                    VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../linux/vsftp配置.html">
+            
+                <a href="../linux/vsftp配置.html">
+            
+                    
+                    vsftp配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../linux/网络配置.html">
+            
+                <a href="../linux/网络配置.html">
+            
+                    
+                    网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../linux/进程管理.html">
+            
+                <a href="../linux/进程管理.html">
+            
+                    
+                    进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Maven
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../maven/Maven实战笔记.html">
+            
+                <a href="../maven/Maven实战笔记.html">
+            
+                    
+                    Maven实战笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Mongodb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../mongodb/Centos7.x下mongodb安装.html">
+            
+                <a href="../mongodb/Centos7.x下mongodb安装.html">
+            
+                    
+                    Centos7.x下mongodb安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Moosefs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../moosefs/moosefs总结.html">
+            
+                <a href="../moosefs/moosefs总结.html">
+            
+                    
+                    moosefs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Mq
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../mq/RabbitMQ.html">
+            
+                <a href="../mq/RabbitMQ.html">
+            
+                    
+                    Rabbit MQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Netty
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../netty/Netty源码解析.html">
+            
+                <a href="../netty/Netty源码解析.html">
+            
+                    
+                    Netty源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../nginx/Nginx实战.html">
+            
+                <a href="../nginx/Nginx实战.html">
+            
+                    
+                    Nginx实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    Nodejs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../nodejs/前端面试题.html">
+            
+                <a href="../nodejs/前端面试题.html">
+            
+                    
+                    前端面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../nodejs/常用正则表达式.html">
+            
+                <a href="../nodejs/常用正则表达式.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../nodejs/电商前端.html">
+            
+                <a href="../nodejs/电商前端.html">
+            
+                    
+                    电商前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../python/Python基础学习.html">
+            
+                <a href="../python/Python基础学习.html">
+            
+                    
+                    Python基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../redis/redis action.html">
+            
+                <a href="../redis/redis action.html">
+            
+                    
+                    Redis Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../redis/Redis Cluster 安装.html">
+            
+                <a href="../redis/Redis Cluster 安装.html">
+            
+                    
+                    Redis Cluster 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../redis/redis主从切换的集群管理.html">
+            
+                <a href="../redis/redis主从切换的集群管理.html">
+            
+                    
+                    redis主从切换的集群管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="eclipse搭建Spring MVC 开发环境.html">
+            
+                <a href="eclipse搭建Spring MVC 开发环境.html">
+            
+                    
+                    eclipse搭建Spring MVC 开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="Spring boot实践.html">
+            
+                <a href="Spring boot实践.html">
+            
+                    
+                    Spring boot实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="Spring Cloud.html">
+            
+                <a href="Spring Cloud.html">
+            
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="Spring Security 实战.html">
+            
+                <a href="Spring Security 实战.html">
+            
+                    
+                    Spring Security 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="Spring 揭秘.html">
+            
+                <a href="Spring 揭秘.html">
+            
+                    
+                    Spring 揭秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="Spring集成日志.html">
+            
+                <a href="Spring集成日志.html">
+            
+                    
+                    Java笔记-集成日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.22.7" data-path="理解Spring技术栈.html">
+            
+                <a href="理解Spring技术栈.html">
+            
+                    
+                    理解Spring技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" >
+            
+                <span>
+            
+                    
+                    Sybase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../sybase/Sybase ASE培训.html">
+            
+                <a href="../sybase/Sybase ASE培训.html">
+            
+                    
+                    Sybase ASE培训
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../sybase/SYBASE 日常维护.html">
+            
+                <a href="../sybase/SYBASE 日常维护.html">
+            
+                    
+                    SYBASE 日常维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" >
+            
+                <span>
+            
+                    
+                    Test
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../test/性能测试.html">
+            
+                <a href="../test/性能测试.html">
+            
+                    
+                    性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" >
+            
+                <span>
+            
+                    
+                    Tools
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                <a href="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                    
+                    Github进行fork后如何与原仓库同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../tools/GIT常用操作.html">
+            
+                <a href="../tools/GIT常用操作.html">
+            
+                    
+                    GIT常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../tools/Intellij IDEA 常用快捷键.html">
+            
+                <a href="../tools/Intellij IDEA 常用快捷键.html">
+            
+                    
+                    Intellij IDEA 常用快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                <a href="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                    
+                    NAVICAT 12.0.26 mac 激活
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../tools/Redis故障排查.html">
+            
+                <a href="../tools/Redis故障排查.html">
+            
+                    
+                    Redis故障排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../tools/vpn搭建.html">
+            
+                <a href="../tools/vpn搭建.html">
+            
+                    
+                    vpn搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.7" data-path="../tools/转售物联网交流.html">
+            
+                <a href="../tools/转售物联网交流.html">
+            
+                    
+                    转售物联网交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <span>
+            
+                    
+                    Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../work/会议记录20190515.html">
+            
+                <a href="../work/会议记录20190515.html">
+            
+                    
+                    会议记录20190515
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../work/可研会议记录.html">
+            
+                <a href="../work/可研会议记录.html">
+            
+                    
+                    可研会议记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.3" data-path="../work/审计相关问题.html">
+            
+                <a href="../work/审计相关问题.html">
+            
+                    
+                    审计相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.4" data-path="../work/工程项目培训与交流.html">
+            
+                <a href="../work/工程项目培训与交流.html">
+            
+                    
+                    工程项目培训与交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.5" data-path="../work/转售4G.html">
+            
+                <a href="../work/转售4G.html">
+            
+                    
+                    转售4G
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >理解Spring技术栈</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7406;&#x89E3;-spring-&#x6280;&#x672F;&#x6808;">&#x7406;&#x89E3; Spring &#x6280;&#x672F;&#x6808;</h1>
+<h2 id="spring-framework-&#x6838;&#x5FC3;&#x7279;&#x6027;">Spring Framework &#x6838;&#x5FC3;&#x7279;&#x6027;</h2>
+<h3 id="ioc-containerioc-&#x5BB9;&#x5668;">IoC container(IoC &#x5BB9;&#x5668;)</h3>
+<ul>
+<li><p>Bean&#x662F;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF1F;</p>
+<ul>
+<li><p>java Bean</p>
+</li>
+<li><p>java Beans&#xFF08;&#x89C4;&#x8303;&#xFF09;</p>
+<ul>
+<li><p>&#x5185;&#x7701;</p>
+<ul>
+<li><p>&#x57FA;&#x7840;&#x6838;&#x5FC3;&#x7279;&#x6027;&#xFF1A;&#x53CD;&#x5C04;&#xFF08;Reflection&#xFF09;</p>
+</li>
+<li><p>&#x9644;&#x52A0;&#x7279;&#x6027;&#xFF1A;&#x5F15;&#x7528;&#xFF08;Refrence&#xFF09;</p>
+<ul>
+<li>SoftReference</li>
+<li>WeakReference</li>
+<li>PhantomReference</li>
+<li>FinalReference</li>
+<li>BeanInfo</li>
+<li>BeanDescriptor</li>
+</ul>
+</li>
+<li><p>BeanInfo</p>
+</li>
+<li><p>PropertyDescriptor
+ &#x4E8B;&#x4EF6;: PropertyChangeEvent </p>
+<p>java.util.EventObject &#x76D1;&#x542C;&#x5668;: PropertyChangeListener </p>
+<pre><code>                             java.util.EventListener
+                   MethodDescriptor
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>IOC(&#x53CD;&#x8F6C;&#x63A7;&#x5236;)</p>
+<ul>
+<li>&#x5E94;&#x7528;&#x4E0D;&#x5173;&#x5FC3;&#x4F9D;&#x8D56;&#x7EC4;&#x4EF6;&#x7684;&#x6765;&#x6E90;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;DI&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x67E5;&#x627E;</li>
+<li>&#x6284;&#x88AD;&#x4E86;JavaEE&#x6982;&#x5FF5;,JavaEE(EJB&#x5BB9;&#x5668;&#xFF0C;JSF&#x5BB9;&#x5668;)<ul>
+<li>EJB&#x5BB9;&#x5668;<ul>
+<li>Bean&#x6A21;&#x5F0F;<ul>
+<li>Local<ul>
+<li>&#x5BB9;&#x5668;Bean</li>
+</ul>
+</li>
+<li>Remote<ul>
+<li>RMI</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bean&#x7C7B;&#x578B;<ul>
+<li>&#x4F1A;&#x8BDD;&#xFF08;Session Bean&#xFF09;<ul>
+<li>&#x65E0;&#x72B6;&#x6001;Bean</li>
+<li>&#x6709;&#x72B6;&#x6001;Bean</li>
+</ul>
+</li>
+<li>&#x6301;&#x4E45;&#x5316;&#xFF08;Persistence Bean&#xFF09;<ul>
+<li>Hibernate</li>
+</ul>
+</li>
+<li>&#x6D88;&#x606F;&#x9A71;&#x52A8;Bean&#xFF08;Java Messaging&#xFF09;<ul>
+<li>JMS<ul>
+<li>ActiveMQ&#xFF0C;Kafka</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>DI&#xFF08;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF09;<ul>
+<li>JavaEE&#xFF1A;JNDI&#xFF08;java Naming and Directory Interface&#xFF09;&#x662F;DI&#x7684;&#x9F3B;&#x7956;&#x3002;<ul>
+<li><code>Javax.naming.Context</code><ul>
+<li>&#x540D;&#x79F0;<ul>
+<li><code>Javax.naming.Context#lookup(java.lang.String)</code></li>
+<li><code>Javax.naming.Context#lookup(javax.naming.Name)</code></li>
+</ul>
+</li>
+<li>EJB<ul>
+<li><code>javax.ejb.@Ejb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F9D;&#x8D56;&#x67E5;&#x627E;&#xFF08;&#x6838;&#x5FC3;&#x7C7B;BeanFactory<ul>
+<li>ID&#x3001;&#x522B;&#x540D;&#x3001;&#x540D;&#x79F0;&#x67E5;&#x627E;<ul>
+<li>getBean(String):Object</li>
+</ul>
+</li>
+<li>&#x7C7B;&#x578B;&#x67E5;&#x627E;<ul>
+<li>getBean(Class):T</li>
+</ul>
+</li>
+<li>&#x6CE8;&#x89E3;&#x67E5;&#x627E;<ul>
+<li><code>ListableBeanFactory#getBeanWithAnnotation&#xFF08;Class&#xFF09;</code></li>
+</ul>
+</li>
+<li><code>FactoryBean</code>&#x67E5;&#x627E;<ul>
+<li><code>FactoryBean#getObject()</code></li>
+</ul>
+</li>
+<li><code>ObjectFactory</code>&#x67E5;&#x627E;<ul>
+<li>ObjectFactory#getObject()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;&#x7EC4;&#x4EF6;&#x4F9D;&#x8D56;Dependency&#xFF0C;&#x6CE8;&#x5165;Injection&#xFF09;<ul>
+<li>&#x65B9;&#x6CD5;<ul>
+<li>@Autowired</li>
+<li>java<code>@Resource</code></li>
+<li>JavaEE <code>@Inject</code></li>
+</ul>
+</li>
+<li>&#x6CE8;&#x5165;&#x9014;&#x5F84;<ul>
+<li>&#x5B57;&#x6BB5;&#xFF08;Field&#xFF09;&#x6CE8;&#x5165;</li>
+<li>&#x5C5E;&#x6027;&#xFF08;Setter&#xFF09;&#x6CE8;&#x5165;</li>
+<li>&#x65B9;&#x6CD5;&#xFF08;Method&#xFF09;&#x6CE8;&#x5165;</li>
+<li>&#x6784;&#x9020;&#x5668;&#xFF08;Construtor&#xFF09;&#x6CE8;&#x5165;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Java Bean </p>
+<ul>
+<li>Setter/Getter method </li>
+</ul>
+</li>
+<li><p>Java Beans(&#x89C4;&#x8303;) </p>
+<ul>
+<li>&#x5185;&#x7701;<ul>
+<li>&#x57FA;&#x7840;&#x6838;&#x5FC3;&#x7279;&#x6027;:&#x53CD;&#x5C04;(Reflection) </li>
+<li>&#x9644;&#x52A0;&#x7279;&#x6027;:&#x5F15;&#x7528;(Reference) <ul>
+<li>Reference </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>SoftReference
+                        WeakReference
+                        PhantomReference
+                        FinalReference
+               BeanInfo
+                   BeanDescriptor
+</code></pre><p>PropertyDescriptor
+ &#x4E8B;&#x4EF6;: PropertyChangeEvent </p>
+<p>java.util.EventObject &#x76D1;&#x542C;&#x5668;: PropertyChangeListener </p>
+<pre><code>                             java.util.EventListener
+                   MethodDescriptor
+</code></pre><p>IoC(&#x53CD;&#x8F6C;&#x63A7;&#x5236;)
+ &#x5E94;&#x7528;&#x4E0D;&#x5173;&#x5FC3;&#x4F9D;&#x8D56;&#x7EC4;&#x4EF6;&#x7684;&#x6765;&#x6E90;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x5B9A; DI &#x65B9;&#x5F0F;&#x67E5;&#x627E; &#x6284;&#x88AD;&#x4E86; Java EE &#x6982;&#x5FF5;, Java EE &#x5BB9;&#x5668;(EJB &#x5BB9;&#x5668;&#x3001;JSF &#x5BB9;&#x5668;) </p>
+<p>EJB &#x5BB9;&#x5668;
+ Bean &#x6A21;&#x5F0F; </p>
+<p>Local </p>
+<p>&#x5BB9;&#x5668; Bean Remote </p>
+<p>RMI </p>
+<p>Bean &#x7C7B;&#x578B;
+ &#x4F1A;&#x8BDD;(Session Bean) </p>
+<p>&#x65E0;&#x72B6;&#x6001; Bean </p>
+<p>&#x6709;&#x72B6;&#x6001; Bean &#x6301;&#x4E45;&#x5316;(Persistence Bean) </p>
+<p>Hibernate
+ &#x6D88;&#x606F;&#x9A71;&#x52A8; Bean(Java Messaging Bean) </p>
+<p>JMS
+ ActiveMQ&#x3001;Kafka </p>
+<p>DI(&#x4F9D;&#x8D56;&#x6CE8;&#x5165;) Java EE </p>
+<p>JNDI(Java Naming and Directory Interface) javax.naming.Context </p>
+<p>&#x540D;&#x79F0; </p>
+<p>EJB </p>
+<p>&#x4F9D;&#x8D56;&#x67E5;&#x627E;(Dependency Lookup) ID&#x3001;&#x522B;&#x540D;&#x3001;&#x540D;&#x79F0;&#x67E5;&#x627E; </p>
+<p>BeanFactory#getBean(String) : Object &#x7C7B;&#x578B;&#x67E5;&#x627E; </p>
+<p>BeanFactory#getBean(Class) : T &#x6CE8;&#x89E3;&#x67E5;&#x627E; </p>
+<p>ListableBeanFactory#getBeansWithAnnotation(Class) FactoryBean &#x67E5;&#x627E; </p>
+<p>FactoryBean#getObject() ObjectFactory &#x67E5;&#x627E; </p>
+<pre><code>          ObjectFactory#getObject()
+</code></pre><p>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;(Dependency Injection) &#x65B9;&#x6CD5; </p>
+<p>Spring @Autowired Java @Resource Java EE @Inject </p>
+<p>&#x9014;&#x5F84; </p>
+<pre><code>javax.naming.Context#lookup(java.lang.String)
+javax.naming.Context#lookup(javax.naming.Name)
+javax.ejb.@Ejb
+</code></pre><p>&#x5B57;&#x6BB5;(Field)&#x6CE8;&#x5165; &#x5C5E;&#x6027;(Setter)&#x6CE8;&#x5165; &#x65B9;&#x6CD5;(Method)&#x6CE8;&#x5165; &#x6784;&#x9020;&#x5668;(Constructor)&#x6CE8;&#x5165; </p>
+<h3 id="events">Events</h3>
+<p> Essentially, this is the standard Observer design pattern. </p>
+<p>&#x6838;&#x5FC3;&#x6A21;&#x5F0F;:&#x89C2;&#x5BDF;&#x6A21;&#x5F0F;
+ Spring &#x4E8B;&#x4EF6;: ApplicationEvent </p>
+<pre><code>     java.util.EventObject
+</code></pre><p>Spring &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;: ApplicationListener java.util.EventListener </p>
+<p>Spring &#x4E8B;&#x4EF6;&#x5E7F;&#x64AD;&#x5668; : ApplicationEventMulticaster SimpleApplicationEventMulticaster </p>
+<p>@Override </p>
+<pre><code>    public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType)
+{
+        ResolvableType type = (eventType != null ? eventType : resolveDefaultEventType(event));
+        for (final ApplicationListener&lt;?&gt; listener : getApplicationListeners(event, type)) {
+            Executor executor = getTaskExecutor();
+            if (executor != null) {
+                executor.execute(() -&gt; invokeListener(listener, event));
+            }
+            else {
+                invokeListener(listener, event);
+</code></pre><p>} } </p>
+<p>} </p>
+<p>Bean &#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x4E4B;&#x4E00; &#x4E8B;&#x4EF6;(&#x5305;&#x88C5;)&#x6570;&#x636E;&#x53D8;&#x5316; </p>
+<p>Resources Java &#x8D44;&#x6E90;&#x7BA1;&#x7406; </p>
+<p>URL &#x8D44;&#x6E90;&#x7BA1;&#x7406; &#x534F;&#x8BAE; </p>
+<p>&#x83B7;&#x53D6;&#x534F;&#x8BAE;: java.net.URL#getProtocol &#x534F;&#x8BAE;&#x5904;&#x7406; </p>
+<p>HTTP: sun.net.www.protocol.http.Handler FTP: sun.net.www.protocol.ftp.Handler HTTPS: sun.net.www.protocol.https.Handler File: sun.net.www.protocol.file.Handler Email: sun.net.www.protocol.emailto.Handler </p>
+<p>ClassLoader(Class Path) &#x8D44;&#x6E90;&#x7BA1;&#x7406; &#x8D44;&#x6E90; </p>
+<p>&#x83B7;&#x53D6;&#x5F53;&#x524D; ClassLoader &#x8D44;&#x6E90; URL: java.lang.ClassLoader#getResource(String)
+ &#x83B7;&#x53D6;&#x5F53;&#x524D; ClassLoader &#x6240;&#x6709;&#x8D44;&#x6E90; URL: java.lang.ClassLoader#getResources(String)
+ &#x83B7;&#x53D6;&#x5F53;&#x524D; ClassLaoder &#x8D44;&#x6E90; InputStream : java.lang.ClassLoader#getResourceAsStream(String) </p>
+<p>Spring &#x8D44;&#x6E90;&#x7BA1;&#x7406;
+ &#x8D44;&#x6E90;&#x5B9A;&#x4F4D;: classpath:/META-INF/abc.properties </p>
+<p>&#x591A;&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;: classpath*:/META-INF/abc.properties </p>
+<p>Resource &#x63A5;&#x53E3; </p>
+<p>URL &#x3001; File &#x548C; ClassLoader &#x5C01;&#x88C5;&#x5B9E;&#x73B0; &#x8BED;&#x4E49;: </p>
+<p>&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;( URL &#x3001; File ) &#x8D44;&#x6E90;&#x6D41;&#x8BFB;&#x53D6;( InputStream ) </p>
+<p>&#x5B9E;&#x73B0;&#x7C7B; </p>
+<pre><code>          ClassPathResource
+</code></pre><p>getURL() -&gt; ClassLoader#getResource(String) </p>
+<p>getInputStream() -&gt; ClassLoader#getResourceAsStream(String) &#x52A0;&#x8F7D;&#x5668; </p>
+<p>ResourceLoader
+ &#x83B7;&#x53D6; Resource : ResourceLoader#getResource(String) &#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;: DefaultResourceLoader </p>
+<p>&#x524D;&#x7F00; = &quot;classpath:&quot; -&gt; ClassPathResource </p>
+<p>&#x5426;&#x5219; -&gt; FileUrlResource &#x6216; UrlResource ProtocolResolver </p>
+<p>&#x901A;&#x8FC7;&#x8DEF;&#x5F84;&#x89E3;&#x6790;&#x51FA; Resource </p>
+<p>i18n Java i18n </p>
+<p>Java &#x6807;&#x51C6;&#x63A5;&#x53E3; ResourceBundle </p>
+<p>&lt; Java 1.6 : &#x4E71;&#x7801;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6848; native2ascci Java 1.6 ResourceBundle.Control
+ Java 1.8 ResourceBundleControlProvider </p>
+<p>Java 1.6 ServiceLoader SPI Spring MessageSource </p>
+<pre><code>     MesasgeFormat
+</code></pre><p>Hello,{0} -&gt; 0=&quot;World&quot; -&gt; Hello,World </p>
+<p>&#x5B9E;&#x73B0;&#x7C7B; </p>
+<pre><code>          ResourceBundleMessageSource
+</code></pre><p>Validation
+ Java Bean Validation (JSR-308) </p>
+<p>Spring Validator </p>
+<p>Spring Validator + Bean Validation : LocalValidatorFactoryBean </p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F; </p>
+<p>&#x6807;&#x51C6; Java Bean &#x6821;&#x9A8C; Spring MVC &#x6821;&#x9A8C; </p>
+<p>&#x534F;&#x8BAE;&#x6269;&#x5C55; </p>
+<p>Form &#x6821;&#x9A8C;&#x3001; @RequestBody &#x6821;&#x9A8C;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49; Spring Boot &#x5916;&#x90E8;&#x5316;&#x914D;&#x7F6E; </p>
+<pre><code>          @ConfigurationProperties
+</code></pre><p>Data Binding </p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F; </p>
+<p>Spring &#x81EA;&#x5B9A;&#x4E49;&#x7ED1;&#x5B9A; Spring MVC &#x53C2;&#x6570;&#x7ED1;&#x5B9A; Spring Boot &#x5916;&#x90E8;&#x5316;&#x914D;&#x7F6E; </p>
+<pre><code>          @ConfigurationProperties
+</code></pre><p>Type Conversion </p>
+<p>&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#x88C5;&#x6362; &#x81EA;&#x5B9A;&#x4E49;&#x88C5;&#x6362; </p>
+<pre><code> ConversionService
+</code></pre><p>&#x4F7F;&#x7528;&#x573A;&#x666F;
+ Spring Boot &#x5916;&#x90E8;&#x5316;&#x914D;&#x7F6E; </p>
+<pre><code>          @ConfigurationProperties
+</code></pre><p>SpEL
+ AOP
+ Spring Boot &#x5B9E;&#x9645;&#x7684;&#x573A;&#x666F; </p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x4E0D;&#x9002;&#x5408;&#x573A;&#x666F;                                  &#x591A; DataSource &#x591A; &#x4E8B;&#x52A1;                                  Reactive -&gt; RxJava &#x6216;&#x8005; Reactor  Java 8 CompletableFuture&#x3001;Java 9 Flow API Vert.x -&gt;                                  Spring Cloud &#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x5B66;                                                                                                                                                                       &#x89C6;&#x9891;&#x63A8;&#x68A6;&#x6674;QQ:3354309945 &#x5BA2;&#x670D;&#x63A8;Lily&#x5FAE;&#x4FE1;/QQ:572958662</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Spring集成日志.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Java笔记-集成日志">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"理解Spring技术栈","level":"1.22.7","depth":2,"next":{"title":"Sybase","level":"1.23","depth":1,"ref":"","articles":[{"title":"Sybase ASE培训","level":"1.23.1","depth":2,"path":"sybase/Sybase ASE培训.md","ref":"sybase/Sybase ASE培训.md","articles":[]},{"title":"SYBASE 日常维护","level":"1.23.2","depth":2,"path":"sybase/SYBASE 日常维护.md","ref":"sybase/SYBASE 日常维护.md","articles":[]}]},"previous":{"title":"Java笔记-集成日志","level":"1.22.6","depth":2,"path":"spring/Spring集成日志.md","ref":"spring/Spring集成日志.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"spring/理解Spring技术栈.md","mtime":"2019-04-08T11:43:09.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T03:04:27.118Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

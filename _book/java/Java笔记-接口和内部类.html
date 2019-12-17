@@ -1,0 +1,2240 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java笔记-接口和内部类 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Java笔记-类型信息.html" />
+    
+    
+    <link rel="prev" href="Java笔记-并发.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Action
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../action/权限管理的副本.html">
+            
+                <a href="../action/权限管理的副本.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../action/电商实战.html">
+            
+                <a href="../action/电商实战.html">
+            
+                    
+                    电商实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../action/电商实战2.html">
+            
+                <a href="../action/电商实战2.html">
+            
+                    
+                    电商实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../action/电商实战的副本.html">
+            
+                <a href="../action/电商实战的副本.html">
+            
+                    
+                    电商实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Activiti
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../activiti/Activiti实战.html">
+            
+                <a href="../activiti/Activiti实战.html">
+            
+                    
+                    Activiti实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../activiti/Activiti实战的副本.html">
+            
+                <a href="../activiti/Activiti实战的副本.html">
+            
+                    
+                    Activiti实战的副本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Books
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../books/Java基础学习过程[转].html">
+            
+                <a href="../books/Java基础学习过程[转].html">
+            
+                    
+                    Java基础学习过程[转]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../books/java进阶（空格分隔）： 学习.html">
+            
+                <a href="../books/java进阶（空格分隔）： 学习.html">
+            
+                    
+                    java进阶（空格分隔）： 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../books/读书笔记.html">
+            
+                <a href="../books/读书笔记.html">
+            
+                    
+                    读书笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../database/mybatis-plus.html">
+            
+                <a href="../database/mybatis-plus.html">
+            
+                    
+                    Mybatis Plus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../database/mysql.html">
+            
+                <a href="../database/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../database/PageHelper的使用和原理.html">
+            
+                <a href="../database/PageHelper的使用和原理.html">
+            
+                    
+                    PageHelper的使用和原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Designpattern
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../designpattern/单件模式.html">
+            
+                <a href="../designpattern/单件模式.html">
+            
+                    
+                    单件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../designpattern/命令模式.html">
+            
+                <a href="../designpattern/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../designpattern/工厂模式.html">
+            
+                <a href="../designpattern/工厂模式.html">
+            
+                    
+                    工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../designpattern/策略模式.html">
+            
+                <a href="../designpattern/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../designpattern/装饰者模式.html">
+            
+                <a href="../designpattern/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../designpattern/观察者模式.html">
+            
+                <a href="../designpattern/观察者模式.html">
+            
+                    
+                    观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../designpattern/适配器模式与外观模式.html">
+            
+                <a href="../designpattern/适配器模式与外观模式.html">
+            
+                    
+                    适配器模式与外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Devops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../devops/DevOps简介.md">
+            
+                <span>
+            
+                    
+                    DevOps简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../devops/持续集成是什么.html">
+            
+                <a href="../devops/持续集成是什么.html">
+            
+                    
+                    持续集成是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../docker/docker and k8s.html">
+            
+                <a href="../docker/docker and k8s.html">
+            
+                    
+                    Docker And k8s 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../docker/Docker基础.html">
+            
+                <a href="../docker/Docker基础.html">
+            
+                    
+                    Docker基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../docker/images.html">
+            
+                <a href="../docker/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../docker/容器技术与Docker简介.html">
+            
+                <a href="../docker/容器技术与Docker简介.html">
+            
+                    
+                    容器技术与Docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Dubbo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../dubbo/Untitled.html">
+            
+                <a href="../dubbo/Untitled.html">
+            
+                    
+                    Untitled
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../hadoop/hadoop笔记(一）.html">
+            
+                <a href="../hadoop/hadoop笔记(一）.html">
+            
+                    
+                    hadoop笔记(一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="Java Concurrency in Practice.html">
+            
+                <a href="Java Concurrency in Practice.html">
+            
+                    
+                    Java Concurrency In Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="Java日志记录总结.html">
+            
+                <a href="Java日志记录总结.html">
+            
+                    
+                    Java日志记录总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="Java笔记-Java IO系统.html">
+            
+                <a href="Java笔记-Java IO系统.html">
+            
+                    
+                    Java笔记-Java I/O系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="Java笔记-初始化与清理.html">
+            
+                <a href="Java笔记-初始化与清理.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="Java笔记-多态.html">
+            
+                <a href="Java笔记-多态.html">
+            
+                    
+                    Java笔记-多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="Java笔记-并发.html">
+            
+                <a href="Java笔记-并发.html">
+            
+                    
+                    Java笔记-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.7" data-path="Java笔记-接口和内部类.html">
+            
+                <a href="Java笔记-接口和内部类.html">
+            
+                    
+                    Java笔记-接口和内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="Java笔记-类型信息.html">
+            
+                <a href="Java笔记-类型信息.html">
+            
+                    
+                    Java笔记-类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="Java笔记-访问控制权限和复用类.html">
+            
+                <a href="Java笔记-访问控制权限和复用类.html">
+            
+                    
+                    Java笔记-访问控制权限和复用类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="剑指offer.html">
+            
+                <a href="剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../linux/.~VMBox桥接网络设置.html">
+            
+                <a href="../linux/.~VMBox桥接网络设置.html">
+            
+                    
+                    .~VMBox桥接网络设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../linux/Linux常用软件安装.html">
+            
+                <a href="../linux/Linux常用软件安装.html">
+            
+                    
+                    Linux常用软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../linux/LINUX磁盘与文件系统管理.html">
+            
+                <a href="../linux/LINUX磁盘与文件系统管理.html">
+            
+                    
+                    LINUX磁盘与文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../linux/linux防火墙关闭.html">
+            
+                <a href="../linux/linux防火墙关闭.html">
+            
+                    
+                    linux防火墙关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../linux/RedHat中安装EPEL.html">
+            
+                <a href="../linux/RedHat中安装EPEL.html">
+            
+                    
+                    RedHat中安装EPEL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../linux/RedHat配置网络yum源.html">
+            
+                <a href="../linux/RedHat配置网络yum源.html">
+            
+                    
+                    RedHat配置网络yum源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                <a href="../linux/VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题.html">
+            
+                    
+                    VMware中RedHat设置静态IP,解决克隆后网卡启动失败问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../linux/vsftp配置.html">
+            
+                <a href="../linux/vsftp配置.html">
+            
+                    
+                    vsftp配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../linux/网络配置.html">
+            
+                <a href="../linux/网络配置.html">
+            
+                    
+                    网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../linux/进程管理.html">
+            
+                <a href="../linux/进程管理.html">
+            
+                    
+                    进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Maven
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../maven/Maven实战笔记.html">
+            
+                <a href="../maven/Maven实战笔记.html">
+            
+                    
+                    Maven实战笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Mongodb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../mongodb/Centos7.x下mongodb安装.html">
+            
+                <a href="../mongodb/Centos7.x下mongodb安装.html">
+            
+                    
+                    Centos7.x下mongodb安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Moosefs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../moosefs/moosefs总结.html">
+            
+                <a href="../moosefs/moosefs总结.html">
+            
+                    
+                    moosefs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Mq
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../mq/RabbitMQ.html">
+            
+                <a href="../mq/RabbitMQ.html">
+            
+                    
+                    Rabbit MQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Netty
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../netty/Netty源码解析.html">
+            
+                <a href="../netty/Netty源码解析.html">
+            
+                    
+                    Netty源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../nginx/Nginx实战.html">
+            
+                <a href="../nginx/Nginx实战.html">
+            
+                    
+                    Nginx实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    Nodejs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../nodejs/前端面试题.html">
+            
+                <a href="../nodejs/前端面试题.html">
+            
+                    
+                    前端面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../nodejs/常用正则表达式.html">
+            
+                <a href="../nodejs/常用正则表达式.html">
+            
+                    
+                    Java笔记-初始化与清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../nodejs/电商前端.html">
+            
+                <a href="../nodejs/电商前端.html">
+            
+                    
+                    电商前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../python/Python基础学习.html">
+            
+                <a href="../python/Python基础学习.html">
+            
+                    
+                    Python基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../redis/redis action.html">
+            
+                <a href="../redis/redis action.html">
+            
+                    
+                    Redis Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../redis/Redis Cluster 安装.html">
+            
+                <a href="../redis/Redis Cluster 安装.html">
+            
+                    
+                    Redis Cluster 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../redis/redis主从切换的集群管理.html">
+            
+                <a href="../redis/redis主从切换的集群管理.html">
+            
+                    
+                    redis主从切换的集群管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                <a href="../spring/eclipse搭建Spring MVC 开发环境.html">
+            
+                    
+                    eclipse搭建Spring MVC 开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../spring/Spring boot实践.html">
+            
+                <a href="../spring/Spring boot实践.html">
+            
+                    
+                    Spring boot实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../spring/Spring Cloud.html">
+            
+                <a href="../spring/Spring Cloud.html">
+            
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="../spring/Spring Security 实战.html">
+            
+                <a href="../spring/Spring Security 实战.html">
+            
+                    
+                    Spring Security 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="../spring/Spring 揭秘.html">
+            
+                <a href="../spring/Spring 揭秘.html">
+            
+                    
+                    Spring 揭秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="../spring/Spring集成日志.html">
+            
+                <a href="../spring/Spring集成日志.html">
+            
+                    
+                    Java笔记-集成日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.7" data-path="../spring/理解Spring技术栈.html">
+            
+                <a href="../spring/理解Spring技术栈.html">
+            
+                    
+                    理解Spring技术栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" >
+            
+                <span>
+            
+                    
+                    Sybase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../sybase/Sybase ASE培训.html">
+            
+                <a href="../sybase/Sybase ASE培训.html">
+            
+                    
+                    Sybase ASE培训
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../sybase/SYBASE 日常维护.html">
+            
+                <a href="../sybase/SYBASE 日常维护.html">
+            
+                    
+                    SYBASE 日常维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" >
+            
+                <span>
+            
+                    
+                    Test
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../test/性能测试.html">
+            
+                <a href="../test/性能测试.html">
+            
+                    
+                    性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" >
+            
+                <span>
+            
+                    
+                    Tools
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                <a href="../tools/Github进行fork后如何与原仓库同步.html">
+            
+                    
+                    Github进行fork后如何与原仓库同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../tools/GIT常用操作.html">
+            
+                <a href="../tools/GIT常用操作.html">
+            
+                    
+                    GIT常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../tools/Intellij IDEA 常用快捷键.html">
+            
+                <a href="../tools/Intellij IDEA 常用快捷键.html">
+            
+                    
+                    Intellij IDEA 常用快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                <a href="../tools/NAVICAT 12.0.26 mac 激活.html">
+            
+                    
+                    NAVICAT 12.0.26 mac 激活
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../tools/Redis故障排查.html">
+            
+                <a href="../tools/Redis故障排查.html">
+            
+                    
+                    Redis故障排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../tools/vpn搭建.html">
+            
+                <a href="../tools/vpn搭建.html">
+            
+                    
+                    vpn搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.7" data-path="../tools/转售物联网交流.html">
+            
+                <a href="../tools/转售物联网交流.html">
+            
+                    
+                    转售物联网交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <span>
+            
+                    
+                    Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../work/会议记录20190515.html">
+            
+                <a href="../work/会议记录20190515.html">
+            
+                    
+                    会议记录20190515
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../work/可研会议记录.html">
+            
+                <a href="../work/可研会议记录.html">
+            
+                    
+                    可研会议记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.3" data-path="../work/审计相关问题.html">
+            
+                <a href="../work/审计相关问题.html">
+            
+                    
+                    审计相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.4" data-path="../work/工程项目培训与交流.html">
+            
+                <a href="../work/工程项目培训与交流.html">
+            
+                    
+                    工程项目培训与交流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.5" data-path="../work/转售4G.html">
+            
+                <a href="../work/转售4G.html">
+            
+                    
+                    转售4G
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Java笔记-接口和内部类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="java&#x7B14;&#x8BB0;-&#x63A5;&#x53E3;&#x548C;&#x5185;&#x90E8;&#x7C7B;">Java&#x7B14;&#x8BB0;-&#x63A5;&#x53E3;&#x548C;&#x5185;&#x90E8;&#x7C7B;</h2>
+<p>&#x63A5;&#x53E3;&#x548C;&#x5185;&#x90E8;&#x7C7B;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5C06;&#x63A5;&#x53E3;&#x4E0E;&#x5B9E;&#x73B0;&#x5206;&#x79BB;&#x7684;&#x66F4;&#x52A0;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="&#x62BD;&#x8C61;&#x7C7B;&#x548C;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;">&#x62BD;&#x8C61;&#x7C7B;&#x548C;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</h3>
+<p>Java&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53EB;&#x505A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x65F6;&#x4E0D;&#x5B8C;&#x6574;&#x7684;&#xFF0C;&#x4EC5;&#x6709;&#x58F0;&#x660E;&#x800C;&#x6CA1;&#x6709;&#x65B9;&#x6CD5;&#x4F53;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span>;
+</code></pre>
+<p>&#x5305;&#x542B;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x53EB;&#x505A;&#x62BD;&#x8C61;&#x7C7B;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7C7B;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x7C7B;&#x5FC5;&#x987B;&#x88AB;&#x9650;&#x5B9A;&#x4E3A;&#x62BD;&#x8C61;&#x7684;&#x3002;&#x4E0D;&#x80FD;&#x751F;&#x6210;&#x62BD;&#x8C61;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="&#x63A5;&#x53E3;">&#x63A5;&#x53E3;</h3>
+<p>interface&#x5173;&#x952E;&#x5B57;&#x4F7F;&#x62BD;&#x8C61;&#x7684;&#x6982;&#x5FF5;&#x66F4;&#x5411;&#x524D;&#x8FC8;&#x8FDB;&#x4E86;&#x4E00;&#x6B65;&#x3002;&#x63A5;&#x53E3;&#x88AB;&#x7528;&#x6765;&#x5EFA;&#x7ACB;&#x7C7B;&#x4E0E;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x534F;&#x8BAE;&#x3002;&#x63A5;&#x53E3;&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x57DF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x57DF;&#x9690;&#x5F0F;&#x5730;&#x662F;static&#x548C;final&#x7684;&#x3002;</p>
+<h3 id="&#x5B8C;&#x5168;&#x89E3;&#x8026;">&#x5B8C;&#x5168;&#x89E3;&#x8026;</h3>
+<h4 id="&#x7B56;&#x7565;&#x6A21;&#x5F0F;">&#x7B56;&#x7565;&#x6A21;&#x5F0F;</h4>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x6839;&#x636E;&#x6240;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x4E0D;&#x540C;&#x800C;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x884C;&#x4E3A;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x7B56;&#x7565;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</strong>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Processor</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">name</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> getClass().getSimpleName();
+  }
+  <span class="hljs-function">Object <span class="hljs-title">process</span><span class="hljs-params">(Object input)</span> </span>{ <span class="hljs-keyword">return</span> input; }
+}    
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Upcase</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Processor</span> </span>{
+  <span class="hljs-function">String <span class="hljs-title">process</span><span class="hljs-params">(Object input)</span> </span>{ <span class="hljs-comment">// Covariant return</span>
+    <span class="hljs-keyword">return</span> ((String)input).toUpperCase();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Downcase</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Processor</span> </span>{
+  <span class="hljs-function">String <span class="hljs-title">process</span><span class="hljs-params">(Object input)</span> </span>{
+    <span class="hljs-keyword">return</span> ((String)input).toLowerCase();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Splitter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Processor</span> </span>{
+  <span class="hljs-function">String <span class="hljs-title">process</span><span class="hljs-params">(Object input)</span> </span>{
+    <span class="hljs-comment">// The split() argument divides a String into pieces:</span>
+    <span class="hljs-keyword">return</span> Arrays.toString(((String)input).split(<span class="hljs-string">&quot; &quot;</span>));
+  }
+}    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Apply</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(Processor p, Object s)</span> </span>{
+    print(<span class="hljs-string">&quot;Using Processor &quot;</span> + p.name());
+    print(p.process(s));
+  }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String s =
+    <span class="hljs-string">&quot;Disagreement with beliefs is by definition incorrect&quot;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    process(<span class="hljs-keyword">new</span> Upcase(), s);
+    process(<span class="hljs-keyword">new</span> Downcase(), s);
+    process(<span class="hljs-keyword">new</span> Splitter(), s);
+  }
+} <span class="hljs-comment">/* Output:
+Using Processor Upcase
+DISAGREEMENT WITH BELIEFS IS BY DEFINITION INCORRECT
+Using Processor Downcase
+disagreement with beliefs is by definition incorrect
+Using Processor Splitter
+[Disagreement, with, beliefs, is, by, definition, incorrect]
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x7B56;&#x7565;&#x6A21;&#x5F0F;">&#x7B56;&#x7565;&#x6A21;&#x5F0F;</h4>
+<p>&#x7C7B;&#x5E93;&#x662F;&#x88AB;&#x53D1;&#x73B0;&#x800C;&#x975E;&#x88AB;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;</strong>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FilterAdapter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Processor</span> </span>{
+  Filter filter;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FilterAdapter</span><span class="hljs-params">(Filter filter)</span> </span>{
+    <span class="hljs-keyword">this</span>.filter = filter;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">name</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> filter.name(); }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Waveform <span class="hljs-title">process</span><span class="hljs-params">(Object input)</span> </span>{
+    <span class="hljs-keyword">return</span> filter.process((Waveform)input);
+  }
+}    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FilterProcessor</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    Waveform w = <span class="hljs-keyword">new</span> Waveform();
+    Apply.process(<span class="hljs-keyword">new</span> FilterAdapter(<span class="hljs-keyword">new</span> LowPass(<span class="hljs-number">1.0</span>)), w);
+    Apply.process(<span class="hljs-keyword">new</span> FilterAdapter(<span class="hljs-keyword">new</span> HighPass(<span class="hljs-number">2.0</span>)), w);
+    Apply.process(
+      <span class="hljs-keyword">new</span> FilterAdapter(<span class="hljs-keyword">new</span> BandPass(<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>)), w);
+  }
+} <span class="hljs-comment">/* Output:
+Using Processor LowPass
+Waveform 0
+Using Processor HighPass
+Waveform 0
+Using Processor BandPass
+Waveform 0
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<h4 id="&#x63A5;&#x53E3;&#x4E0E;&#x5DE5;&#x5382;&#xFF08;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF09;">&#x63A5;&#x53E3;&#x4E0E;&#x5DE5;&#x5382;&#xFF08;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF09;</h4>
+<p>&#x4E0E;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x6784;&#x9020;&#x5668;&#x4E0D;&#x540C;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;&#x521B;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#x5C06;&#x751F;&#x4EA7;&#x63A5;&#x53E3;&#x7684;&#x67D0;&#x4E2A;&#x5B9E;&#x73B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Service</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span></span>;
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ServiceFactory</span> </span>{
+  <span class="hljs-function">Service <span class="hljs-title">getService</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Service</span> </span>{
+  Implementation1() {} <span class="hljs-comment">// Package access</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation1 method1&quot;</span>);}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation1 method2&quot;</span>);}
+}    
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation1Factory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ServiceFactory</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Service <span class="hljs-title">getService</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Implementation1();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Service</span> </span>{
+  Implementation2() {} <span class="hljs-comment">// Package access</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation2 method1&quot;</span>);}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation2 method2&quot;</span>);}
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation2Factory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ServiceFactory</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Service <span class="hljs-title">getService</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Implementation2();
+  }
+}    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Factories</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">serviceConsumer</span><span class="hljs-params">(ServiceFactory fact)</span> </span>{
+    Service s = fact.getService();
+    s.method1();
+    s.method2();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    serviceConsumer(<span class="hljs-keyword">new</span> Implementation1Factory());
+    <span class="hljs-comment">// Implementations are completely interchangeable:</span>
+    serviceConsumer(<span class="hljs-keyword">new</span> Implementation2Factory());
+  }
+} <span class="hljs-comment">/* Output:
+Implementation1 method1
+Implementation1 method2
+Implementation2 method1
+Implementation2 method2
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x4EFB;&#x4F55;&#x62BD;&#x8C61;&#x6027;&#x90FD;&#x5E94;&#x8BE5;&#x662F;&#x5E94;&#x771F;&#x6B63;&#x7684;&#x9700;&#x6C42;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x3002;&#x6070;&#x5F53;&#x7684;&#x539F;&#x5219;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x9650;&#x9009;&#x62E9;&#x7C7B;&#x800C;&#x4E0D;&#x662F;&#x63A5;&#x53E3;&#x3002;&#x4ECE;&#x7C7B;&#x5F00;&#x59CB;&#xFF0C;&#x5982;&#x679C;&#x63A5;&#x53E3;&#x7684;&#x5FC5;&#x9700;&#x6027;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x660E;&#x786E;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8FDB;&#x884C;&#x91CD;&#x6784;&#x3002;</p>
+<h3 id="&#x5185;&#x90E8;&#x7C7B;">&#x5185;&#x90E8;&#x7C7B;</h3>
+<p>&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x653E;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x5185;&#x90E8;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5185;&#x90E8;&#x7C7B;&#x3002;&#x5185;&#x90E8;&#x7C7B;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5141;&#x8BB8;&#x4F60;&#x628A;&#x4E00;&#x4E9B;&#x903B;&#x8F91;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x7EC4;&#x7EC7;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5E76;&#x63A7;&#x5236;&#x4F4D;&#x4E8E;&#x5185;&#x90E8;&#x7684;&#x7C7B;&#x7684;&#x53EF;&#x89C6;&#x6027;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parcel2</span> </span>{
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Contents</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">11</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">value</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> i; }
+  }
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Destination</span> </span>{
+    <span class="hljs-keyword">private</span> String label;
+    Destination(String whereTo) {
+      label = whereTo;
+    }
+    <span class="hljs-function">String <span class="hljs-title">readLabel</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> label; }
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Destination <span class="hljs-title">to</span><span class="hljs-params">(String s)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Destination(s);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Contents <span class="hljs-title">contents</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Contents();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ship</span><span class="hljs-params">(String dest)</span> </span>{
+    Contents c = contents();
+    Destination d = to(dest);
+    System.out.println(d.readLabel());
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    Parcel2 p = <span class="hljs-keyword">new</span> Parcel2();
+    p.ship(<span class="hljs-string">&quot;Tasmania&quot;</span>);
+    Parcel2 q = <span class="hljs-keyword">new</span> Parcel2();
+    <span class="hljs-comment">// Defining references to inner classes:</span>
+    Parcel2.Contents c = q.contents();
+    Parcel2.Destination d = q.to(<span class="hljs-string">&quot;Borneo&quot;</span>);
+  }
+} <span class="hljs-comment">/* Output:
+Tasmania
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60F3;&#x4ECE;&#x5916;&#x90E8;&#x7C7B;&#x7684;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E4B;&#x5916;&#x7684;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x521B;&#x5EFA;&#x67D0;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x50CF;&#x5728;main()&#x65B9;&#x6CD5;&#x4E2D;&#x90A3;&#x6837;&#xFF0C;&#x5177;&#x4F53;&#x6307;&#x7684;&#x6307;&#x660E;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#xFF1A;OuterClassName.InnerClassName&#x3002;</p>
+<h4 id="&#x94FE;&#x63A5;&#x5230;&#x5916;&#x90E8;&#x7C7B;">&#x94FE;&#x63A5;&#x5230;&#x5916;&#x90E8;&#x7C7B;</h4>
+<p>&#x5F53;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x6B64;&#x5BF9;&#x8C61;&#x4E0E;&#x5236;&#x9020;&#x5B83;&#x7684;&#x5916;&#x56F4;&#x5BF9;&#x8C61;&#xFF08;enclosing object&#xFF09;&#x4E4B;&#x95F4;&#x5C31;&#x6709;&#x4E86;&#x4E00;&#x79CD;&#x8054;&#x7CFB;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x80FD;&#x8BBF;&#x95EE;&#x5176;&#x4ED6;&#x5916;&#x56F4;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#xFF0C;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x7279;&#x6B8A;&#x6761;&#x4EF6;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5185;&#x90E8;&#x7C7B;&#x8FD8;&#x62E5;&#x6709;&#x5176;&#x5916;&#x56F4;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x3002;</p>
+<h5 id="&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;">&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;</h5>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Selector</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>;
+  <span class="hljs-function">Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>;
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;
+}    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sequence</span> </span>{
+  <span class="hljs-keyword">private</span> Object[] items;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> next = <span class="hljs-number">0</span>;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sequence</span><span class="hljs-params">(<span class="hljs-keyword">int</span> size)</span> </span>{ items = <span class="hljs-keyword">new</span> Object[size]; }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Object x)</span> </span>{
+    <span class="hljs-keyword">if</span>(next &lt; items.length)
+      items[next++] = x;
+  }
+  <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceSelector</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Selector</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> i == items.length; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">current</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> items[i]; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">if</span>(i &lt; items.length) i++; }
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Selector <span class="hljs-title">selector</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SequenceSelector();
+  }    
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    Sequence sequence = <span class="hljs-keyword">new</span> Sequence(<span class="hljs-number">10</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+      sequence.add(Integer.toString(i));
+    Selector selector = sequence.selector();
+    <span class="hljs-keyword">while</span>(!selector.end()) {
+      System.out.print(selector.current() + <span class="hljs-string">&quot; &quot;</span>);
+      selector.next();
+    }
+  }
+} <span class="hljs-comment">/* Output:
+0 1 2 3 4 5 6 7 8 9
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x5B9E;&#x73B0;&#x4E86;Selector&#x63A5;&#x53E3;&#x3002;&#x5185;&#x90E8;&#x7C7B;&#x81EA;&#x52A8;&#x62E5;&#x6709;&#x5BF9;&#x5176;&#x5916;&#x56F4;&#x7C7B;&#x6240;&#x6709;&#x6210;&#x5458;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x3002;&#x5F53;&#x67D0;&#x4E2A;&#x5916;&#x56F4;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x6B21;&#x5185;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x5FC5;&#x5B9A;&#x4F1A;&#x79D8;&#x5BC6;&#x5730;&#x8865;&#x8D27;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x90A3;&#x4E2A;&#x5916;&#x56F4;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5185;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x5728;&#x4E0E;&#x5176;&#x5916;&#x56F4;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x8054;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x80FD;&#x88AB;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x751F;&#x6210;&#x5BF9;&#x5916;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x7C7B;&#x7684;&#x540D;&#x5B57;&#x540E;&#x9762;&#x7D27;&#x8DDF;&#x5706;&#x70B9;&#x548C;this&#x3002;</p>
+<h4 id="&#x65B9;&#x6CD5;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;">&#x65B9;&#x6CD5;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x5185;&#x90E8;&#x7C7B;&amp;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;</h4>
+<p>&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x4E0E;&#x6B63;&#x89C4;&#x7684;&#x7EE7;&#x627F;&#x76F8;&#x6BD4;&#x6709;&#x4E9B;&#x53D7;&#x9650;&#xFF0C;&#x56E0;&#x4E3A;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x65E2;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x7C7B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x4E24;&#x8005;&#x517C;&#x5907;&#x3002;&#x800C;&#x4E14;&#x5982;&#x679C;&#x662F;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x53EA;&#x80FD;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#x7684;&#x5B9E;&#x73B0;&#x4E0D;&#x662F;&#x6307;implements&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4F20;&#x5165;&#x53D8;&#x91CF;&#x5E76;&#x9700;&#x662F;final&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E86;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parcel10</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Destination
+  <span class="hljs-title">destination</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String dest, <span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> price)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Destination() {
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> cost;
+      <span class="hljs-comment">// Instance initialization for each object:</span>
+      {
+        cost = Math.round(price);
+        <span class="hljs-keyword">if</span>(cost &gt; <span class="hljs-number">100</span>)
+          System.out.println(<span class="hljs-string">&quot;Over budget!&quot;</span>);
+      }
+      <span class="hljs-keyword">private</span> String label = dest;
+      <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">readLabel</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> label; }
+    };
+  }    
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    Parcel10 p = <span class="hljs-keyword">new</span> Parcel10();
+    Destination d = p.destination(<span class="hljs-string">&quot;Tasmania&quot;</span>, <span class="hljs-number">101.395F</span>);
+  }
+} <span class="hljs-comment">/* Output:
+Over budget!
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x5229;&#x7528;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x6539;&#x9020;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Service</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span></span>;
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ServiceFactory</span> </span>{
+  <span class="hljs-function">Service <span class="hljs-title">getService</span><span class="hljs-params">()</span></span>;
+}    
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Service</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Implementation1</span><span class="hljs-params">()</span> </span>{}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation1 method1&quot;</span>);}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation1 method2&quot;</span>);}
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ServiceFactory factory =
+    <span class="hljs-keyword">new</span> ServiceFactory() {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Service <span class="hljs-title">getService</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Implementation1();
+      }
+    };
+}    
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Implementation2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Service</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Implementation2</span><span class="hljs-params">()</span> </span>{}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation2 method1&quot;</span>);}
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>{print(<span class="hljs-string">&quot;Implementation2 method2&quot;</span>);}
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ServiceFactory factory =
+    <span class="hljs-keyword">new</span> ServiceFactory() {
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Service <span class="hljs-title">getService</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Implementation2();
+      }
+    };
+}    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Factories</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">serviceConsumer</span><span class="hljs-params">(ServiceFactory fact)</span> </span>{
+    Service s = fact.getService();
+    s.method1();
+    s.method2();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    serviceConsumer(Implementation1.factory);
+    <span class="hljs-comment">// Implementations are completely interchangeable:</span>
+    serviceConsumer(Implementation2.factory);
+  }
+} <span class="hljs-comment">/* Output:
+Implementation1 method1
+Implementation1 method2
+Implementation2 method1
+Implementation2 method2
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#x7528;&#x4E8E;Implementation&#x7684;&#x6784;&#x9020;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x662F;private&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x53BB;&#x521B;&#x5EFA;&#x4F5C;&#x4E3A;&#x5DE5;&#x5382;&#x7684;&#x5177;&#x540D;&#x7C7B;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5355;&#x4E00;&#x7684;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;factory&#x5B9A;&#x4E49;&#x4E3A;static&#x57DF;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x6CD5;&#x4E5F;&#x66F4;&#x5177;&#x6709;&#x5B9E;&#x9645;&#x610F;&#x4E49;&#x3002;</p>
+<h4 id="&#x5D4C;&#x5957;&#x7C7B;">&#x5D4C;&#x5957;&#x7C7B;</h4>
+<p>&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x5185;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x4E0E;&#x5176;&#x5916;&#x90E8;&#x7C7B;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x6709;&#x8054;&#x7CFB;&#xFF0C;name&#x53EF;&#x4EE5;&#x8BB2;&#x5185;&#x90E8;&#x7C7B;&#x58F0;&#x660E;&#x4E3A;static&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x79F0;&#x4E3A;&#x5D4C;&#x5957;&#x7C7B;&#x3002;</p>
+<ol>
+<li>&#x8981;&#x521B;&#x5EFA;&#x5D4C;&#x5957;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5176;&#x5916;&#x56F4;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x4E0D;&#x80FD;&#x4ECE;&#x5D4C;&#x5957;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#x8BBF;&#x95EE;&#x975E;&#x9759;&#x6001;&#x7684;&#x5916;&#x56F4;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestBed</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{ System.out.println(<span class="hljs-string">&quot;f()&quot;</span>); }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tester</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+      TestBed t = <span class="hljs-keyword">new</span> TestBed();
+      t.f();
+    }
+  }
+} <span class="hljs-comment">/* Output:
+f()
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+<p>&#x8FD9;&#x7C7B;&#x6D4B;&#x8BD5;&#x5D4C;&#x5957;&#x7C7B;&#xFF0C;&#x5C06;&#x4EA7;&#x54C1;&#x6253;&#x5305;&#x65F6;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x5220;&#x9664;TestBed$Tester.class</p>
+<h4 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x5185;&#x90E8;&#x7C7B;">&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x5185;&#x90E8;&#x7C7B;</h4>
+<p>&#x5185;&#x90E8;&#x7C7B;&#x7EE7;&#x627F;&#x67D0;&#x4E2A;&#x7C7B;&#x6216;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5185;&#x90E8;&#x7C7B;&#x7684;&#x4EE3;&#x7801;&#x64CD;&#x4F5C;&#x521B;&#x5EFA;&#x5B83;&#x7684;&#x5916;&#x56F4;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x5185;&#x90E8;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x67D0;&#x79CD;&#x8FDB;&#x5165;&#x5176;&#x5916;&#x56F4;&#x7C7B;&#x7684;&#x7A97;&#x53E3;&#x3002;</p>
+<p>&#x5185;&#x90E8;&#x7C7B;&#x6700;&#x5438;&#x5F15;&#x4EBA;&#x7684;&#x539F;&#x56E0;&#xFF1A;&#x6BCF;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#x90FD;&#x80FD;&#x72EC;&#x7ACB;&#x7684;&#x7EE7;&#x627F;&#x81EA;&#x4E00;&#x4E2A;&#xFF08;&#x63A5;&#x53E3;&#x7684;&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x8BBA;&#x5916;&#x56F4;&#x7C7B;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x7EE7;&#x627F;&#x4E86;&#x67D0;&#x4E2A;&#xFF08;&#x63A5;&#x53E3;&#x7684;&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x5BF9;&#x4E8E;&#x5185;&#x90E8;&#x7C7B;&#x90FD;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x5185;&#x90E8;&#x7C7B;&#x4F7F;&#x5F97;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x53D8;&#x5F97;&#x5B8C;&#x6574;&#x3002;</p>
+<h4 id="&#x5185;&#x90E8;&#x7C7B;&#x4E0E;&#x63A7;&#x5236;&#x6846;&#x67B6;">&#x5185;&#x90E8;&#x7C7B;&#x4E0E;&#x63A7;&#x5236;&#x6846;&#x67B6;</h4>
+<p>&#x6B64;&#x4F8B;&#x5B50;&#x4E2D;&#x5E94;&#x7528;&#x5230;&#x4E86;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x548C;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#x3002;&#x63A7;&#x5236;&#x6846;&#x67B6;&#x5F0F;&#x4E00;&#x7C7B;&#x7279;&#x6B8A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x89E3;&#x51B3;&#x54CD;&#x5E94;&#x4E8B;&#x4EF6;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x7684;&#x7CFB;&#x7EDF;&#x4E58;&#x5750;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x4E8B;&#x4EF6;&#x7C7B;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Event</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> eventTime;
+  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> delayTime;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Event</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{
+    <span class="hljs-keyword">this</span>.delayTime = delayTime;
+    start();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">// Allows restarting</span>
+    eventTime = System.nanoTime() + delayTime;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">ready</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> System.nanoTime() &gt;= eventTime;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span></span>;
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Controller</span> </span>{
+  <span class="hljs-comment">// A class from java.util to hold Event objects:</span>
+  <span class="hljs-keyword">private</span> List&lt;Event&gt; eventList = <span class="hljs-keyword">new</span> ArrayList&lt;Event&gt;();
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addEvent</span><span class="hljs-params">(Event c)</span> </span>{ eventList.add(c); }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">while</span>(eventList.size() &gt; <span class="hljs-number">0</span>)
+      <span class="hljs-comment">// Make a copy so you&apos;re not modifying the list</span>
+      <span class="hljs-comment">// while you&apos;re selecting the elements in it:</span>
+      <span class="hljs-keyword">for</span>(Event e : <span class="hljs-keyword">new</span> ArrayList&lt;Event&gt;(eventList))
+        <span class="hljs-keyword">if</span>(e.ready()) {
+          System.out.println(e);
+          e.action();
+          eventList.remove(e);
+        }
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<p>&#x5728;&#x76EE;&#x524D;&#x7684;&#x8BBE;&#x8BA1;&#x4E2D;&#x6D77;&#x4E0D;&#x77E5;&#x9053;Event&#x5230;&#x5E95;&#x5728;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x8FD9;&#x662F;&#x6B21;&#x8BBE;&#x8BA1;&#x7684;&#x5173;&#x952E;&#x6240;&#x5728;&#xFF0C;&#x4F7F;&#x53D8;&#x5316;&#x7684;&#x4E8B;&#x7269;&#x4E0E;&#x4E0D;&#x53D8;&#x7684;&#x4E8B;&#x7269;&#x76F8;&#x5206;&#x79BB;&#x3002;</p>
+<p>&#x6E29;&#x5BA4;&#x63A7;&#x5236;&#x5BA4;&#x7684;&#x8FD0;&#x4F5C;&#xFF0C;&#x8FD9;&#x91CC;Bell&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;event&#xFF0C;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GreenhouseControls</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> light = <span class="hljs-keyword">false</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightOn</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LightOn</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// Put hardware control code here to</span>
+      <span class="hljs-comment">// physically turn on the light.</span>
+      light = <span class="hljs-keyword">true</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Light is on&quot;</span>; }
+  }    
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LightOff</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LightOff</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// Put hardware control code here to</span>
+      <span class="hljs-comment">// physically turn off the light.</span>
+      light = <span class="hljs-keyword">false</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Light is off&quot;</span>; }
+  }
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> water = <span class="hljs-keyword">false</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WaterOn</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WaterOn</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// Put hardware control code here.</span>
+      water = <span class="hljs-keyword">true</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Greenhouse water is on&quot;</span>;
+    }
+  }    
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WaterOff</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WaterOff</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// Put hardware control code here.</span>
+      water = <span class="hljs-keyword">false</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Greenhouse water is off&quot;</span>;
+    }
+  }
+
+  <span class="hljs-comment">// An example of an action() that inserts a</span>
+  <span class="hljs-comment">// new one of itself into the event list:</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bell</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Bell</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      addEvent(<span class="hljs-keyword">new</span> Bell(delayTime));
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Bing!&quot;</span>; }
+  }    
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Restart</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-keyword">private</span> Event[] eventList;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Restart</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime, Event[] eventList)</span> </span>{
+      <span class="hljs-keyword">super</span>(delayTime);
+      <span class="hljs-keyword">this</span>.eventList = eventList;
+      <span class="hljs-keyword">for</span>(Event e : eventList)
+        addEvent(e);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">for</span>(Event e : eventList) {
+        e.start(); <span class="hljs-comment">// Rerun each event</span>
+        addEvent(e);
+      }
+      start(); <span class="hljs-comment">// Rerun this Event</span>
+      addEvent(<span class="hljs-keyword">this</span>);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Restarting system&quot;</span>;
+    }
+  }    
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Terminate</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Terminate</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delayTime)</span> </span>{ <span class="hljs-keyword">super</span>(delayTime); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{ System.exit(<span class="hljs-number">0</span>); }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Terminating&quot;</span>;  }
+  }
+} <span class="hljs-comment">///:~</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x8FF0;&#x7C7B;&#x6DFB;&#x52A0;&#x4E0D;&#x540C;&#x7684;Event&#x5BF9;&#x8C61;&#x914D;&#x7F6E;&#x8BE5;&#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x662F;&#x547D;&#x4EE4;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5728;eventList&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x88AB;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GreenhouseController</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    GreenhouseControls gc = <span class="hljs-keyword">new</span> GreenhouseControls();
+    <span class="hljs-comment">// Instead of hard-wiring, you could parse</span>
+    <span class="hljs-comment">// configuration information from a text file here:</span>
+    gc.addEvent(gc.new Bell(<span class="hljs-number">900</span>));
+    Event[] eventList = {
+      gc.new LightOn(<span class="hljs-number">200</span>),
+      gc.new LightOff(<span class="hljs-number">400</span>),
+      gc.new WaterOn(<span class="hljs-number">600</span>),
+      gc.new WaterOff(<span class="hljs-number">800</span>),
+    };    
+    gc.addEvent(gc.new Restart(<span class="hljs-number">2000</span>, eventList));
+    <span class="hljs-keyword">if</span>(args.length == <span class="hljs-number">1</span>)
+      gc.addEvent(
+        <span class="hljs-keyword">new</span> GreenhouseControls.Terminate(
+          <span class="hljs-keyword">new</span> Integer(args[<span class="hljs-number">0</span>])));
+    gc.run();
+  }
+} <span class="hljs-comment">/* Output:
+Bing!
+Light is on
+Light is off
+Greenhouse water is on
+Greenhouse water is off
+Restarting system
+Terminating
+*/</span><span class="hljs-comment">//:~</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Java笔记-并发.html" class="navigation navigation-prev " aria-label="Previous page: Java笔记-并发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Java笔记-类型信息.html" class="navigation navigation-next " aria-label="Next page: Java笔记-类型信息">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java笔记-接口和内部类","date":"2018-04-02T22:00:21.000Z","categories":"java","tags":"java","level":"1.11.7","depth":2,"next":{"title":"Java笔记-类型信息","level":"1.11.8","depth":2,"path":"java/Java笔记-类型信息.md","ref":"java/Java笔记-类型信息.md","articles":[]},"previous":{"title":"Java笔记-并发","level":"1.11.6","depth":2,"path":"java/Java笔记-并发.md","ref":"java/Java笔记-并发.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/Java笔记-接口和内部类.md","mtime":"2019-03-07T09:20:40.237Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T03:04:27.118Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
