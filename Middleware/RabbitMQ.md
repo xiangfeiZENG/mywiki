@@ -8,29 +8,29 @@
 
   Apache，老牌消息中间件，性能一般。丰富的的API。目前用的少
 
-  ![image-20191021222604574](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021222604574.png)
+  ![image-20191021222604574](./images/image-20191021222604574.png)
 
-  ![image-20191021222641347](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021222641347.png)
+  ![image-20191021222641347](./images/image-20191021222641347.png)
 
   
 
 - Kafka
 
-  ![image-20191021221207520](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021221207520.png)
+  ![image-20191021221207520](./images/image-20191021221207520.png)
 
-  ![image-20191021221343051](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021221343051.png)
+  ![image-20191021221343051](./images/image-20191021221343051.png)
 
 - RocketMQ
 
-  ![image-20191021221451637](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021221451637.png)
+  ![image-20191021221451637](./images/image-20191021221451637.png)
 
-  ![image-20191021221813897](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021221813897.png)
+  ![image-20191021221813897](./images/image-20191021221813897.png)
 
 - RabbitMQ
 
-  ![image-20191021222114379](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021222114379.png)
+  ![image-20191021222114379](./images/image-20191021222114379.png)
 
-  ![image-20191021222244926](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021222244926.png)
+  ![image-20191021222244926](./images/image-20191021222244926.png)
 
 
 
@@ -38,7 +38,7 @@
 
 ## RabbitMQ核心概念及AMQP协议
 
-![image-20191021223252510](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021223252510.png)
+![image-20191021223252510](./images/image-20191021223252510.png)
 
 
 
@@ -64,11 +64,11 @@
 
 - AMQP全称：Advanced Message Queuing Protocol 高级消息队列协议
 
-  ![image-20191021224130529](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021224130529.png)
+  ![image-20191021224130529](./images/image-20191021224130529.png)
 
 - AMQP协议模型
 
-  ![image-20191021224202427](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021224202427.png)
+  ![image-20191021224202427](./images/image-20191021224202427.png)
 
 
 
@@ -90,7 +90,7 @@
 
 **RabbitMQ整体架构模型是什么样子的？**
 
-![image-20191021230859885](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021230859885.png)
+![image-20191021230859885](./images/image-20191021230859885.png)
 
 
 
@@ -98,7 +98,7 @@
 
 **RabbitMQ消息是如何流转的？**
 
-![image-20191021231032817](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191021231032817.png)
+![image-20191021231032817](./images/image-20191021231032817.png)
 
 
 
@@ -214,7 +214,7 @@ vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app
 
 - Exchange : 接收消息，并根据路由键转发消息到所绑定的队列
 
-  ![image-20191027112807444](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191027112807444.png)
+  ![image-20191027112807444](./images/image-20191027112807444.png)
   - Name：交换机名称
 
   - Type：交换机类型direct、topic、fanaut、headers
@@ -225,7 +225,7 @@ vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app
 
         注意：Direct模式可以使用RabbitMQ自带的Exchange：default Exchange，所以不需要将Exchange进行任何绑定（bingding）操作，消息传递时，RouteKey必须完全匹配才会被队列接收，否则消息会被抛弃。
 
-        ![image-20191027114037845](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191027114037845.png)
+        ![image-20191027114037845](./images/image-20191027114037845.png)
 
     - Topic Exchange
 
@@ -235,9 +235,9 @@ vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app
 
         注意：可以使用通配符进行模糊匹配
 
-        ![image-20191027120230039](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191027120230039.png)
+        ![image-20191027120230039](./images/image-20191027120230039.png)
 
-        ![image-20191027120307556](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191027120307556.png)
+        ![image-20191027120307556](./images/image-20191027120307556.png)
 
     - Fanout Exchange
 
@@ -247,7 +247,7 @@ vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app
 
       - Fanout交换机转发消息是最快的
 
-        ![image-20191028172955073](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191028172955073.png)
+        ![image-20191028172955073](./images/image-20191028172955073.png)
 
   - Durability：是否需要持久化，true为持久化
 
@@ -312,13 +312,13 @@ BAT/TMD互联网大厂的解决方案：
 
   消息信息落库，对消息状态进行打标
 
-  ![image-20191028190246052](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191028190246052.png)
+  ![image-20191028190246052](./images/image-20191028190246052.png)
 
   （step1 如果失败，可以快速失败）
 
 - 消息的延迟投递，做二次确认，回调检查（3-3节，注意）
 
-  ![image-20191028191811110](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191028191811110.png)
+  ![image-20191028191811110](./images/image-20191028191811110.png)
 
   注意：
 
@@ -328,7 +328,7 @@ BAT/TMD互联网大厂的解决方案：
 
 ### 幂等性概念详解
 
-![image-20191029172002066](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029172002066.png)
+![image-20191029172002066](./images/image-20191029172002066.png)
 
 #### 消费端-幂等性保障
 
@@ -340,13 +340,13 @@ BAT/TMD互联网大厂的解决方案：
 
 - 唯一ID + 指纹码机制，利用数据库主键去重
 
-  ![image-20191029172659307](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029172659307.png)
+  ![image-20191029172659307](./images/image-20191029172659307.png)
 
   先查询，后插入（如果没有就插入）
 
 - 利用Redis的原子性去实现
 
-  ![image-20191029173342120](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029173342120.png)
+  ![image-20191029173342120](./images/image-20191029173342120.png)
 
 
 
@@ -360,25 +360,25 @@ BAT/TMD互联网大厂的解决方案：
 
 #### Confirm确认消息
 
-![image-20191029174014862](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029174014862.png)
+![image-20191029174014862](./images/image-20191029174014862.png)
 
 确认机制流程图：
 
-![image-20191029174115080](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029174115080.png)
+![image-20191029174115080](./images/image-20191029174115080.png)
 
 如何实现Confirm确认消息：
 
-![image-20191029174214447](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029174214447.png)
+![image-20191029174214447](./images/image-20191029174214447.png)
 
 #### Return消息机制
 
-![image-20191029184316189](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029184316189.png)
+![image-20191029184316189](./images/image-20191029184316189.png)
 
-![image-20191029184357597](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029184357597.png)
+![image-20191029184357597](./images/image-20191029184357597.png)
 
 Return消息机制流程：
 
-![image-20191029184516015](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029184516015.png)
+![image-20191029184516015](./images/image-20191029184516015.png)
 
 
 
@@ -386,7 +386,7 @@ Return消息机制流程：
 
 消费端自定义监听
 
-![image-20191029185520184](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029185520184.png)
+![image-20191029185520184](./images/image-20191029185520184.png)
 
 Envelope包含信息：
 
@@ -401,29 +401,29 @@ Envelope包含信息：
 
 ### 消息的限流
 
-![image-20191029190638752](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029190638752.png)
+![image-20191029190638752](./images/image-20191029190638752.png)
 
-![image-20191029191055067](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029191055067.png)
+![image-20191029191055067](./images/image-20191029191055067.png)
 
-![image-20191029191226544](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029191226544.png)
+![image-20191029191226544](./images/image-20191029191226544.png)
 
 global一般为false，不应用于Channel，用于Customer级别。
 
-![image-20191029191413510](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029191413510.png)
+![image-20191029191413510](./images/image-20191029191413510.png)
 
 
 
 ### 消息的ACK与重回队列
 
-![image-20191029192529629](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029192529629.png)
+![image-20191029192529629](./images/image-20191029192529629.png)
 
-![image-20191029192649862](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191029192649862.png)
+![image-20191029192649862](./images/image-20191029192649862.png)
 
 
 
 ### TTL消息
 
-![image-20191030145553250](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030145553250.png)
+![image-20191030145553250](./images/image-20191030145553250.png)
 
 通过设置队列设置过期时间。
 
@@ -439,23 +439,23 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 死信队列：DLX，Dead-Letter-Exchange
 
-![image-20191030151245448](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030151245448.png)
+![image-20191030151245448](./images/image-20191030151245448.png)
 
-![image-20191030151349330](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030151349330.png)
+![image-20191030151349330](./images/image-20191030151349330.png)
 
 
 
 死信队列 概念描述：
 
-![image-20191030151525296](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030151525296.png)
+![image-20191030151525296](./images/image-20191030151525296.png)
 
 
 
 死信队列设置：
 
-![image-20191030151630596](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030151630596.png)
+![image-20191030151630596](./images/image-20191030151630596.png)
 
-![image-20191030151748403](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030151748403.png)
+![image-20191030151748403](./images/image-20191030151748403.png)
 
 
 
@@ -469,11 +469,11 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 #### RabbitAdmin
 
-![image-20191030155458907](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030155458907.png)
+![image-20191030155458907](./images/image-20191030155458907.png)
 
-![image-20191030155619936](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030155619936.png)
+![image-20191030155619936](./images/image-20191030155619936.png)
 
-![image-20191030155734999](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030155734999.png)
+![image-20191030155734999](./images/image-20191030155734999.png)
 
 
 
@@ -483,7 +483,7 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 - 在Rabbit基础API里面声明一个Exchange、声明一个绑定、一个队列
 
-![image-20191030174118138](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030174118138.png)
+![image-20191030174118138](./images/image-20191030174118138.png)
 
 
 
@@ -491,7 +491,7 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 即消息模版
 
-![image-20191030182957049](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030182957049.png)
+![image-20191030182957049](./images/image-20191030182957049.png)
 
 ```java
 	@Test
@@ -533,19 +533,19 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 简单消息监听容器
 
-![image-20191030185046502](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030185046502.png)
+![image-20191030185046502](./images/image-20191030185046502.png)
 
 事务用的少，了解即可
 
-![image-20191030185137114](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030185137114.png)
+![image-20191030185137114](./images/image-20191030185137114.png)
 
-![image-20191030185335164](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030185335164.png)
+![image-20191030185335164](./images/image-20191030185335164.png)
 
 
 
 注意：
 
-![image-20191030185451606](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191030185451606.png)
+![image-20191030185451606](./images/image-20191030185451606.png)
 
 
 
@@ -575,11 +575,11 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 
 
-![image-20191102094514992](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102094514992.png)
+![image-20191102094514992](./images/image-20191102094514992.png)
 
 
 
-![image-20191102094546154](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102094546154.png)
+![image-20191102094546154](./images/image-20191102094546154.png)
 
 
 
@@ -589,17 +589,17 @@ global一般为false，不应用于Channel，用于Customer级别。
 
 MessageConverter消息转换器
 
-![image-20191102094655467](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102094655467.png)
+![image-20191102094655467](./images/image-20191102094655467.png)
 
 实现方法：
 
-![image-20191102094726797](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102094726797.png)
+![image-20191102094726797](./images/image-20191102094726797.png)
 
 
 
 常用的MessageConverter消息转换器
 
-![image-20191102094811580](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102094811580.png)
+![image-20191102094811580](./images/image-20191102094811580.png)
 
 
 
@@ -611,31 +611,31 @@ MessageConverter消息转换器
 
 生产端：
 
-![image-20191102104730427](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102104730427.png)
+![image-20191102104730427](./images/image-20191102104730427.png)
 
-![image-20191102104517857](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102104517857.png)
+![image-20191102104517857](./images/image-20191102104517857.png)
 
-![image-20191102104611459](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102104611459.png)
+![image-20191102104611459](./images/image-20191102104611459.png)
 
 消费端：
 
 核心配置：
 
-![image-20191102110819521](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102110819521.png)
+![image-20191102110819521](./images/image-20191102110819521.png)
 
 
 
-![image-20191102110937021](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102110937021.png)
+![image-20191102110937021](./images/image-20191102110937021.png)
 
 
 
 @RabbitListener注解使用
 
-![image-20191102111023087](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102111023087.png)
+![image-20191102111023087](./images/image-20191102111023087.png)
 
 
 
-![image-20191102111117591](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102111117591.png)
+![image-20191102111117591](./images/image-20191102111117591.png)
 
 
 
@@ -645,27 +645,27 @@ PS：由于类配置写在代码里非常不友好，所以强烈建议大家使
 
 ### RabbitMQ整合Spring Cloud实战
 
-![image-20191102114638752](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102114638752.png)
+![image-20191102114638752](./images/image-20191102114638752.png)
 
-![image-20191102114700089](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102114700089.png)
-
-
-
-![image-20191102114754315](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102114754315.png)
+![image-20191102114700089](./images/image-20191102114700089.png)
 
 
 
-![image-20191102114903542](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102114903542.png)
-
-![image-20191102115025688](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102115025688.png)
-
-![image-20191102115107734](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102115107734.png)
+![image-20191102114754315](./images/image-20191102114754315.png)
 
 
 
-![image-20191102115128191](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102115128191.png)
+![image-20191102114903542](./images/image-20191102114903542.png)
 
-![image-20191102115321765](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191102115321765.png)
+![image-20191102115025688](./images/image-20191102115025688.png)
+
+![image-20191102115107734](./images/image-20191102115107734.png)
+
+
+
+![image-20191102115128191](./images/image-20191102115128191.png)
+
+![image-20191102115321765](./images/image-20191102115321765.png)
 
 
 
@@ -681,63 +681,63 @@ PS：由于类配置写在代码里非常不友好，所以强烈建议大家使
 
 #### 主备模式
 
-![image-20191103090838161](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103090838161.png)
+![image-20191103090838161](./images/image-20191103090838161.png)
 
-![image-20191103090906558](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103090906558.png)
+![image-20191103090906558](./images/image-20191103090906558.png)
 
-![image-20191103090942883](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103090942883.png)
+![image-20191103090942883](./images/image-20191103090942883.png)
 
 
 
-![image-20191103091043045](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091043045.png)
+![image-20191103091043045](./images/image-20191103091043045.png)
 
 
 
 #### 远程模式（用的不多，较早期的模式）
 
-![image-20191103091332535](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091332535.png)
+![image-20191103091332535](./images/image-20191103091332535.png)
 
-![image-20191103091356934](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091356934.png)
+![image-20191103091356934](./images/image-20191103091356934.png)
 
-![image-20191103091453215](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091453215.png)
+![image-20191103091453215](./images/image-20191103091453215.png)
 
-![image-20191103091643104](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091643104.png)
+![image-20191103091643104](./images/image-20191103091643104.png)
 
-![image-20191103091808030](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091808030.png)
+![image-20191103091808030](./images/image-20191103091808030.png)
 
-![image-20191103091827815](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091827815.png)
+![image-20191103091827815](./images/image-20191103091827815.png)
 
-![image-20191103091853055](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103091853055.png)
+![image-20191103091853055](./images/image-20191103091853055.png)
 
 
 
 #### 镜像模式（常用）
 
-![image-20191103092048145](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092048145.png)
+![image-20191103092048145](./images/image-20191103092048145.png)
 
-![image-20191103092107845](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092107845.png)
+![image-20191103092107845](./images/image-20191103092107845.png)
 
 
 
-![image-20191103092214077](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092214077.png)
+![image-20191103092214077](./images/image-20191103092214077.png)
 
 
 
 #### 多活模式
 
-![image-20191103092539481](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092539481.png)
+![image-20191103092539481](./images/image-20191103092539481.png)
 
 有多个rabbitmq集群。
 
-![image-20191103092748783](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092748783.png)
+![image-20191103092748783](./images/image-20191103092748783.png)
 
 
 
-![image-20191103092834545](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092834545.png)
+![image-20191103092834545](./images/image-20191103092834545.png)
 
-![image-20191103092950790](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103092950790.png)
+![image-20191103092950790](./images/image-20191103092950790.png)
 
-![image-20191103093139154](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103093139154.png)
+![image-20191103093139154](./images/image-20191103093139154.png)
 
 
 
@@ -753,27 +753,27 @@ PS：由于类配置写在代码里非常不友好，所以强烈建议大家使
 
 #### 镜像模式
 
-![image-20191103093449548](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191103093449548.png)
+![image-20191103093449548](./images/image-20191103093449548.png)
 
 
 
 #### HAProxy
 
-![image-20191106083817305](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191106083817305.png)
+![image-20191106083817305](./images/image-20191106083817305.png)
 
-![image-20191106083917615](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191106083917615.png)
+![image-20191106083917615](./images/image-20191106083917615.png)
 
-![image-20191106083946683](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191106083946683.png)
+![image-20191106083946683](./images/image-20191106083946683.png)
 
 
 
 #### KeepAlived
 
-![image-20191107115010440](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107115010440.png)
+![image-20191107115010440](./images/image-20191107115010440.png)
 
-![image-20191107115146283](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107115146283.png)
+![image-20191107115146283](./images/image-20191107115146283.png)
 
-![image-20191107115225499](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107115225499.png)
+![image-20191107115225499](./images/image-20191107115225499.png)
 
 
 
@@ -783,25 +783,25 @@ PS：由于类配置写在代码里非常不友好，所以强烈建议大家使
 
 #### 关键配置参数
 
-![image-20191107144203222](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107144203222.png)
+![image-20191107144203222](./images/image-20191107144203222.png)
 
-![image-20191107144328687](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107144328687.png)
+![image-20191107144328687](./images/image-20191107144328687.png)
 
 
 
 #### 集群恢复与故障转移
 
-![image-20191107160706792](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107160706792.png)
+![image-20191107160706792](./images/image-20191107160706792.png)
 
-![image-20191107161126694](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107161126694.png)
+![image-20191107161126694](./images/image-20191107161126694.png)
 
-![image-20191107161155298](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107161155298.png)
+![image-20191107161155298](./images/image-20191107161155298.png)
 
-![image-20191107161336092](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107161336092.png)
+![image-20191107161336092](./images/image-20191107161336092.png)
 
-![image-20191107161541475](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107161541475.png)
+![image-20191107161541475](./images/image-20191107161541475.png)
 
-![image-20191107161715897](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107161715897.png)
+![image-20191107161715897](./images/image-20191107161715897.png)
 
 
 
@@ -813,13 +813,13 @@ PS：由于类配置写在代码里非常不友好，所以强烈建议大家使
 
 延迟插件的作用：
 
-![image-20191107162112283](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107162112283.png)
+![image-20191107162112283](./images/image-20191107162112283.png)
 
 
 
 延迟插件的安装
 
-![image-20191107162252778](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107162252778.png)
+![image-20191107162252778](./images/image-20191107162252778.png)
 
 
 
@@ -829,15 +829,15 @@ SET：单元化
 
 ### SET化架构的进衍
 
-![image-20191107172337619](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107172337619.png)
+![image-20191107172337619](./images/image-20191107172337619.png)
 
-![image-20191107173052032](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107173052032.png)
+![image-20191107173052032](./images/image-20191107173052032.png)
 
-![image-20191107173113675](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191107173113675.png)
+![image-20191107173113675](./images/image-20191107173113675.png)
 
-![image-20191108092508711](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108092508711.png)
+![image-20191108092508711](./images/image-20191108092508711.png)
 
-![image-20191108092746214](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108092746214.png)
+![image-20191108092746214](./images/image-20191108092746214.png)
 
 
 
@@ -845,17 +845,17 @@ SET：单元化
 
 #### 同城"双活"架构介绍
 
-![image-20191108093022739](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093022739.png)
+![image-20191108093022739](./images/image-20191108093022739.png)
 
-![image-20191108093103899](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093103899.png)
+![image-20191108093103899](./images/image-20191108093103899.png)
 
 #### 两地三中心架构
 
-![image-20191108093221984](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093221984.png)
+![image-20191108093221984](./images/image-20191108093221984.png)
 
 两地三中心架构
 
-![image-20191108093322989](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093322989.png)
+![image-20191108093322989](./images/image-20191108093322989.png)
 
 
 
@@ -863,39 +863,39 @@ SET：单元化
 
 目标：
 
-![image-20191108093721551](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093721551.png)
+![image-20191108093721551](./images/image-20191108093721551.png)
 
 SET化架构策略
 
-![image-20191108093845833](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108093845833.png)
+![image-20191108093845833](./images/image-20191108093845833.png)
 
 
 
-![image-20191108094352744](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108094352744.png)
+![image-20191108094352744](./images/image-20191108094352744.png)
 
-·![image-20191108094525228](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108094525228.png)
+·![image-20191108094525228](./images/image-20191108094525228.png)
 
-![image-20191108094637713](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108094637713.png)
+![image-20191108094637713](./images/image-20191108094637713.png)
 
-![image-20191108094955858](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108094955858.png)
+![image-20191108094955858](./images/image-20191108094955858.png)
 
-![image-20191108095626204](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108095626204.png)
+![image-20191108095626204](./images/image-20191108095626204.png)
 
 
 
 优势：
 
-![image-20191108095721010](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108095721010.png)
+![image-20191108095721010](./images/image-20191108095721010.png)
 
-![image-20191108095800939](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108095800939.png)
+![image-20191108095800939](./images/image-20191108095800939.png)
 
-![image-20191108095921579](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108095921579.png)
+![image-20191108095921579](./images/image-20191108095921579.png)
 
-![image-20191108100002694](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108100002694.png)
+![image-20191108100002694](./images/image-20191108100002694.png)
 
 
 
-![image-20191108100215868](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108100215868.png)
+![image-20191108100215868](./images/image-20191108100215868.png)
 
 
 
@@ -903,11 +903,11 @@ SET化架构策略
 
 SET化架构原则
 
-![image-20191108101026301](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108101026301.png)
+![image-20191108101026301](./images/image-20191108101026301.png)
 
-![image-20191108101054373](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108101054373.png)
+![image-20191108101054373](./images/image-20191108101054373.png)
 
-![image-20191108101232189](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108101232189.png)
+![image-20191108101232189](./images/image-20191108101232189.png)
 
 
 
@@ -917,23 +917,23 @@ SET化架构原则
 
 ### RabbitMQ SET化架构搭建
 
-![image-20191108101619712](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108101619712.png)
+![image-20191108101619712](./images/image-20191108101619712.png)
 
 
 
 Federation
 
-![image-20191108102051459](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108102051459.png)
+![image-20191108102051459](./images/image-20191108102051459.png)
 
-![image-20191108102301272](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108102301272.png)
+![image-20191108102301272](./images/image-20191108102301272.png)
 
 
 
-![image-20191108104353270](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108104353270.png)
+![image-20191108104353270](./images/image-20191108104353270.png)
 
-![image-20191108104446186](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108104446186.png)
+![image-20191108104446186](./images/image-20191108104446186.png)
 
-![image-20191108104519987](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108104519987.png)
+![image-20191108104519987](./images/image-20191108104519987.png)
 
 
 
@@ -943,37 +943,37 @@ Federation
 
 ### 一线大厂中MQ组件实现思路和架构设计方案
 
-![image-20191108105127175](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108105127175.png)
+![image-20191108105127175](./images/image-20191108105127175.png)
 
 
 
 基本需求：
 
-![image-20191108105812909](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108105812909.png)
+![image-20191108105812909](./images/image-20191108105812909.png)
 
 扩展封装：
 
-![image-20191108105937421](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108105937421.png)
+![image-20191108105937421](./images/image-20191108105937421.png)
 
-![image-20191108110037880](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108110037880.png)
+![image-20191108110037880](./images/image-20191108110037880.png)
 
 
 
 #### 基础组件封装设计 - 迅速消息发送
 
-![image-20191108110248006](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108110248006.png)
+![image-20191108110248006](./images/image-20191108110248006.png)
 
-![image-20191108110314854](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108110314854.png)
+![image-20191108110314854](./images/image-20191108110314854.png)
 
 
 
 ### 基础组件封装设计 - 确认消息发送
 
-![image-20191108110358087](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108110358087.png)
+![image-20191108110358087](./images/image-20191108110358087.png)
 
 
 
-![image-20191108111218628](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108111218628.png)
+![image-20191108111218628](./images/image-20191108111218628.png)
 
 
 
@@ -981,17 +981,17 @@ Federation
 
 ### 基础组件封装设计 - 批量消息发送
 
-![image-20191108110650334](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108110650334.png)
+![image-20191108110650334](./images/image-20191108110650334.png)
 
 
 
-![image-20191108111002858](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108111002858.png)
+![image-20191108111002858](./images/image-20191108111002858.png)
 
 
 
 ### 基础组件封装设计 - 延迟消息发送
 
-![image-20191108111145367](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108111145367.png)
+![image-20191108111145367](./images/image-20191108111145367.png)
 
 
 
@@ -999,11 +999,11 @@ Federation
 
 ### 基础组件封装设计 -顺序消息发送
 
-![image-20191108113836564](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108113836564.png)
+![image-20191108113836564](./images/image-20191108113836564.png)
 
-![image-20191108114121431](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108114121431.png)
+![image-20191108114121431](./images/image-20191108114121431.png)
 
-![image-20191108114244311](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108114244311.png)
+![image-20191108114244311](./images/image-20191108114244311.png)
 
 
 
@@ -1011,29 +1011,29 @@ Federation
 
 ### 基础组件封装设计 -事务消息发送
 
-![image-20191108114657332](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108114657332.png)
+![image-20191108114657332](./images/image-20191108114657332.png)
 
-![image-20191108114930137](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108114930137.png)
+![image-20191108114930137](./images/image-20191108114930137.png)
 
-![image-20191108115208815](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108115208815.png)
+![image-20191108115208815](./images/image-20191108115208815.png)
 
-![image-20191108115426716](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108115426716.png)
+![image-20191108115426716](./images/image-20191108115426716.png)
 
-![image-20191108115537871](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108115537871.png)
+![image-20191108115537871](./images/image-20191108115537871.png)
 
 
 
 ### 消息的幂等性保证-消息路由规则架构设计
 
-![image-20191108124135892](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108124135892.png)
+![image-20191108124135892](./images/image-20191108124135892.png)
 
-![image-20191108124209598](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108124209598.png)
+![image-20191108124209598](./images/image-20191108124209598.png)
 
 
 
 ## 课程总结
 
-![image-20191108130054398](/Users/zengxiangfei/Documents/mywiki/mq/images/image-20191108130054398.png)
+![image-20191108130054398](./images/image-20191108130054398.png)
 
 
 

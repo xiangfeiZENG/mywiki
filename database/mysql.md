@@ -26,7 +26,7 @@
 
 QPS ：每秒处理的查量
 
-TPS：每秒事物数
+TPS：每秒事务数
 
 1. 超高的QPS和TPS：80%的数据库问题都是慢查询导致。
 
@@ -155,7 +155,7 @@ MySQL不支持多CPU对同一SQL并发处理
 - 不要在64位使用32位的服务器版本。（检查操作系统位数，使用32位操作系统对系统极大限制）
 - 64位的CPU一定要工作在64位的系统下
 - 对于并发比较高的场景CPU的数量比频率重要
-- 对于CPU密集性场景和复制SQL则频率越高越好
+- 对于CPU密集性场景和复杂SQL则频率越高越好
 
 
 
@@ -171,7 +171,7 @@ MySQL不支持多CPU对同一SQL并发处理
 
 
 
-根据数据库热数据选择内存
+根据数据库**热数据**选择内存
 
 
 
@@ -373,15 +373,249 @@ nas设备使用**网络连接**，通过基于文件的协议如nfs或smb来访�
 
 
 
+### MySQL体系结构
+
+![image-20191221102058107](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221102058107.png)
+
+客户端：jdbc，odbc，php等
+
+MySQL服务层：实现与存储引擎无关的所有特性。
+
+存储引擎层
+
+注意：存储引擎是针对于表的而不是针对于库的（一个库中的不同表可以使用不同的存储引擎，不建议使用）
+
 
 
 ### 数据库存储引擎的选择
 
-插件式存储引擎
+#### **插件式存储引擎**
 
-MyISAM：不支持事务，表级锁
+MyISAM（5.58和之前版本）：不支持事务，表级锁
 
-InnoDB：
+- MyISAM存储引擎表由MYD和MYI组成
+
+  ![image-20191221102510682](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221102510682.png)
+
+- 特性
+
+  - 并发性与锁级别，使用的是表级锁，而不是行级锁，对读写混合并发性不好
+  - 表损坏修复 ,`check table tablename`、`repair table tablename`
+  - 支持的索引类型：fullText
+  - MyISAM表支持数据压缩
+  - 版本MySQL5.0时默认表大小为4G
+
+- 使用场景
+
+  - 非事务型应用
+  - 只读类应用
+  - 空间类应用：支持空间函数，gprs数据等。
+
+
+
+#### InnoDB存储引擎：MySQL5.5及之后版本默认存储引擎，
+
+- Innodb使用表空间进行，数据存储
+
+  ![image-20191221105835345](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221105835345.png)
+
+  ![image-20191221105936852](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221105936852.png)
+
+  ![image-20191221110010389](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221110010389.png)
+
+  ![image-20191221110049548](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221110049548.png)
+
+  系统表空间和独立表空间要如何选择：
+
+  比较
+
+  - 系统表空间无法简单的收缩文件大小
+  - 独立表空间可以通过optimize table命令收缩系统文件
+  - 系统表空间会产生IO瓶颈
+  - 独立表空间可以同时向多个文件刷新数据
+
+  建议：
+
+  - 对Innodb使用独立表空间
+
+  ![image-20191221110657264](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191221110657264.png)
+
+  系统表空间还存储了什么信息：
+
+  - Innodb数据字典信息，通过b数进行数据管理
+  - undo回滚段
+
+#### Innodb存储引擎的特性
+
+- Innodb是一种事务性存储引擎
+
+- 完全支持事务的ACID特性
+
+- Redo Log 和Undo Log
+
+  ![image-20191222225151368](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191222225151368.png)
+
+- Innodb支持行级锁
+
+- 行级锁可以最大程度的支持并发
+
+- 行级锁是由存储引擎层实现的
+
+  什么是锁（数据库系统区别于文件系统的重要特性）：
+
+  - 锁对主要作用是管理共享资源的并发访问
+  - 锁用于实现事务的隔离性
+
+  锁的类型
+
+  - 共享锁（也称读锁）
+
+  - 独占锁（也称写锁）
+
+    ![image-20191222230057021](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20191222230057021.png)
+
+  锁的粒度-锁的策略
+
+  - 表级锁
+  - 行级锁
+
+  阻塞和死锁：
+
+  - 什么是阻塞：在有些时刻，一个事务中的锁需要等待另一个锁的释放
+  - 什么是死锁：是指两个或两个以上的事务在执行中相互占用了对方等待的资源而产生的一种异常。死锁系统会发现并自动处理，少量的死锁不影响系统的运行。
+
+- Innodb状态检查
+
+  `show engine innodb status`
+
+  参考mysql官方手册。
+
+- 适用场景
+
+  - Innodb适合大多数OLTP应用
+
+
+
+#### MySql常用存储引擎之CSV
+
+文件系统存储特点
+
+- 数据以文本方式存储在文件中
+- .csv文件存储表内容
+- .csm文件存储表的元数据如表状态和数据量
+- .frm文件存储表结构信息
+- 所有列必须都不能为NULL的
+- 不支持索引，不支持大表，不适合在线处理
+- 可以对数据文件直接编辑
+
+适用场景
+
+- 适合作为数据交换的中间表
+
+
+
+#### Mysql常用存储引擎之Archive
+
+文件系统存储特点
+
+- 以zlib对表数据进行压缩，磁盘I/O更少
+- 数据存在在ARZ为后缀的文件中，表结构存储在frm中。
+- 只支持insert和select操作
+- 只允许在自增ID列上加索引
+
+
+
+适用场景
+
+- 日志和数据采集类应用
+
+
+
+#### MySQL常用存储引擎之Memory
+
+文件系统存储引擎特点
+
+- 也称HEAP存储引擎，所以数据保存在内存中
+- 数据易失性，一旦mysql重启，表中数据会丢失，表结构会保留
+- 只有一个frm文件
+
+功能特点
+
+- 支持HASH索引（等值查询快，无法进行范围查询）和BTree索引（范围查找快），默认为HASH索引。
+- 所有字段都是固定长度varchar(10) = char(10)
+- 不支持BLOG和TEXT等大字段
+- Memory存储引擎适用表级锁
+- 最大大小由max_heap_table_size参数决定，默认16M，修改后需要对表重建
+
+
+
+容易混淆的概念：
+
+- Memory存储引擎表
+- 临时表
+  - 系统临时表
+    - 超过限制使用Mysam临时表
+    - 未超限制使用Memory表
+  - create temporary table 建立的临时表
+
+使用场景
+
+- 用于查找或者是映射表，例如邮编和地区的对应表（hash对于等值查找很高效）
+- 用于保存数据分析中产生的中间表
+- 用于换成周期性聚合数据的结果表
+
+注意：Memory数据易丢失，所以要求数据可再生
+
+
+
+#### MySQL常用存储引擎之Federated
+
+特点
+
+- 提供了访问远程MySQL服务器上表的方法
+- 本地不存储数据，数据全部放到原创服务器上
+- 本地需要保存表结构和原创服务器的连接信息（存在一个frm文件）
+
+如何使用
+
+- 很少使用，禁止，启用需要在启动时增加federated参数
+
+   ```
+  mysql://user_name[:password]@host_name[:port_num]/db_name/tbl_name
+  show engines;
+  在my.cnf中加入：
+  federated=1
+  重启mysql服务器
+   ```
+
+  ![image-20200203134159881](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200203134159881.png)
+
+- 可以通过复制实现该特性
+
+使用场景
+
+偶尔的统计分析及手工查询。
+
+
+
+#### 如何选择存储引擎
+
+大部分情况下，选择innodb。除非万不得已，不要混合使用存储引擎。
+
+参考条件
+
+- 事务
+- 备份 innodb支持免费在线热备方案 mysqldump不是在线热备方案
+- 奔溃恢复
+- 存储引擎的特有特性
+
+
+
+#### MySQL服务器参数介绍
+
+
+
+
 
 
 
