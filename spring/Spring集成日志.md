@@ -5,7 +5,7 @@ categories: java
 tags: java
 ---
 
-## Spring集成logback日志
+## Spring 集成logback日志
 
 本文引用参考：
 
