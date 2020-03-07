@@ -126,7 +126,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ```
 # 创建数据库
-CREATE DATABASE IF NOT EXISTS mvne_crm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_bin;
+CREATE DATABASE IF NOT EXISTS mvne_crm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 # 创建用户
 CREATE USER IF NOT EXISTS crm_user IDENTIFIED BY '1qaz@WSX';
 # 为用户赋权
