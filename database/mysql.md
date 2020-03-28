@@ -1,3 +1,7 @@
+
+
+
+
 # mysql 实战
 
 [TOC]
@@ -586,7 +590,7 @@ MyISAM（5.58和之前版本）：不支持事务，表级锁
   在my.cnf中加入：
   federated=1
   重启mysql服务器
-   ```
+  ```
 
   ![image-20200203134159881](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200203134159881.png)
 
@@ -613,21 +617,283 @@ MyISAM（5.58和之前版本）：不支持事务，表级锁
 
 #### MySQL服务器参数介绍
 
+MySQL获取配置路径
 
+- 命令行参数
 
+  `mysqld_safe --datadir=/data/sql_data`
 
+- 配置文件
+
+  通过以下命令获取mysql读取配置文件的顺序。
+
+  ![image-20200314084440957](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314084440957.png)
+
+Mysql配置参数作用域：
+
+- 全局参数(可能需要重新登录才能生效)
+
+  - set global 参数名=参数值;
+  - set @@global.参数名  :=参数值;
+
+- 会话参数
+
+  set [session] 参数名=参数值
+
+  set @@session.参数名:=参数值;
+
+mysql5.7之后有部分参数支持修改全局参数后不需要重新登录就可以生效。
 
 
 
 ### 数据库参数配置（重要）
 
+#### 内存相关参数
+
+- 确定可以使用的内存的上限，如果32位操作系统（Mysql单进程）就只能使用3G以内内存
+
+- 确定Mysql的每个连接使用的内存
+
+  sort_buffer_size：在查询需要排序时，会给所有连接分配该指定内存。分配时要小心，不宜过大。
+
+  join_buffer_size：连接缓冲，当多表查询时会分配多个
+
+  read_buffer_size:4K倍数 有查询需要时
+
+  read_rnd_buffer_size
+
+- 确定需要为操作系统保留多少内存
+
+- 如何为缓存池分配内存
+
+  - Innodb_buffer_pool_size ：缓存索引，数据等数据，延迟写入。必须保证足够的内存。
+
+    总内存-（每个线程所需要的内存*连接数）-系统保留内存
+
+    （MySQL手册建议的时服务器内存的75%）
+
+  - key_buffer_size:主要用于myisam，myisam缓存池只缓存索引，数据依赖于操作系统的缓存。Mysql的系统表还在使用myisam存储引擎，所以还是需要给key_buffer_size分配一定的空间。【
+
+    ![image-20200314103659184](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314103659184.png)
+
+    
+
+#### I/O相关配置参数
+
+##### InnoDB I/O相关配置
+
+- Innodb_log_file_size 控制了单个事务日志的大小 。跟业务情况相关，如果业务非常繁忙，设置大一些有好处。大小应为记录服务器一个小时左右的事务信息。
+
+- Innodb_log_files_in_group 控制着事务日志文件的个数
+
+- 事务日志的总大小=Innodb_log_file_size*Innodb_log_files_in_group
+
+- Innodb_log_buffer_size :   能够保留1秒钟的事务就足够了。 32M～128M
+
+- Innodb_flush_log_at_trx_commit : 刷新事务日志的频繁程度
+
+  设置为2时mysql进程奔溃不会丢失数据，但是在整个服务器宕机可能会丢失1秒数据。
+
+  ![image-20200314145337744](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314145337744.png)
+
+![image-20200314145900954](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314145900954.png)
 
 
-### 数据库结构设计和SQL语句
+
+##### MyISAM I/O相关配置
+
+- delay_key_write
+
+  ![image-20200314150146672](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314150146672.png)
+
+
+
+#### 安全相关配置
+
+- expire_logs_days 指定自动清理binlog的天数
+
+- max_allowed_packet 控制mysql可以接收包的大小 32M 主从复制，主从这个参数要保持一致。
+
+- skip_name_resolve 禁用DNS查找
+
+- sys date_is_now 确定sys date()返回确定性日期，和now()结果一致。 建议增加
+
+- read_only 禁止非super权限的用户写权限 建议在从库中启用。在给用户授权时注意，不要给予super权限。
+
+- skip_slave_start 禁用slave自动恢复 用在从库上，阻止mysql在重启后试图自动的启动复制。
+
+- sql_mode 设置MySQL所使用的SQL模式
+
+  ![image-20200314162522117](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314162522117.png)
+
+#### 其他常用配置参数
+
+- sync_binlog 控制MySQL如何向磁盘刷新binlog 默认为0，表示默认由操作系统控制 主从复制的主DB来说，建议设置为1，避免由于主DB奔溃而造成cache中的日志没有同步到二进制文件中。
+- tmp_table_size 和 max_heap_table_size 控制内存临时表大小（memory存储引擎）
+- max_connections 控制允许的最大连接数 默认值只有100，同城情况下会设置为2000或者稍微更大些。
+
+
+
+
+
+### 数据库结构设计和SQL语句（影响最大）
+
+数据库设计对性能的影响
+
+- 过分的反范式化为表建立太多的列
+- 过分的范式化造成太多的表关联（最多关联61个表），关联表应控制在10个以内
+- OLTP环境中使用不恰当的分区表
+- 使用外键保证数据的完整性（强烈建议不要使用外键约束）
+
+
+
+性能优化顺序
+
+- 数据库结构设计和SQL语句
+- 数据库存储引擎的选择和参数配置
+- 系统选择及优化
+- 硬件升级
 
 
 
 ## MySQL基准测试
+
+测量系统的性能 判断优化是否有效
+
+基准测试：基准测试是一种测量和评估软件性能指标的活动用于建立某个时刻的性能基准，以便当系统发生软硬件变化时重新进行基准测试以评估变化对性能的影响。
+
+基准测试是针对系统设置的一种压力测试。
+
+基准测试：直接、简单、易于比较、用于评估服务器的处理能力。简化了的压力测试。
+
+压力测试：对真实的业务数据进行测试，获得真实系统所承受的压力。
+
+
+
+### 如何进行基准测试
+
+基准测试的目的：
+
+- 建立MySQL服务器的性能基准线，确定当前MySQL服务器运行情况。
+
+- 模拟比当前系统更高的负载，以找出系统扩展瓶颈
+
+  增加数据库并发、观察QPS、TPS变化，确定并发量与性能最优关系
+
+- 测试不同的硬件、软件和操作系统配置
+
+- 证明新的硬件设备是否配置正确。
+
+
+
+对整个系统进行基准测试
+
+从系统入口进行测试（如网站Web前端、手机App前端）
+
+优点：
+
+- 能够测试整个系统的性能，包括Web服务器缓存、数据库等。
+- 能够反映出系统中各个组件接口间的性能问题体现真实性能状况。
+
+缺点
+
+- 测试设计复杂，消耗时间长
+
+
+
+单独对MySQL进行基准测试
+
+优点：
+
+- 测试设计简单，所需耗费时间短
+
+缺点：
+
+- 无法全面了解整个系统的性能基线
+
+
+
+指标
+
+- 单位时间内所处理的事务数（TPS）
+
+- 单位时间内所处理的查询数（QPS）
+
+- 响应时间
+
+  平均响应时间、最小响应时间、最大响应时间、各个时间所占百分比
+
+- 并发量：同时处理的查询请求的数量（并发量并不等于连接数），指的是正在工作中的并发的操作数或同时工作的数量。
+
+
+
+### 基准测试演示实例
+
+计划和设计基准测试
+
+- 对整个系统还是某一组件
+
+- 使用什么样的数据
+
+- 准备基准测试及数据收集脚本
+
+  CPU使用率、IO、网络流量、状态与计数器信息 等
+
+  Get_Test_info.sh 
+
+  ![image-20200314174531475](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314174531475.png)
+
+
+
+- 运行基准测试
+
+- 保存和分析基准测试结果
+
+  analyze.sh
+
+  ![image-20200314183753638](/Users/zengxiangfei/Documents/mywiki/Database/images/image-20200314183753638.png)
+
+
+
+基准测试容易忽略的问题：
+
+- 使用生产环境数据时只使用了部分数据
+- 在多用户场景中，只做单用户的测试 。推荐多线程并发测试。
+- 在单服务器上测试分布式应用 **推荐：**使用相同的架构进行测试。
+- 反复执行统一查询
+
+
+
+### Mysql基准测试工具
+
+ab，httploader，对系统进行整体测试。
+
+MySQL基准测试工具之 mysqlslap，mysql服务器自带，无需安装。
+
+特点：
+
+- 可以模拟服务器负载，并输出相关统计信息。
+- 可以指定也可以自动生成查询语句。
+
+
+
+常用参数说明：
+
+- `--auto-generate-sql`由系统自动生成SQL脚本进行测试
+- `--auto-generate-sql-add-autoincrement`在生成的表中增加自增ID
+- `--auto-generate-sql-load-type`指定测试中使用的查询类型 默认使用混合（读写删除查询更新）
+- `--auto-generate-sql-write-number`指定初始化数据生成的数据量。
+- `--concurrency`指定并发线程数量。
+- `--engine`指定要测试表的存储引擎，可以用逗号分隔多个存储引擎。
+- `--no-drop`指定不清理测试数据
+- `--iterations`指定测试运行的次数。每次测试都会重新生成测试数据，指定了这个参数，就不能指定no-drop参数。
+- `--number-of-queries`指定每一个线程执行的查询数量
+- `--debug-info` 指定输出额外的内存及CPU统计信息
+- `--number-int-cols`指定测试表中包含INT类型列的数量
+- `--number-char-cols`指定测试表中包含的varchar类型的数量
+- `--create-schema`指定了用于执行测试的数据库的名字
+- `--query`用于指定自定义SQL的脚步
+- `--only-print`并不允许测试脚本，而是把生成的脚本打印出来
 
 
 

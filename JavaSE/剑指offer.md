@@ -63,7 +63,7 @@ jdk11支持到2026
 
 先自上而下，后自下而上处理数据头部
 
-![image-20191124220006550](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124220006550.png)
+![image-20191124220006550](./images/image-20191124220006550.png)
 
 
 
@@ -71,13 +71,13 @@ jdk11支持到2026
 
 OSI的"实现”：TCP/IP
 
-![image-20191124220246501](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124220246501.png)
+![image-20191124220246501](./images/image-20191124220246501.png)
 
 
 
 先自上而下，后自下而上处理数据头部
 
-![image-20191124220458011](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124220458011.png)
+![image-20191124220458011](./images/image-20191124220458011.png)
 
 
 
@@ -85,7 +85,7 @@ OSI的"实现”：TCP/IP
 
 传输控制协议TCP简介：
 
-![image-20191124220847500](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124220847500.png)
+![image-20191124220847500](./images/image-20191124220847500.png)
 
 
 
@@ -104,9 +104,9 @@ TCP报文头
   - **FIN：finish标志，用于释放连接**
 - 
 
-![image-20191124220957799](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124220957799.png)
+![image-20191124220957799](./images/image-20191124220957799.png)
 
 "握手"是为了建立连接，TCP三次握手的流程图如下：
 
-![image-20191124221923103](/Users/zengxiangfei/Documents/mywiki/java/images/image-20191124221923103.png)
+![image-20191124221923103](./images/image-20191124221923103.png)
 

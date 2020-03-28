@@ -11,17 +11,17 @@ tags: java
 
 基础知识讲解与核心知识准备：
 
-![image-20190311203659166](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190311203659166.png)
+![image-20190311203659166](./images/image-20190311203659166.png)
 
 
 
-![image-20190311203814437](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190311203814437.png)
+![image-20190311203814437](./images/image-20190311203814437.png)
 
 
 
 
 
-![image-20190311203900035](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190311203900035.png)
+![image-20190311203900035](./images/image-20190311203900035.png)
 
 并发：
 
@@ -37,7 +37,7 @@ tags: java
 
 
 
-![image-20190311214914956](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190311214914956.png)
+![image-20190311214914956](./images/image-20190311214914956.png)
 
 
 
@@ -45,7 +45,7 @@ tags: java
 
 ### cpu多级缓存-缓存一致性
 
-![image-20190312224226086](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190312224226086.png)
+![image-20190312224226086](./images/image-20190312224226086.png)
 
 为什么需要CPU cache：CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源。所以cache的出现，是为了**缓解CPU和内存之间速度的不匹配问题**。（结构：cpu->cache->memory）
 
@@ -54,11 +54,11 @@ cpu cache有什么意义：
 - 时间局限性：如果某个数据被访问，那么在不久的将来它可能被再次访问。
 - 空间局限性：如果某个数据被访问，那么与它相邻的数据很快也可能被访问。
 
-![image-20190312225039189](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190312225039189.png)
+![image-20190312225039189](./images/image-20190312225039189.png)
 
 
 
-![image-20190312225445217](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190312225445217.png)
+![image-20190312225445217](./images/image-20190312225445217.png)
 
 
 
@@ -66,43 +66,43 @@ Java内存模型（Java Memory Model，JMM）
 
 规范了java虚拟机与计算机内存是如何协同工作的
 
-![image-20190313142446833](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313142446833.png)
+![image-20190313142446833](./images/image-20190313142446833.png)
 
 堆：存取速度慢一些，动态生成的。 
 
-![image-20190313142948835](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313142948835.png)
+![image-20190313142948835](./images/image-20190313142948835.png)
 
 关联如下：
 
-![image-20190313143326117](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313143326117.png)
+![image-20190313143326117](./images/image-20190313143326117.png)
 
 
 
-![image-20190313143449150](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313143449150.png)
+![image-20190313143449150](./images/image-20190313143449150.png)
 
 同步的八种操作
 
-![image-20190313143859008](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313143859008.png)
+![image-20190313143859008](./images/image-20190313143859008.png)
 
-![image-20190313143928611](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313143928611.png)
+![image-20190313143928611](./images/image-20190313143928611.png)
 
 
 
-![image-20190313144054976](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313144054976.png)
+![image-20190313144054976](./images/image-20190313144054976.png)
 
-![image-20190313144124696](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313144124696.png)
+![image-20190313144124696](./images/image-20190313144124696.png)
 
-![image-20190313144149703](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313144149703.png)
+![image-20190313144149703](./images/image-20190313144149703.png)
 
-![image-20190313144217637](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313144217637.png)
+![image-20190313144217637](./images/image-20190313144217637.png)
 
 Java内存模型-同步操作与规则
 
-![image-20190313144428846](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313144428846.png)
+![image-20190313144428846](./images/image-20190313144428846.png)
 
 并发的优势与风险：
 
-![image-20190313145052149](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313145052149.png)
+![image-20190313145052149](./images/image-20190313145052149.png)
 
 总结：
 
@@ -121,9 +121,9 @@ Java内存模型-同步操作与规则
 - JMeter：Apache组织开发的压力测试工具
 - 代码：Semaphore、CountDownLatch等
 
-![image-20190313153907815](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313153907815.png)
+![image-20190313153907815](./images/image-20190313153907815.png)
 
-![image-20190313154204647](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313154204647.png)
+![image-20190313154204647](./images/image-20190313154204647.png)
 
 Requests per second:吞吐率
 
@@ -135,7 +135,7 @@ Transfer rate ：total transfered/Time taken for tests
 
 
 
-![image-20190313155228040](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313155228040.png)
+![image-20190313155228040](./images/image-20190313155228040.png)
 
 线程数：虚拟用户数，
 
@@ -147,13 +147,13 @@ Ramp-Up Period：虚拟用户增长时长
 
 CountDownLatch：可以阻塞进程，当进程满足某种条件的时候再继续执行。
 
-![image-20190313155753144](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313155753144.png)
+![image-20190313155753144](./images/image-20190313155753144.png)
 
 
 
 信号量：阻塞进程控制统一时间的并发量。
 
-![image-20190313155838404](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190313155838404.png)
+![image-20190313155838404](./images/image-20190313155838404.png)
 
 模拟代码
 
@@ -218,9 +218,9 @@ public class ConcurrencyTest {
 
 ## 线程安全性
 
-![image-20190318105153973](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318105153973.png)
+![image-20190318105153973](./images/image-20190318105153973.png)
 
-![image-20190318105248520](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318105248520.png)
+![image-20190318105248520](./images/image-20190318105248520.png)
 
 
 
@@ -250,7 +250,7 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 - LongAdder：将热点数据分离，可能有时候不准确？
 
-![image-20190318145428395](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318145428395.png)
+![image-20190318145428395](./images/image-20190318145428395.png)
 
 
 
@@ -269,7 +269,7 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
   
 
-![image-20190318163938412](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318163938412.png)
+![image-20190318163938412](./images/image-20190318163938412.png)
 
 
 
@@ -283,15 +283,15 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 - 重排序结合线程交叉执行
 - 共享变量更新后没有在工作内存与主存间及时更新
 
-![image-20190318164254914](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318164254914.png)
+![image-20190318164254914](./images/image-20190318164254914.png)
 
-![image-20190318164418716](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318164418716.png)
+![image-20190318164418716](./images/image-20190318164418716.png)
 
-![image-20190318164506667](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318164506667.png)
+![image-20190318164506667](./images/image-20190318164506667.png)
 
-![image-20190318164537197](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318164537197.png)
+![image-20190318164537197](./images/image-20190318164537197.png)
 
-![image-20190318164948602](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318164948602.png)
+![image-20190318164948602](./images/image-20190318164948602.png)
 
 ```
 `//x、y为非volatile变量``//flag为volatile变量` `x = ``2``;        ``//语句1``y = ``0``;        ``//语句2``flag = ``true``;  ``//语句3``x = ``4``;         ``//语句4``y = -``1``;       ``//语句5`
@@ -309,7 +309,7 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 ### 有序性
 
-![image-20190318171418587](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318171418587.png)
+![image-20190318171418587](./images/image-20190318171418587.png)
 
 
 
@@ -319,11 +319,11 @@ happens-before原则
 
 ## 安全发布对象
 
-![image-20190318172246023](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318172246023.png)
+![image-20190318172246023](./images/image-20190318172246023.png)
 
 四种安全发布对象的方法：
 
-![image-20190318204715530](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190318204715530.png)
+![image-20190318204715530](./images/image-20190318204715530.png)
 
 
 
@@ -343,7 +343,7 @@ final关键字：类、方法、变量
 - 修饰方法：1. **锁定方法不被继承类修改**；2. 效率
 - 修饰变量：基本数据类型变量、引用类型变量（初始化后不能再指向另外对象）
 
-![image-20190319160419005](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190319160419005.png)
+![image-20190319160419005](./images/image-20190319160419005.png)
 
 ```java
 @ThreadSafe
@@ -370,7 +370,7 @@ public class ImmutableExample3 {
 
 ### 线程封闭
 
-![image-20190320110332421](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190320110332421.png)
+![image-20190320110332421](./images/image-20190320110332421.png)
 
 把对象封装到一个对象里。
 
@@ -450,23 +450,23 @@ ConcurrentHashMap
 - 键值有序
 - 高并发表现好
 
-![image-20190320233022909](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190320233022909.png)
+![image-20190320233022909](./images/image-20190320233022909.png)
 
-![image-20190320233216005](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190320233216005.png)
+![image-20190320233216005](./images/image-20190320233216005.png)
 
-![image-20190320233239685](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190320233239685.png)
+![image-20190320233239685](./images/image-20190320233239685.png)
 
 ## AQS开发
 
-![image-20190321095659217](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190321095659217.png)
+![image-20190321095659217](./images/image-20190321095659217.png)
 
 
 
-![image-20190321160013406](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190321160013406.png)
+![image-20190321160013406](./images/image-20190321160013406.png)
 
 
 
-![image-20190321160032528](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190321160032528.png)
+![image-20190321160032528](./images/image-20190321160032528.png)
 
 AQS同步组件：
 
@@ -569,7 +569,7 @@ synchronized是不会引发死锁的，jvm会解锁。
 
 并行执行任务的框架，思想类似于mapreduce，将一个大任务分解为很多小任务。采用工作窃取算法（某个线程从其他队列里窃取任务来执行，采用的双端队列）。
 
-![image-20190702093657559](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702093657559.png)
+![image-20190702093657559](./images/image-20190702093657559.png)
 
 
 
@@ -618,7 +618,7 @@ put，take可能会阻塞。主要用在生产者和消费者的场景。
 
 线程池的几种状态
 
-![image-20190702101737725](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702101737725.png)
+![image-20190702101737725](./images/image-20190702101737725.png)
 
 几种方法：
 
@@ -631,7 +631,7 @@ put，take可能会阻塞。主要用在生产者和消费者的场景。
 - getPoolSize()：线程池当前线程数量
 - getActiveCount()：当前线程池中正在执行的任务的线程数量
 
-![image-20190702102616235](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702102616235.png)
+![image-20190702102616235](./images/image-20190702102616235.png)
 
 
 
@@ -649,7 +649,7 @@ put，take可能会阻塞。主要用在生产者和消费者的场景。
 - CPU密集型任务，就需要尽量压榨CPU，参考值可以设为NCPU+1
 - IO密集型任务，参考值可以设置为2*NCPU
 
-![image-20190702104155658](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702104155658.png)
+![image-20190702104155658](./images/image-20190702104155658.png)
 
 
 
@@ -695,33 +695,33 @@ HashMap
 - 初始容量
 - 加载因子
 
-![image-20190702114703022](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702114703022.png)
+![image-20190702114703022](./images/image-20190702114703022.png)
 
-![image-20190702114722086](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702114722086.png)
+![image-20190702114722086](./images/image-20190702114722086.png)
 
 
 
 多线程下会产生死循环：
 
-![image-20190702114920523](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702114920523.png)
+![image-20190702114920523](./images/image-20190702114920523.png)
 
-![image-20190702114947537](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702114947537.png)
+![image-20190702114947537](./images/image-20190702114947537.png)
 
-![image-20190702115021064](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702115021064.png)
+![image-20190702115021064](./images/image-20190702115021064.png)
 
-![image-20190702115041473](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702115041473.png)
+![image-20190702115041473](./images/image-20190702115041473.png)
 
 
 
 ConcurrentHashMap
 
-![image-20190702115157623](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702115157623.png)
+![image-20190702115157623](./images/image-20190702115157623.png)
 
 
 
 Java8之后不再使用segment，分段锁，引入红黑树：
 
-![image-20190702115311660](/Users/zengxiangfei/Documents/mywiki/java/images/image-20190702115311660.png)
+![image-20190702115311660](./images/image-20190702115311660.png)
 
 
 
