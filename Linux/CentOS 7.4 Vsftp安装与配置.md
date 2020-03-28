@@ -49,12 +49,17 @@ chroot_list_file=/etc/vsftpd/chroot_list
 ③当chroot_list_enable=NO，chroot_local_user=YES时，所有的用户均不能切换到其他目录。
 ④当chroot_list_enable=NO，chroot_local_user=NO时，所有的用户均可以切换到其他目录。
 
+pasv_enable=YES
+pasv_min_port=20000
+pasv_max_port=30000
+
+use_localtime=YES
+
 # 添加用户
 [root@xfei-server vsftpd]# useradd -d /var/ftp/mvne -s /sbin/nologin ftpuser
 [root@xfei-server vsftpd]# passwd ftpuser
 [root@xfei-server vsftpd]# vim /etc/vsftpd/chroot_list 
 ftpuser
-
 ```
 
 
@@ -93,6 +98,86 @@ Feb 10 10:53:11 xfei-server systemd[1]: Started Vsftpd ftp daemon.
 问题：使用Filezilla连接路由器内的计算机搭建的ftp服务器时常会出现如下错误：
 
 解决方法：更改Filezilla设置，编辑-设置-连接-FTP-被动模式，将“使用服务器的外部ip地址来代替”改为“回到主动模式”即可。
+
+```shell
+[crmuser@mvne-crm bin]$ cat mvne-crm-eureka-server 
+#!/bin/bash
+
+RUNNING_USER=crmuser
+APP_NAME=mvne-crm-eureka
+APP_VERSION=0.0.1-SNAPSHOT
+PROFILE=eureka
+
+ADATE=`date +%Y-%m-%d`
+
+APP_HOME=$(cd `dirname $0`;cd ..; pwd)
+echo APP_HOME:$APP_HOME
+
+LIB_PATH=$APP_HOME/lib/$PROFILE/
+LOG_PATH=$APP_HOME/log/info/$APP_NAME.$ADATE.log
+APP_CONFIG=$APP_HOME/conf/application-$PROFILE.properties
+
+JVM_OPTS="-Xms1024M -Xmx2048M -Xloggc:$APP_HOME/log/error/$APP_NAME.gc.log -XX:+PrintGCDetails"
+
+JAR_FILE=$APP_HOME/lib/$APP_NAME-$APP_VERSION.jar
+pid=0
+start(){
+  checkpid
+  if [ ! -n "$pid" ]; then
+    echo JAR_FILE:$JAR_FILE
+    echo java $JVM_OPTS -Dspring.config.location=$APP_CONFIG -Dloader.path=$LIB_PATH -jar $JAR_FILE 1>/dev/null 2>&1 &
+    nohup java $JVM_OPTS -Dspring.config.location=$APP_CONFIG -Dloader.path=$LIB_PATH -jar $JAR_FILE 1>/dev/null 2>&1 &
+    echo "---------------------------------"
+    echo "Program $APP_NAME started, press CTRL + C to exit console log!"
+    echo "---------------------------------"
+    sleep 2s
+    tail -f $LOG_PATH
+  else
+      echo "$APP_NAME is runing PID: $pid"
+  fi
+
+}
+
+status(){
+   checkpid
+   if [ ! -n "$pid" ]; then
+     echo "$APP_NAME not runing"
+   else
+     echo "$APP_NAME runing PID: $pid"
+   fi
+}
+
+
+checkpid(){
+    pid=`ps -ef |grep $JAR_FILE |grep -v grep |awk '{print $2}'`
+}
+
+stop(){
+    checkpid
+    if [ ! -n "$pid" ]; then
+     echo "$APP_NAME not runing"
+    else
+      echo "$APP_NAME stop..."
+      kill -9 $pid
+    fi
+}
+
+restart(){
+    stop
+    sleep 1s
+    start
+}
+
+case $1 in
+          start) start;;
+          stop)  stop;;
+          restart)  restart;;
+          status)  status;;
+              *)  echo "require start|stop|restart|status"  ;;
+esac
+```
+
+
 
 
 

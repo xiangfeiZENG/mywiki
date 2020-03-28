@@ -188,3 +188,113 @@ Spring MVC集成slf4j-log4j的过程，如下：
 	</listener>
 ```
 
+
+
+
+
+## 日志部署
+
+### 原因
+
+SpringBoot先于LogBack加载，application-dev.yml中的logging path 后生效
+
+在logback-spring.xml 增加
+<springProperty name="log.path" source="logging.path" defaultValue="${user.dir}/log"/>
+
+ 即可
+
+
+
+三个配置文件：
+
+logback-spring.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>mvne-crm-eureka</contextName>
+
+    <springProperty name="log.path" source="logging.path" defaultValue="${user.dir}/log"/>
+
+    <springProfile name="default">
+        <include resource="logback/logback-dev.xml" />
+    </springProfile>
+    <springProfile name="dev">
+        <include resource="logback/logback-dev.xml" />
+    </springProfile>
+
+</configuration>
+```
+
+
+
+```xml
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+<!--<configuration scan="true" scanPeriod="60 seconds" debug="false">-->
+<included>
+    <contextName>mvne-crm-eureka</contextName>
+
+    <!--    <property name="log.path" value="log" />-->
+    <property name="log.maxHistory" value="30" />
+    <property name="log.totalSizeCap" value="1GB"/>
+    <property name="log.colorPattern" value="%magenta(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %yellow(%thread) %green(%logger) %msg%n"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5level %thread %logger %msg%n"/>
+
+    <!--输出到控制台 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.colorPattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!--按天生成日志 -->
+    <appender name="file_info"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log.path}/info/mvne-crm-eureka.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>${log.maxHistory}</maxHistory>
+            <totalSizeCap>${log.totalSizeCap}</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="file_error"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log.path}/error/mvne-crm-eureka-error.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <root level="trace">
+    </root>
+
+    <root level="info">
+        <appender-ref ref="console" />
+        <appender-ref ref="file_info" />
+        <appender-ref ref="file_error" />
+    </root>
+
+    <logger name="org.springframework.cloud.netflix.eureka" level="debug" additivity="false"/>
+
+</included>
+```
+
+
+

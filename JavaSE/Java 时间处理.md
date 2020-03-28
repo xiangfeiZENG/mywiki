@@ -1,5 +1,55 @@
 # Java 时间处理 
 
+## Java 8 Date/Time API
+
+Java 8引入了用于*日期*和*时间的*新API，以解决旧版*java.util.Date*和*java.util.Calendar*的缺点。
+
+Java 8项目的核心类的*java.time*包像*LOCALDATE的*，*本地时间，LocalDateTime，ZonedDateTime，周期，持续时间*和他们支持的API。
+
+### 现有Date/Time API的问题
+
+- **线程安全** – *Date*和*Calendar*类不是线程安全的，这使开发人员不得不处理难以调试的并发问题并编写其他代码来处理线程安全。相反，Java 8中引入的新的*日期*和*时间* API是不可变的，并且是线程安全的，因此使并发性头痛从开发人员那里减轻了。
+- **API的设计和易于理解** – *Date*和*Calendar* API的设计不完善，没有足够的方法来执行日常操作。新的*日期/时间* API以ISO为中心，并遵循一致的日期，时间，持续时间和期间域模型。有许多支持最常用操作的实用程序方法。
+- ***ZonedDate\*和\*Time\*** –开发人员必须编写其他逻辑才能使用旧的API处理时区逻辑，而使用新的API，可以使用 *Local*和 *ZonedDate* / *Time* API完成时区的处理。
+
+### 使用*LocalDate*，*LocalTime*和*LocalDateTime*
+
+最常用的类是*LocalDate*，*LocalTime*和*LocalDateTime*。顾名思义，它们表示观察者上下文中的本地日期/时间。
+
+这些类主要在不需要在上下文中明确指定时区的情况下使用。在本节中，我们将介绍最常用的API。
+
+#### 使用LocalDate
+
+所述*LOCALDATE*表示**在ISO格式（YYYY-MM-DD），而不时间的日期**。
+
+它可以用于存储日期，例如**生日**和**发薪日**。
+
+可以从系统时钟创建当前日期的实例，如下所示：
+
+```
+LocalDate localDate = LocalDate.now();
+```
+
+可以使用“ *of* ”方法或使用“ *parse* ”方法来获取表示特定日期，月份和年份的*LocalDate*。例如，以下代码段代表2015年2月20日的*LocalDate*：
+
+```
+LocalDate.of(``2015``, ``02``, ``20``);` `LocalDate.parse(``"2015-02-20"``);
+```
+
+所述*LOCALDATE*提供各种实用方法，以获得各种信息。让我们快速浏览其中一些API方法。
+
+以下代码段获取当前的本地日期并添加一天：
+
+```
+LocalDate tomorrow = LocalDate.now().plusDays(``1``);
+```
+
+
+
+
+
+## Joda Time
+
 官方文档：https://www.joda.org/joda-time/userguide.html#
 
 > Joda-Time提供了Java日期和时间类的质量替代。
