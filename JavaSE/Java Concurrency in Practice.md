@@ -11,7 +11,9 @@ tags: java
 
 基础知识讲解与核心知识准备：
 
-![image-20190311203659166](./images/image-20190311203659166.png)
+![](.\images\1.jpg)
+
+
 
 
 
@@ -47,14 +49,35 @@ tags: java
 
 ![image-20190312224226086](./images/image-20190312224226086.png)
 
-为什么需要CPU cache：CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源。所以cache的出现，是为了**缓解CPU和内存之间速度的不匹配问题**。（结构：cpu->cache->memory）
+**问题**：为什么需要CPU cache：
 
-cpu cache有什么意义：
+CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源。所以cache的出现，是为了**缓解CPU和内存之间速度的不匹配问题**。（结构：cpu->cache->memory）
+
+**问题**：Cpu cache有什么意义：
 
 - 时间局限性：如果某个数据被访问，那么在不久的将来它可能被再次访问。
 - 空间局限性：如果某个数据被访问，那么与它相邻的数据很快也可能被访问。
 
 ![image-20190312225039189](./images/image-20190312225039189.png)
+
+四种状态：
+
+- M：Modified 被修改
+
+- E：Exclusive 独享
+
+- S：Shared 共享
+
+- I：Invalid 无效
+
+四种操作：
+
+- local read ：读本地缓存中的数据
+- local write：将数据写到本地缓存
+- remote read：将内存中的数据读取过来
+- remote write：将数据写回到主存
+
+**监听和广播**
 
 
 
@@ -62,7 +85,7 @@ cpu cache有什么意义：
 
 
 
-Java内存模型（Java Memory Model，JMM）
+### Java内存模型（Java Memory Model，JMM）
 
 规范了java虚拟机与计算机内存是如何协同工作的
 
@@ -100,7 +123,7 @@ Java内存模型-同步操作与规则
 
 ![image-20190313144428846](./images/image-20190313144428846.png)
 
-并发的优势与风险：
+### 并发的优势与风险
 
 ![image-20190313145052149](./images/image-20190313145052149.png)
 
@@ -112,38 +135,39 @@ Java内存模型-同步操作与规则
 
 
 
-## 并发编程与线程安全
+## 多线程并发编程与线程安全
 
-并发模拟
+**并发模拟**
 
 - Postman：http请求模拟工具
+
 - Apache Bench（AB）：Apache附带的工具，测试网站性能
+
+  ![image-20190313153907815](./images/image-20190313153907815.png)
+
+  ![image-20190313154204647](./images/image-20190313154204647.png)
+
+  Requests per second:吞吐率
+
+  Time per request：用户平均等待时间
+
+  Time per request：服务器平均等待时间
+
+  Transfer rate ：total transfered/Time taken for tests
+
 - JMeter：Apache组织开发的压力测试工具
+
+  
+
+  ![image-20190313155228040](./images/image-20190313155228040.png)
+
+  线程数：虚拟用户数，
+
+  Ramp-Up Period：虚拟用户增长时长
+
 - 代码：Semaphore、CountDownLatch等
 
-![image-20190313153907815](./images/image-20190313153907815.png)
-
-![image-20190313154204647](./images/image-20190313154204647.png)
-
-Requests per second:吞吐率
-
-Time per request：用户平均等待时间
-
-Time per request：服务器平均等待时间
-
-Transfer rate ：total transfered/Time taken for tests
-
-
-
-![image-20190313155228040](./images/image-20190313155228040.png)
-
-线程数：虚拟用户数，
-
-Ramp-Up Period：虚拟用户增长时长
-
-
-
-### 编码测试
+编码测试
 
 CountDownLatch：可以阻塞进程，当进程满足某种条件的时候再继续执行。
 
@@ -151,13 +175,13 @@ CountDownLatch：可以阻塞进程，当进程满足某种条件的时候再继
 
 
 
-信号量：阻塞进程控制统一时间的并发量。
+信号量：阻塞进程控制同一时间的并发量。
 
 ![image-20190313155838404](./images/image-20190313155838404.png)
 
 模拟代码
 
-```
+```java
 package com.mmall.concurrency;
 
 import com.mmall.concurrency.annoations.NotThreadSafe;
@@ -212,11 +236,7 @@ public class ConcurrencyTest {
 
 
 
-
-
-
-
-## 线程安全性
+### 线程安全性
 
 ![image-20190318105153973](./images/image-20190318105153973.png)
 
@@ -224,7 +244,7 @@ public class ConcurrencyTest {
 
 
 
-### 原子性-Atomic包
+#### 原子性-Atomic包
 
 AtomicXXX：CAS、Unsafe.compareAndSwapxxx()
 
@@ -275,7 +295,7 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 
 
-### 可见性
+#### 可见性
 
 导致共享变量在线程间不可见的原因
 
@@ -293,8 +313,19 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 ![image-20190318164948602](./images/image-20190318164948602.png)
 
-```
-`//x、y为非volatile变量``//flag为volatile变量` `x = ``2``;        ``//语句1``y = ``0``;        ``//语句2``flag = ``true``;  ``//语句3``x = ``4``;         ``//语句4``y = -``1``;       ``//语句5`
+```java
+//x、y为非volatile变量
+//flag为volatile变量 
+x = 2;        
+//语句1
+y = 0;        
+//语句2
+flag = true;  
+//语句3
+x = 4;         
+//语句4
+y = -1;       
+//语句5
 ```
 
  由于flag变量为volatile变量，那么在进行指令重排序的过程的时候，不会将语句3放到语句1、语句2前面，也不会讲语句3放到语句4、语句5后面。但是要注意语句1和语句2的顺序、语句4和语句5的顺序是不作任何保证的。
@@ -307,13 +338,49 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 
 
-### 有序性
+#### 有序性
 
 ![image-20190318171418587](./images/image-20190318171418587.png)
 
+#### happens-before原则
+
+什么是happens-before原则：
+
+> **happens-before：**A happens-before B就是A先行发生于B（这种说法不是很准确），定义为hb(A, B)。在Java内存模型中，happens-before的意思是前一个操作的结果可以被后续操作获取。
+
+为什么要happens-before原则
+
+**JVM会对代码进行编译优化，会出现指令重排序情况**，为了避免编译优化对并发编程安全性的影响，**需要happens-before规则定义一些禁止编译优化的场景**，保证并发编程的正确性。以双重检查单例示例进行分析：
+
+![image-20200409121449447](.\images\image-20200409121449447.png)
+
+上述代码中instance = new LazyDoubleCheckSingleton()并不是原子操作 ，JVM会分解成以下几个命令执行：
+
+给对象分配内容初始化对象将初始化对象和内存地址建立关联按照上面的分解顺序（1->2->3）执行不存在任何问题，但是由于JVM编译优化的存在，可能导致2和3步骤颠倒，即按1->3->2顺序执行（这就是指令重排序）。按照1->3->2顺序执行，在多线程环境中执行getInstance就有可能出现instance已经和初始对象内存建立关联，但是对象还没有初始化完成的情况，即执行if (instance == null)的时候instance ！= null 直接返回没有初始化完成的instance，导致再使用instance实例的时候报错。volatile关键字是可以解决指令重排序问题的一种方式，具体解决方式如下：
+
+![image-20200409121533343](.\images\image-20200409121533343.png)
 
 
-happens-before原则
+
+有哪些happens-before规则
+
+**程序次序规则：**在一个线程内一段代码的执行结果是有序的。就是还会指令重排，但是随便它怎么排，结果是按照我们代码的顺序生成的不会变。
+
+**管程锁定规则：**就是无论是在单线程环境还是多线程环境，对于同一个锁来说，一个线程对这个锁解锁之后，另一个线程获取了这个锁都能看到前一个线程的操作结果！(管程是一种通用的同步原语，synchronized就是管程的实现）
+
+**volatile变量规则：**就是如果一个线程先去写一个volatile变量，然后一个线程去读这个变量，那么这个写操作的结果一定对读的这个线程可见。
+
+**线程启动规则：**在主线程A执行过程中，启动子线程B，那么线程A在启动子线程B之前对共享变量的修改结果对线程B可见。
+
+**线程终止规则：**在主线程A执行过程中，子线程B终止，那么线程B在终止之前对共享变量的修改结果在线程A中可见。也称线程join()规则。
+
+**线程中断规则**：对线程interrupt()方法的调用先行发生于被中断线程代码检测到中断事件的发生，可以通过Thread.interrupted()检测到是否发生中断。
+
+**传递性规则：**这个简单的，就是happens-before原则具有传递性，即hb(A, B) ， hb(B, C)，那么hb(A, C)。
+
+**对象终结规则：**这个也简单的，就是一个对象的初始化的完成，也就是构造函数执行的结束一定 happens-before它的finalize()方法。
+
+
 
 
 

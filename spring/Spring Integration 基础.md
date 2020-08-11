@@ -133,11 +133,33 @@ assertEquals(123, message4.getHeaders().get("foo"));
 > gateway. The method that’s being invoked is defined on an object that’s referenced
 > within the same Spring application context.  
 
+
+
+
+
 #### 路由（ROUTER）  
 
 > A Router (see figure 1.10) determines the
 > next channel a message should be sent to
 > based on the incoming message.  
+
+路由决定下一个消息将会基于输入消息决定后续发往哪个channel
+
+
+
+
+
+#### 过滤器（FILTER)
+
+消息过滤器用于`Message`根据某些条件（例如，消息头值或消息内容本身）来决定是否传递a。因此，消息过滤器与路由器相似，不同之处在于，对于从过滤器的输入通道接收到的每个消息，相同的消息可能会或可能不会发送到过滤器的输出通道。与路由器不同，它不决定将消息发送到哪个消息通道，而只决定是否完全发送消息。
+
+
+
+
+
+
+
+
 
 
 
@@ -148,6 +170,12 @@ assertEquals(123, message4.getHeaders().get("foo"));
 > useful whenever the act of processing message content can be split into multiple steps
 > and executed by different consumers at the
 > same time.  
+
+
+
+拆分器（参见图1.11）接收一条消息并将其拆分为多条消息发送到其输出通道。 这是每当处理消息内容的操作可以分为多个步骤时，此命令就很有用并由不同的消费者同时执行。
+
+
 
 #### 聚合器（AGGREGATOR）  
 
